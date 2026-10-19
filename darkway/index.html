@@ -14,18 +14,25 @@
   <meta property="og:image" content="https://hanxgames.net/assets/games/darkway/og.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#0e0a07">
+  <!-- @head -->
+<link rel="alternate" hreflang="en" href="https://hanxgames.net/darkway/">
+  <link rel="alternate" hreflang="tr" href="https://hanxgames.net/tr/darkway/">
+  <link rel="alternate" hreflang="x-default" href="https://hanxgames.net/darkway/">
+  <meta property="og:locale" content="en_US">
+  <script>try{if(!localStorage.getItem('hx-lang')&&/^tr\b/i.test(navigator.language||''))location.replace('/tr'+location.pathname+location.hash)}catch(e){}</script>
+<!-- /@head -->
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,700&family=Cinzel:wght@500;700;800&family=IM+Fell+English:ital@0;1&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,700&family=Cinzel:wght@500;700;800&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/site.css">
   <style>
     :root {
       --bg: #0d0907; --bg-2: #16100b; --fg: #efe3c8; --muted: #a8977a;
       --accent: #d4a85a; --accent-2: #9b1c1c; --accent-ink: #1a1006; --glow: rgba(212,168,90,.35);
       --surface: rgba(239, 227, 200, .04); --surface-2: rgba(239, 227, 200, .08); --line: rgba(212, 168, 90, .18);
-      --font-display: "Cinzel", Georgia, serif; --font-body: "IM Fell English", Georgia, serif;
+      --font-display: "Cinzel", Georgia, serif; --font-body: "EB Garamond", Georgia, serif;
       --parch: #e9dcbf; --ink: #2a1d10;
     }
     body { font-size: 18px; }
@@ -38,7 +45,7 @@
     @keyframes flick { 0%, 100% { opacity: .9; transform: scale(1); } 20% { opacity: .7; } 40% { opacity: 1; transform: scale(1.04); } 60% { opacity: .75; } 80% { opacity: .95; transform: scale(.98); } }
     .vignette { position: absolute; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,.75) 100%); }
     .g-title { font-family: "Cinzel", serif; font-weight: 800; font-size: clamp(50px, 7.4vw, 104px); color: var(--parch); letter-spacing: .04em; text-shadow: 0 0 40px rgba(255,170,70,.25); }
-    .g-sub { font-family: "IM Fell English", serif; font-style: italic; text-transform: none; color: var(--accent); letter-spacing: .02em; font-size: clamp(20px, 2.4vw, 28px); }
+    .g-sub { font-family: "EB Garamond", serif; font-style: italic; text-transform: none; color: var(--accent); letter-spacing: .02em; font-size: clamp(20px, 2.4vw, 28px); }
     .seal { width: 74px; height: 74px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #c2372f, #7a1414 70%); box-shadow: inset 0 0 0 5px rgba(0,0,0,.18), 0 6px 14px rgba(0,0,0,.6); display: grid; place-items: center; color: #f3c9a8; font-family: "Cinzel", serif; font-weight: 800; font-size: 24px; transform: rotate(-12deg); }
     .g-art__frame { border-color: rgba(212,168,90,.35); }
 
@@ -60,7 +67,7 @@
     .petition.dragging { transition: none; cursor: grabbing; }
     .petition .who { font-family: "Cinzel", serif; font-weight: 800; font-size: 13px; letter-spacing: .24em; color: #7a1414; }
     .petition .portrait { width: 110px; height: 110px; border-radius: 50%; display: grid; place-items: center; font-size: 56px; background: radial-gradient(circle, #e9dcbf, #b89a64); box-shadow: inset 0 0 0 3px #8b6a35; }
-    .petition p { font-family: "IM Fell English", serif; font-size: 19px; line-height: 1.35; }
+    .petition p { font-family: "EB Garamond", serif; font-size: 19px; line-height: 1.35; }
     .petition .drag { margin-top: auto; font-family: "Cinzel", serif; font-weight: 700; font-size: 12px; letter-spacing: .2em; color: #8b6a35; }
     .petition .drag::before, .petition .drag::after { content: ""; display: inline-block; width: 28px; height: 1px; background: currentColor; vertical-align: middle; margin: 0 10px; }
     .petition .hint { position: absolute; top: 18px; padding: 6px 10px; border: 2px solid; border-radius: 8px; font-family: "Cinzel", serif; font-weight: 800; font-size: 12px; letter-spacing: .1em; opacity: 0; transition: opacity .2s; max-width: 45%; }
@@ -99,6 +106,9 @@
       <a href="/moba-manager/"><img src="/assets/games/moba-manager/icon.webp" alt="" width="22" height="22" loading="lazy">Moba Manager</a>
       <a href="/ember-keep/"><img src="/assets/games/ember-keep/icon.webp" alt="" width="22" height="22" loading="lazy">Ember Keep</a>
     </nav>
+    <!-- @lang -->
+<div class="lang" role="group" aria-label="Language"><a href="/darkway/" hreflang="en" lang="en" aria-current="true">EN</a><a href="/tr/darkway/" hreflang="tr" lang="tr">TR</a></div>
+<!-- /@lang -->
     <button class="nav__burger" type="button" aria-label="Open menu" aria-expanded="false"><span></span></button>
   </div>
 </header>

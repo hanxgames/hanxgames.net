@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hantro: Ember Keep | HanX Games</title>
+  <meta name="description" content="Hantro: Ember Keep hızlı ve rengârenk bir kule savunma oyunu. Beş kahramanı güçlendir, yıkıcı büyüler yağdır, roguelike kartlarla stratejini kur ve kaleni savun. Android ve iOS.">
+  <link rel="canonical" href="https://hanxgames.net/tr/ember-keep/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="HanX Games">
+  <meta property="og:title" content="Hantro: Ember Keep">
+  <meta property="og:description" content="Kaleni savun! Kahramanlar, büyüler, kartlar ve kalıcı güçle kule savunma.">
+  <meta property="og:url" content="https://hanxgames.net/tr/ember-keep/">
+  <meta property="og:image" content="https://hanxgames.net/assets/games/ember-keep/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#1d0b2e">
+  <!-- @head -->
+<link rel="alternate" hreflang="en" href="https://hanxgames.net/ember-keep/">
+  <link rel="alternate" hreflang="tr" href="https://hanxgames.net/tr/ember-keep/">
+  <link rel="alternate" hreflang="x-default" href="https://hanxgames.net/ember-keep/">
+  <meta property="og:locale" content="tr_TR">
+<!-- /@head -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,700&family=Fredoka:wght@500;600;700&family=Inter:wght@500;600;700&family=Lilita+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <style>
+    :root {
+      --bg: #1a0a2b; --bg-2: #250f3d; --fg: #fff4fb; --muted: #c9a9dc;
+      --accent: #ff5fae; --accent-2: #ffc93c; --accent-ink: #2a0418; --glow: rgba(255,95,174,.45);
+      --surface: rgba(255, 200, 240, .06); --surface-2: rgba(255, 200, 240, .11); --line: rgba(255, 160, 220, .2);
+      --font-display: "Lilita One", "Fredoka", sans-serif; --font-body: "Fredoka", system-ui, sans-serif;
+    }
+    h1, h2, h3 { font-weight: 400; letter-spacing: .01em; }
+    .section-head h2 { text-shadow: 0 4px 0 rgba(0,0,0,.35); }
+    .g-hero__bg { background: radial-gradient(900px 600px at 70% 30%, rgba(255,95,174,.35), transparent 65%), radial-gradient(800px 500px at 10% 80%, rgba(255,140,40,.25), transparent 65%), linear-gradient(180deg, #2a0f45, #1a0a2b); }
+    .g-hero__bg::after { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,.07) 2px, transparent 2px); background-size: 34px 34px; -webkit-mask-image: linear-gradient(180deg, #000, transparent 80%); mask-image: linear-gradient(180deg, #000, transparent 80%); }
+    .g-title { font-family: "Lilita One", sans-serif; font-size: clamp(60px, 10.5vw, 128px); line-height: .9; color: #fff; text-shadow: 0 6px 0 #a3125e, 0 12px 0 #5a0a35, 0 18px 40px rgba(0,0,0,.5); }
+    .g-title small { display: block; font-size: .32em; color: var(--accent-2); text-shadow: 0 3px 0 #8a5a00; letter-spacing: .06em; margin-bottom: 4px; }
+    .phones { position: relative; height: 620px; display: flex; justify-content: center; align-items: center; }
+    .phones .phone { position: absolute; }
+    .phones .phone:nth-child(1) { transform: translateX(-42%) rotate(-9deg) scale(.82); }
+    .phones .phone:nth-child(2) { transform: translateX(42%) rotate(9deg) scale(.82); }
+    .phones .phone:nth-child(3) { z-index: 1; animation: g-icon-float 6s ease-in-out infinite; }
+    .phones .phone { background: linear-gradient(160deg, #ff7cc0, #8a1d6e); }
+    .sparkle { position: absolute; color: var(--accent-2); font-size: 34px; animation: twinkle 2.4s ease-in-out infinite; z-index: 2; }
+    @keyframes twinkle { 50% { transform: scale(.5) rotate(45deg); opacity: .4; } }
+    @media (max-width: 600px) { .phones { height: 520px; } }
+    .btn--primary, .store { border-radius: 18px; }
+
+    .heroes { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(168px, 1fr)); }
+    .hero-card { position: relative; padding: 24px 18px 22px; border-radius: 22px; text-align: center; overflow: hidden; isolation: isolate; border: 2px solid color-mix(in srgb, var(--c) 55%, transparent); background: linear-gradient(180deg, color-mix(in srgb, var(--c) 22%, #2a1040), #1f0c33); transition: transform .35s var(--ease), box-shadow .35s; }
+    .hero-card:hover { transform: translateY(-8px) rotate(-1deg); box-shadow: 0 24px 40px -20px var(--c); }
+    .hero-card .orb { width: 86px; height: 86px; margin: 0 auto 14px; border-radius: 50%; display: grid; place-items: center; font-size: 42px; background: radial-gradient(circle at 35% 30%, #fff, var(--c) 60%); box-shadow: 0 0 30px var(--c); animation: orb 3s ease-in-out infinite; }
+    @keyframes orb { 50% { box-shadow: 0 0 50px 6px var(--c); transform: scale(1.05); } }
+    .hero-card h3 { font-size: 22px; }
+    .hero-card p { color: var(--muted); font-size: 15px; margin-top: 6px; }
+    .spells { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+    .spell { display: flex; align-items: center; gap: 10px; padding: 12px 18px 12px 12px; border-radius: 999px; background: var(--surface); border: 2px solid var(--line); font-weight: 600; transition: transform .25s var(--ease), background .25s; cursor: default; }
+    .spell:hover { transform: scale(1.06); background: var(--surface-2); }
+    .spell i { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; font-style: normal; font-size: 20px; background: var(--c); box-shadow: 0 0 16px var(--c); }
+    /* Region path */
+    .path { position: relative; display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+    .region { position: relative; padding: 22px; border-radius: 20px; border: 2px solid var(--line); background: var(--surface); }
+    .region h3 { font-size: 24px; padding-right: 64px; }
+    .region p { color: var(--muted); font-size: 15px; margin-top: 6px; }
+    .stars { color: var(--accent-2); letter-spacing: 4px; font-size: 18px; margin-top: 10px; }
+    .region--locked { opacity: .6; border-style: dashed; }
+    .region--locked .stars { color: var(--muted); }
+    .region .badge { position: absolute; top: 14px; right: 14px; font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 999px; background: var(--surface-2); }
+    .feature h3 { font-size: 22px; }
+    .note { font-size: 13px; color: var(--muted); }
+  </style>
+</head>
+<body class="game">
+<!-- @nav -->
+<a class="skip" href="#main">İçeriğe geç</a>
+<header class="nav" data-nav>
+  <div class="container nav__inner">
+    <a class="brand" href="/tr/" aria-label="HanX Games ana sayfa">
+      <img src="/assets/brand/logo.webp" alt="" width="36" height="36">
+      <span>HanX<b>GAMES</b></span>
+    </a>
+    <nav class="nav__links" aria-label="Oyunlar">
+      <a href="/tr/rebirth/"><img src="/assets/games/rebirth/icon.webp" alt="" width="22" height="22" loading="lazy">ReBirth</a>
+      <a href="/tr/poker/"><img src="/assets/games/poker/icon.webp" alt="" width="22" height="22" loading="lazy">Hantro: Poker</a>
+      <a href="/tr/blackjack/"><img src="/assets/games/blackjack/icon.webp" alt="" width="22" height="22" loading="lazy">Hantro: BlackJack</a>
+      <a href="/tr/911-idle-dispatch/"><img src="/assets/games/idle-dispatch/icon.webp" alt="" width="22" height="22" loading="lazy">911: Idle Dispatch</a>
+      <a href="/tr/darkway/"><img src="/assets/games/darkway/icon.webp" alt="" width="22" height="22" loading="lazy">DarkWay</a>
+      <a href="/tr/moba-manager/"><img src="/assets/games/moba-manager/icon.webp" alt="" width="22" height="22" loading="lazy">Moba Manager</a>
+      <a href="/tr/ember-keep/" aria-current="page"><img src="/assets/games/ember-keep/icon.webp" alt="" width="22" height="22" loading="lazy">Ember Keep</a>
+    </nav>
+    <!-- @lang -->
+<div class="lang" role="group" aria-label="Dil"><a href="/ember-keep/" hreflang="en" lang="en">EN</a><a href="/tr/ember-keep/" hreflang="tr" lang="tr" aria-current="true">TR</a></div>
+<!-- /@lang -->
+    <button class="nav__burger" type="button" aria-label="Menüyü aç" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+<!-- /@nav -->
+
+<main id="main">
+  <header class="g-hero">
+    <div class="g-hero__bg" aria-hidden="true"></div>
+    <canvas class="fx" aria-hidden="true" data-fx='{"count":34,"shape":"leaf","colors":["#ff8a3d","#ff5f3d","#ffb02e","#d9482b"],"size":[3,6],"dir":"down","speed":[0.5,1.2],"drift":0.9,"alpha":[0.5,0.9]}'></canvas>
+    <canvas class="fx" aria-hidden="true" data-fx='{"count":30,"shape":"flake","colors":["#ffffff","#cfe7ff"],"size":[1.5,3],"dir":"down","speed":[0.3,0.8],"drift":0.5,"alpha":[0.3,0.7]}'></canvas>
+    <div class="container g-hero__grid">
+      <div class="g-hero__copy">
+        <img class="g-icon" src="/assets/games/ember-keep/icon.webp" alt="Hantro: Ember Keep simgesi" width="96" height="96" data-reveal>
+        <p class="eyebrow" data-reveal style="--d:60ms">Kule savunma · <span lang="en">Roguelike</span></p>
+        <h1 class="g-title" data-reveal style="--d:120ms"><small>Hantro:</small>Ember Keep</h1>
+        <p class="lead" data-reveal style="--d:200ms">Her yönden saldıran düşman ordularına karşı kaleni savun! Kahramanlarını kalıcı olarak güçlendir, yıkıcı büyüleri doğru anda kullan, roguelike kartlarla stratejini kur ve yeni bölgeler açmak için yıldız topla.</p>
+        <div class="stores" data-reveal style="--d:260ms"><!-- @stores gp="hantro.tower.roguelike" apple="6803483619" -->
+<a class="store" href="https://play.google.com/store/apps/details?id=hantro.tower.roguelike" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#FBBC04" d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594z"/><path fill="#4285F4" d="M1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924z"/><path fill="#34A853" d="M13.544 10.989l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973z"/><path fill="#EA4335" d="M13.544 13.056l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/></svg><span><small>Hemen indir</small><b>Google Play</b></span></a>
+<a class="store" href="https://apps.apple.com/app/id6803483619" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><span><small>Hemen indir</small><b>App Store</b></span></a>
+<!-- /@stores --></div>
+        <ul class="chips" data-reveal style="--d:320ms"><li class="chip">Tek elle oynanış</li><li class="chip">İnternet gerekmez</li><li class="chip">Zorunlu reklam yok</li></ul>
+      </div>
+      <div class="phones" data-reveal="zoom" style="--d:200ms" aria-hidden="true">
+        <div class="phone"><img src="/assets/games/ember-keep/shot-2.webp" alt=""></div>
+        <div class="phone"><img src="/assets/games/ember-keep/shot-6.webp" alt=""></div>
+        <div class="phone"><img src="/assets/games/ember-keep/shot-1.webp" alt=""></div>
+        <span class="sparkle" style="left:8%;top:12%">✦</span><span class="sparkle" style="right:6%;top:40%;animation-delay:-1s">✦</span><span class="sparkle" style="left:22%;bottom:6%;animation-delay:-1.8s">✦</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Heroes -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head section-head--center" data-reveal>
+        <p class="eyebrow">Beş kahraman</p>
+        <h2>Savunucularını seç</h2>
+        <p>Yendiğin her düşman için altın kazan, kahramanlarını savaşın ortasında seviye atlat ve hasarlarını katla.</p>
+      </div>
+      <div class="heroes">
+        <div class="hero-card" data-reveal style="--c:#4fd1ff"><div class="orb">⚡</div><h3>Storm Knight</h3><p>Düşmandan düşmana sıçrayan zincirleme şimşek.</p></div>
+        <div class="hero-card" data-reveal style="--c:#ff7a2e;--d:60ms"><div class="orb">🔥</div><h3>Ember Mage</h3><p>Alan hasarı veren ateş topları.</p></div>
+        <div class="hero-card" data-reveal style="--c:#7fb8ff;--d:120ms"><div class="orb">❄️</div><h3>Frost Archer</h3><p>Düşmanları yavaşlatan buz okları.</p></div>
+        <div class="hero-card" data-reveal style="--c:#d9a066;--d:180ms"><div class="orb">💣</div><h3>Dwarf Gunner</h3><p>Kalabalığı dağıtan gülleler ve Bomba Yağmuru.</p></div>
+        <div class="hero-card" data-reveal style="--c:#ffd84d;--d:240ms"><div class="orb">✨</div><h3>Dawn Priestess</h3><p>Kutsal ışık okları ve kalenin çevresinde bir ışık kalkanı.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Spells -->
+  <section class="section" style="padding-top:20px">
+    <div class="container">
+      <div class="section-head section-head--center" data-reveal>
+        <p class="eyebrow">Yıkıcı büyüler</p>
+        <h2>Dokun, nişan alsın. Sürükle, vur.</h2>
+        <p>Büyü kendiliğinden en kalabalık gruba nişan alır; ya da sürükleyip tam istediğin yere vur.</p>
+      </div>
+      <div class="spells" data-reveal>
+        <span class="spell" style="--c:#ff6a2e"><i>☄️</i>Meteor</span>
+        <span class="spell" style="--c:#4fd1ff"><i>🌩️</i>Fırtına</span>
+        <span class="spell" style="--c:#7fb8ff"><i>🧊</i>Ayaz</span>
+        <span class="spell" style="--c:#d9a066"><i>💥</i>Bomba Yağmuru</span>
+        <span class="spell" style="--c:#ffd84d"><i>🌟</i>Kutsal Işık</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Regions -->
+  <section class="section">
+    <div class="container split">
+      <div>
+        <div class="section-head" data-reveal style="margin-bottom:28px">
+          <p class="eyebrow">Bölgeler ve yıldızlar</p>
+          <h2>Yıldız topla. Yeni diyarlar aç.</h2>
+          <p>Her bölümde 3 yıldıza kadar kazan. Yıldızlar, her biri yeni düşmanlar ve kapına dayanan dev bosslarla dolu yeni bölgelerin kilidini açar.</p>
+        </div>
+        <div class="path">
+          <div class="region" data-reveal><span class="badge">5 bölüm</span><h3>🍂 Sonbahar Ormanı</h3><p>İskelet savaşçılar, Kara Lejyon devleri ve Rün Golemi.</p><p class="stars">★★★</p></div>
+          <div class="region" data-reveal style="--d:80ms"><span class="badge">Yeni</span><h3>❄️ Kış Diyarı</h3><p>4 yeni düşman, Ayaz Golemi ve Buzul Devi.</p><p class="stars">★★★</p></div>
+          <div class="region region--locked" data-reveal style="--d:160ms"><span class="badge">Yakında</span><h3>🏛️ Kadim Harabeler</h3><p>Çok yakında.</p><p class="stars">☆☆☆</p></div>
+          <div class="region region--locked" data-reveal style="--d:240ms"><span class="badge">Yakında</span><h3>🌋 Yanardağ</h3><p>Çok yakında.</p><p class="stars">☆☆☆</p></div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:center" data-reveal="right">
+        <div class="phone"><img src="/assets/games/ember-keep/shot-4.webp" alt="Yıldızlı bölüm seçimi" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section">
+    <div class="container">
+      <div class="features">
+        <div class="feature" data-reveal>
+          <div class="ficon"><svg viewBox="0 0 32 32"><path d="M4 22l7-7 5 5 12-12"/><path d="M20 8h8v8"/></svg></div>
+          <h3>Kalıcı ilerleme</h3><p>Altın kalıcı güce dönüşür: daha güçlü kahramanlar, daha sağlam surlar, kale için bir mancınık ve özel yetenekler. Kaybedilen bir savaş bile seni bir sonrakine hazırlar.</p>
+        </div>
+        <div class="feature" data-reveal style="--d:60ms">
+          <div class="ficon"><svg viewBox="0 0 32 32"><rect x="4" y="8" width="14" height="20" rx="2"/><rect x="14" y="4" width="14" height="20" rx="2"/><path d="M21 11v6M18 14h6"/></svg></div>
+          <h3>Roguelike kartlar</h3><p>Dalgaları temizle ve üç güç kartından birini seç: zincirleme şimşek, orman yangını, ok yağmuru, derin ayaz ve dahası. Her koşu yeni bir kombo.</p>
+        </div>
+        <div class="feature" data-reveal style="--d:120ms">
+          <div class="ficon"><svg viewBox="0 0 32 32"><path d="M5 26l5-14 6 6 6-6 5 14z"/><path d="M4 26h24"/><circle cx="10" cy="9" r="2"/><circle cx="16" cy="6" r="2"/><circle cx="22" cy="9" r="2"/></svg></div>
+          <h3>Boss savaşları</h3><p>Golemler ve devler; İskelet Okçular, Kanatlı İfritler, Kalkanlı Goblinler ve Goblin Şamanlarla birlikte yürüyor. Komboları zincirle ve kapıları tut.</p>
+        </div>
+        <div class="feature" data-reveal>
+          <div class="ficon"><svg viewBox="0 0 32 32"><rect x="4" y="12" width="24" height="16" rx="2"/><path d="M4 18h24"/><path d="M8 12V9a8 8 0 0 1 16 0v3"/><rect x="14" y="16" width="4" height="5" rx="1"/></svg></div>
+          <h3>Sandıklar, görevler ve sezonlar</h3><p>Ahşap, Demir ve Kraliyet Sandıkları, günlük görevler, sezon ödül yolu ve sen yokken birikmeye devam eden altınlar.</p>
+        </div>
+        <div class="feature" data-reveal style="--d:60ms">
+          <div class="ficon"><svg viewBox="0 0 32 32"><rect x="4" y="16" width="7" height="12"/><rect x="12.5" y="8" width="7" height="20"/><rect x="21" y="12" width="7" height="16"/></svg></div>
+          <h3>Sıralamalar ve bulut kayıt</h3><p>Sıralamalarda yarış ve ilerlemeni bulutta güvende tut.</p>
+        </div>
+        <div class="feature" data-reveal style="--d:120ms">
+          <div class="ficon"><svg viewBox="0 0 32 32"><rect x="9" y="3" width="14" height="26" rx="3"/><path d="M14 25h4"/></svg></div>
+          <h3>Her yerde oyna</h3><p>Kısa ve hızlı savaşlarla tek elle dikey oynanış. İnternet bağlantısı gerekmez.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="section">
+    <div class="container gallery">
+      <div class="gallery-head">
+        <div class="section-head" data-reveal><p class="eyebrow">Ekran görüntüleri</p><h2>Kaleyi savun</h2></div>
+        <div class="gallery__nav">
+          <button type="button" data-dir="-1" aria-label="Önceki ekran görüntüleri"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button type="button" data-dir="1" aria-label="Sonraki ekran görüntüleri"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
+      <div class="shots shots--port">
+        <button class="shot" type="button"><img src="/assets/games/ember-keep/shot-1.webp" alt="Kaleni savun" loading="lazy"></button>
+        <button class="shot" type="button"><img src="/assets/games/ember-keep/shot-2.webp" alt="Kış Diyarı" loading="lazy"></button>
+        <button class="shot" type="button"><img src="/assets/games/ember-keep/shot-3.webp" alt="Kalıcı geliştirme" loading="lazy"></button>
+        <button class="shot" type="button"><img src="/assets/games/ember-keep/shot-4.webp" alt="Yıldızları topla" loading="lazy"></button>
+        <button class="shot" type="button"><img src="/assets/games/ember-keep/shot-5.webp" alt="Her koşu yeni" loading="lazy"></button>
+        <button class="shot" type="button"><img src="/assets/games/ember-keep/shot-6.webp" alt="Destansı boss savaşları" loading="lazy"></button>
+        <button class="shot" type="button"><img src="/assets/games/ember-keep/shot-7.webp" alt="Sandıklar ve ödüller" loading="lazy"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section g-cta" style="padding-top:0">
+    <div class="container">
+      <div class="g-cta__box" data-reveal="zoom">
+        <canvas class="fx" aria-hidden="true" data-fx='{"count":24,"shape":"leaf","colors":["#ff8a3d","#ffb02e","#ff5fae"],"size":[2.5,5],"dir":"down","speed":[0.4,1],"drift":0.8}'></canvas>
+        <img class="g-icon" src="/assets/games/ember-keep/icon.webp" alt="" width="110" height="110" loading="lazy">
+        <h2>Kaleyi savun!</h2>
+        <p class="lead">Ücretsiz oyna. İsteğe bağlı uygulama içi satın alımlar ve yalnızca istersen izlediğin ödüllü reklamlar.</p>
+        <div class="stores"><!-- @stores gp="hantro.tower.roguelike" apple="6803483619" -->
+<a class="store" href="https://play.google.com/store/apps/details?id=hantro.tower.roguelike" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#FBBC04" d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594z"/><path fill="#4285F4" d="M1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924z"/><path fill="#34A853" d="M13.544 10.989l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973z"/><path fill="#EA4335" d="M13.544 13.056l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/></svg><span><small>Hemen indir</small><b>Google Play</b></span></a>
+<a class="store" href="https://apps.apple.com/app/id6803483619" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><span><small>Hemen indir</small><b>App Store</b></span></a>
+<!-- /@stores --></div>
+        <a class="note" href="https://doc-hosting.flycricket.io/hantro-tower-roguelike-privacy-policy/02192a60-e9d2-46ee-81e0-3df2128ac279/privacy" target="_blank" rel="noopener" style="text-decoration:underline">Gizlilik politikası</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <h2 style="font-size:22px;margin-bottom:18px">HanX Games’ten diğer oyunlar</h2>
+      <!-- @more -->
+<div class="more-games">
+<a href="/tr/rebirth/"><img src="/assets/games/rebirth/icon.webp" alt="" loading="lazy">ReBirth</a>
+<a href="/tr/poker/"><img src="/assets/games/poker/icon.webp" alt="" loading="lazy">Hantro: Poker</a>
+<a href="/tr/blackjack/"><img src="/assets/games/blackjack/icon.webp" alt="" loading="lazy">Hantro: BlackJack</a>
+<a href="/tr/911-idle-dispatch/"><img src="/assets/games/idle-dispatch/icon.webp" alt="" loading="lazy">911: Idle Dispatch</a>
+<a href="/tr/darkway/"><img src="/assets/games/darkway/icon.webp" alt="" loading="lazy">DarkWay</a>
+<a href="/tr/moba-manager/"><img src="/assets/games/moba-manager/icon.webp" alt="" loading="lazy">Moba Manager</a>
+</div>
+<!-- /@more -->
+    </div>
+  </section>
+</main>
+
+<!-- @footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a class="brand" href="/tr/" aria-label="HanX Games ana sayfa">
+          <img src="/assets/brand/logo.webp" alt="" width="36" height="36" loading="lazy">
+          <span>HanX<b>GAMES</b></span>
+        </a>
+        <p>Bağımsız mobil oyun stüdyosu. Android ve iOS için strateji, kart, simülasyon ve RPG oyunları.</p>
+      </div>
+      <div>
+        <h4>Oyunlar</h4>
+        <ul class="footer__games">
+          <li><a href="/tr/rebirth/">ReBirth</a></li>
+          <li><a href="/tr/poker/">Hantro: Poker</a></li>
+          <li><a href="/tr/blackjack/">Hantro: BlackJack</a></li>
+          <li><a href="/tr/911-idle-dispatch/">911: Idle Dispatch</a></li>
+          <li><a href="/tr/darkway/">DarkWay</a></li>
+          <li><a href="/tr/moba-manager/">Moba Manager</a></li>
+          <li><a href="/tr/ember-keep/">Ember Keep</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Bizi bulun</h4>
+        <ul>
+          <li><a href="https://play.google.com/store/apps/dev?id=4858435727768538175" target="_blank" rel="noopener">Google Play</a></li>
+          <li><a href="https://apps.apple.com/developer/id1885639647" target="_blank" rel="noopener">App Store</a></li>
+          <li><a href="mailto:hanxdestek@gmail.com">hanxdestek@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span data-year>2026</span> HanX Games. Tüm hakları saklıdır.</span>
+      <span>Google Play ve Google Play logosu Google LLC’nin ticari markalarıdır. App Store, Apple Inc.’in hizmet markasıdır.</span>
+    </div>
+  </div>
+</footer>
+<!-- /@footer -->
+<script src="/assets/js/site.js"></script>
+</body>
+</html>

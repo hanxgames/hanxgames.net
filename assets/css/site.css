@@ -83,8 +83,19 @@ ul { margin: 0; padding: 0; list-style: none; }
   content: ""; position: absolute; left: 10px; right: 10px; bottom: 1px; height: 2px; border-radius: 2px;
   background: linear-gradient(90deg, var(--accent), var(--accent-2));
 }
+.lang {
+  display: flex; flex-shrink: 0; gap: 2px; padding: 3px; margin-left: 8px; border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.04);
+}
+.lang a {
+  min-width: 36px; padding: 6px 8px; border-radius: 999px; text-align: center;
+  font-family: "Inter", sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .06em; color: #aeb4c6;
+  transition: background .2s, color .2s;
+}
+.lang a:hover { color: #fff; }
+.lang a[aria-current="true"] { background: rgba(255,255,255,.14); color: #fff; }
 .nav__burger {
-  display: none; margin-left: auto; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,.14);
+  display: none; margin-left: 10px; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,.14);
   background: rgba(255,255,255,.04); border-radius: 12px; cursor: pointer; position: relative;
 }
 .nav__burger span, .nav__burger::before, .nav__burger::after {
@@ -100,6 +111,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 @media (max-width: 1180px) {
   .nav__burger { display: block; }
+  .lang { margin-left: auto; }
   /* The nav's backdrop-filter makes it the containing block, so size the drawer explicitly. */
   .nav__links {
     position: fixed; top: var(--nav-h); left: 0; right: 0; height: calc(100dvh - var(--nav-h)); margin: 0;

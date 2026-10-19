@@ -34,6 +34,9 @@
       <a href="/moba-manager/"><img src="/assets/games/moba-manager/icon.webp" alt="" width="22" height="22" loading="lazy">Moba Manager</a>
       <a href="/ember-keep/"><img src="/assets/games/ember-keep/icon.webp" alt="" width="22" height="22" loading="lazy">Ember Keep</a>
     </nav>
+    <!-- @lang -->
+<div class="lang" role="group" aria-label="Language"><a href="/" hreflang="en" lang="en" aria-current="true">EN</a><a href="/tr/" hreflang="tr" lang="tr">TR</a></div>
+<!-- /@lang -->
     <button class="nav__burger" type="button" aria-label="Open menu" aria-expanded="false"><span></span></button>
   </div>
 </header>
@@ -85,6 +88,20 @@
   </div>
 </footer>
 <!-- /@footer -->
+<script>
+  /* One 404 page serves every path; switch to Turkish under /tr/. */
+  if (/^\/tr(\/|$)/.test(location.pathname)) {
+    document.documentElement.lang = 'tr';
+    document.title = 'Sayfa bulunamadı | HanX Games';
+    document.querySelector('.lost p').textContent = 'Bu bölüm yok. Henüz.';
+    var back = document.querySelector('.lost .btn');
+    back.textContent = 'HanX Games’e dön'; back.href = '/tr/';
+    document.querySelectorAll('.nav a[href^="/"], .footer a[href^="/"]').forEach(function (a) {
+      var h = a.getAttribute('href');
+      if (!/^\/(tr\/|assets\/)/.test(h)) a.setAttribute('href', '/tr' + h);
+    });
+  }
+</script>
 <script src="/assets/js/site.js"></script>
 </body>
 </html>

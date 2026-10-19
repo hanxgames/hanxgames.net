@@ -4,6 +4,16 @@
   var HX = (window.HX = window.HX || {});
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   HX.reduced = reduced;
+  var isTR = document.documentElement.lang === 'tr';
+  HX.locale = isTR ? 'tr-TR' : 'en-US';
+  var T = isTR
+    ? { viewer: 'Ekran görüntüsü görüntüleyici', close: 'Kapat', prev: 'Önceki', next: 'Sonraki' }
+    : { viewer: 'Screenshot viewer', close: 'Close', prev: 'Previous', next: 'Next' };
+
+  /* ---------- Language switch remembers the choice ---------- */
+  document.querySelectorAll('.lang a').forEach(function (a) {
+    a.addEventListener('click', function () { try { localStorage.setItem('hx-lang', a.getAttribute('hreflang')); } catch (e) { /* storage blocked */ } });
+  });
 
   /* ---------- Navigation ---------- */
   var nav = document.querySelector('.nav');
@@ -52,7 +62,7 @@
   function countUp(el, instant) {
     var to = parseFloat(el.getAttribute('data-count'));
     var suffix = el.getAttribute('data-suffix') || '';
-    var fmt = function (v) { return Math.round(v).toLocaleString('en-US') + suffix; };
+    var fmt = function (v) { return Math.round(v).toLocaleString(HX.locale) + suffix; };
     if (instant) { el.textContent = fmt(to); return; }
     var dur = parseInt(el.getAttribute('data-dur') || '1600', 10), t0 = null;
     var step = function (t) {
@@ -115,11 +125,11 @@
     lb.className = 'lightbox';
     lb.setAttribute('role', 'dialog');
     lb.setAttribute('aria-modal', 'true');
-    lb.setAttribute('aria-label', 'Screenshot viewer');
+    lb.setAttribute('aria-label', T.viewer);
     lb.innerHTML = '<img alt="">' +
-      '<button type="button" data-lb-close aria-label="Close">' + icon('M6 6l12 12M18 6L6 18') + '</button>' +
-      '<button type="button" data-lb-prev aria-label="Previous">' + icon('M15 5l-7 7 7 7') + '</button>' +
-      '<button type="button" data-lb-next aria-label="Next">' + icon('M9 5l7 7-7 7') + '</button>';
+      '<button type="button" data-lb-close aria-label="' + T.close + '">' + icon('M6 6l12 12M18 6L6 18') + '</button>' +
+      '<button type="button" data-lb-prev aria-label="' + T.prev + '">' + icon('M15 5l-7 7 7 7') + '</button>' +
+      '<button type="button" data-lb-next aria-label="' + T.next + '">' + icon('M9 5l7 7-7 7') + '</button>';
     document.body.appendChild(lb);
     var lbImg = lb.querySelector('img'), cur = 0, lastFocus = null;
     var show = function (i) {

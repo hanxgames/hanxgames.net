@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://hanxgames.net/</loc><lastmod>2026-10-19</lastmod></url>
-  <url><loc>https://hanxgames.net/rebirth/</loc><lastmod>2026-10-19</lastmod></url>
-  <url><loc>https://hanxgames.net/poker/</loc><lastmod>2026-10-19</lastmod></url>
-  <url><loc>https://hanxgames.net/blackjack/</loc><lastmod>2026-10-19</lastmod></url>
-  <url><loc>https://hanxgames.net/911-idle-dispatch/</loc><lastmod>2026-10-19</lastmod></url>
-  <url><loc>https://hanxgames.net/darkway/</loc><lastmod>2026-10-19</lastmod></url>
-  <url><loc>https://hanxgames.net/moba-manager/</loc><lastmod>2026-10-19</lastmod></url>
-  <url><loc>https://hanxgames.net/ember-keep/</loc><lastmod>2026-10-19</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://hanxgames.net/</loc><xhtml:link rel="alternate" hreflang="en" href="https://hanxgames.net/"/><xhtml:link rel="alternate" hreflang="tr" href="https://hanxgames.net/tr/"/></url>
+  <url><loc>https://hanxgames.net/tr/</loc><xhtml:link rel="alternate" hreflang="en" href="https://hanxgames.net/"/><xhtml:link rel="alternate" hreflang="tr" href="https://hanxgames.net/tr/"/></url>
+  <url><loc>https://hanxgames.net/911-idle-dispatch/</loc><xhtml:link rel="alternate" hreflang="en" href="https://hanxgames.net/911-idle-dispatch/"/><xhtml:link rel="alternate" hreflang="tr" href="https://hanxgames.net/tr/911-idle-dispatch/"/></url>
+  <url><loc>https://hanxgames.net/tr/911-idle-dispatch/</loc><xhtml:link rel="alternate" hreflang="en" href="https://hanxgames.net/911-idle-dispatch/"/><xhtml:link rel="alternate" hreflang="tr" href="https://hanxgames.net/tr/911-idle-dispatch/"/></url>
+  <url><loc>https://hanxgames.net/blackjack/</loc><xhtml:link rel="alternate" hreflang="en" href="https://hanxgames.net/blackjack/"/><xhtml:link rel="alternate" hreflang="tr" href="https://hanxgames.net/tr/blackjack/"/></url>
+  <url><loc>https://hanxgames.net/tr/blackjack/</loc><xhtml:link rel="alternate" hreflang="en" href="https://hanxgames.net/blackjack/"/><xhtml:link rel="alternate" hreflang="tr" href="https://hanxgames.net/tr/blackjack/"/></url>
+  <url><loc>https://hanxgames.net/darkway/</loc><xhtml:link rel="alternate" hreflang="en" href="https://hanxgames.net/darkway/"/><xhtml:link rel="alternate" hreflang="tr" href="https://hanxgames.net/tr/darkway/"/></url>
+  <url><loc>https://hanxgames.net/tr/darkway/</loc><xhtml:link rel="alternate" hreflang="en" href="https://hanxgames.net/darkway/"/><xhtml:link rel="alternate" hreflang="tr" href="https://hanxgames.net/tr/darkway/"/></url>
+  <url><loc>https://hanxgames.net/ember-keep/</loc><xhtml:link rel="alternate" hreflang="en" href="https://hanxgames.net/ember-keep/"/><xhtml:link rel="alternate" hreflang="tr" href="https://hanxgames.net/tr/ember-keep/"/></url>
+  <url><loc>https://hanxgames.net/tr/ember-keep/</loc><xhtml:link rel="alternate" hreflang="en" href="https://hanxgames.net/ember-keep/"/><xhtml:link rel="alternate" hreflang="tr" href="https://hanxgames.net/tr/ember-keep/"/></url>
+  <url><loc>https://hanxgames.net/moba-manager/</loc><xhtml:link rel="alternate" hreflang="en" href="https://hanxgames.net/moba-manager/"/><xhtml:link rel="alternate" hreflang="tr" href="https://hanxgames.net/tr/moba-manager/"/></url>
+  <url><loc>https://hanxgames.net/tr/moba-manager/</loc><xhtml:link rel="alternate" hreflang="en" href="https://hanxgames.net/moba-manager/"/><xhtml:link rel="alternate" hreflang="tr" href="https://hanxgames.net/tr/moba-manager/"/></url>
+  <url><loc>https://hanxgames.net/poker/</loc><xhtml:link rel="alternate" hreflang="en" href="https://hanxgames.net/poker/"/><xhtml:link rel="alternate" hreflang="tr" href="https://hanxgames.net/tr/poker/"/></url>
+  <url><loc>https://hanxgames.net/tr/poker/</loc><xhtml:link rel="alternate" hreflang="en" href="https://hanxgames.net/poker/"/><xhtml:link rel="alternate" hreflang="tr" href="https://hanxgames.net/tr/poker/"/></url>
+  <url><loc>https://hanxgames.net/rebirth/</loc><xhtml:link rel="alternate" hreflang="en" href="https://hanxgames.net/rebirth/"/><xhtml:link rel="alternate" hreflang="tr" href="https://hanxgames.net/tr/rebirth/"/></url>
+  <url><loc>https://hanxgames.net/tr/rebirth/</loc><xhtml:link rel="alternate" hreflang="en" href="https://hanxgames.net/rebirth/"/><xhtml:link rel="alternate" hreflang="tr" href="https://hanxgames.net/tr/rebirth/"/></url>
 </urlset>
