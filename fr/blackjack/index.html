@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hantro: BlackJack Roguelike – Jeu de blackjack deckbuilder | HanX Games</title>
+  <meta name="description" content="Hantro: BlackJack Roguelike, deckbuilder tactique de blackjack 21. Decks de Jokers, boss, classements mondiaux. Gratuit sur Android et iOS, sans argent réel.">
+  <link rel="canonical" href="https://hanxgames.net/fr/blackjack/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="HanX Games">
+  <meta property="og:title" content="Hantro: BlackJack Roguelike">
+  <meta property="og:description" content="Le roguelike deckbuilder de blackjack tactique ultime.">
+  <meta property="og:url" content="https://hanxgames.net/fr/blackjack/">
+  <meta property="og:image" content="https://hanxgames.net/assets/games/blackjack/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0a0614">
+  <!-- @head -->
+<link rel="alternate" hreflang="en" href="https://hanxgames.net/blackjack/">
+  <link rel="alternate" hreflang="tr" href="https://hanxgames.net/tr/blackjack/">
+  <link rel="alternate" hreflang="es" href="https://hanxgames.net/es/blackjack/">
+  <link rel="alternate" hreflang="pt" href="https://hanxgames.net/pt/blackjack/">
+  <link rel="alternate" hreflang="de" href="https://hanxgames.net/de/blackjack/">
+  <link rel="alternate" hreflang="fr" href="https://hanxgames.net/fr/blackjack/">
+  <link rel="alternate" hreflang="x-default" href="https://hanxgames.net/blackjack/">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="tr_TR">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:locale:alternate" content="pt_BR">
+  <meta property="og:locale:alternate" content="de_DE">
+<!-- /@head -->
+  <!-- @schema -->
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["VideoGame","MobileApplication"],"name":"Hantro: BlackJack Roguelike","url":"https://hanxgames.net/fr/blackjack/","inLanguage":"fr","description":"Hantro: BlackJack Roguelike, deckbuilder tactique de blackjack 21. Decks de Jokers, boss, classements mondiaux. Gratuit sur Android et iOS, sans argent réel.","image":"https://hanxgames.net/assets/games/blackjack/og.jpg","screenshot":["https://hanxgames.net/assets/games/blackjack/shot-2.webp","https://hanxgames.net/assets/games/blackjack/shot-3.webp","https://hanxgames.net/assets/games/blackjack/shot-4.webp","https://hanxgames.net/assets/games/blackjack/shot-5.webp","https://hanxgames.net/assets/games/blackjack/shot-6.webp","https://hanxgames.net/assets/games/blackjack/shot-7.webp"],"genre":["Card","Strategy","Roguelike"],"applicationCategory":"GameApplication","operatingSystem":"Android, iOS","gamePlatform":["Android","iOS"],"playMode":"SinglePlayer","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@id":"https://hanxgames.net/#org"},"publisher":{"@id":"https://hanxgames.net/#org"},"installUrl":"https://play.google.com/store/apps/details?id=com.hantro.blackjack","sameAs":["https://play.google.com/store/apps/details?id=com.hantro.blackjack","https://apps.apple.com/app/id6761393761"]},{"@type":"Organization","@id":"https://hanxgames.net/#org","name":"HanX Games","url":"https://hanxgames.net/","logo":"https://hanxgames.net/assets/brand/logo.webp","email":"hanxdestek@gmail.com","sameAs":["https://play.google.com/store/apps/dev?id=4858435727768538175","https://apps.apple.com/developer/id1885639647"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HanX Games","item":"https://hanxgames.net/fr/"},{"@type":"ListItem","position":2,"name":"Hantro: BlackJack Roguelike","item":"https://hanxgames.net/fr/blackjack/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Hantro: BlackJack Roguelike est-il gratuit ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Il est gratuit sur Google Play et l’App Store, avec des publicités et des achats intégrés facultatifs."}},{"@type":"Question","name":"Puis-je gagner de l’argent réel ?","acceptedAnswer":{"@type":"Answer","text":"Non. Le jeu utilise uniquement des jetons virtuels. Il n’y a ni jeu d’argent réel ni récompenses en argent réel."}},{"@type":"Question","name":"Quelle différence avec le blackjack classique ?","acceptedAnswer":{"@type":"Answer","text":"Les règles du 21 restent les mêmes, mais vous construisez un deck, débloquez des cartes Joker aux effets spéciaux, affrontez des boss et progressez au fil de parties roguelike."}},{"@type":"Question","name":"Est-il disponible sur iPhone ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Il est disponible sur l’App Store pour iPhone et iPad, et sur Google Play pour Android."}}]}]}</script>
+<!-- /@schema -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,700&family=Inter:wght@400;500;600;700&family=Exo+2:wght@700;800&family=Orbitron:wght@700;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <style>
+    :root {
+      --bg: #0a0614; --bg-2: #120a22; --fg: #f3ecff; --muted: #a596c4;
+      --accent: #ff3df2; --accent-2: #39f0ff; --gold: #ffd34d; --accent-ink: #14001a; --glow: rgba(255,61,242,.45);
+      --surface: rgba(190, 120, 255, .06); --surface-2: rgba(190, 120, 255, .11); --line: rgba(190, 120, 255, .2);
+      --font-display: "Exo 2", sans-serif;
+    }
+    .pixel { font-family: "Press Start 2P", monospace; letter-spacing: .02em; }
+    .eyebrow { font-family: "Press Start 2P", monospace; font-size: 10.5px; letter-spacing: .1em; color: var(--accent-2); }
+    .g-hero__bg { background: linear-gradient(180deg, #0a0614 0%, #1a0b33 55%, #2a0b3d 70%, #0a0614 100%); }
+    /* Neon sun */
+    .nsun { position: absolute; left: 50%; top: 18%; width: 46vmin; height: 46vmin; margin-left: -23vmin; border-radius: 50%; z-index: -1; opacity: .5;
+      background: linear-gradient(180deg, #ffd34d 0%, #ff3df2 60%, #7a1fff 100%);
+      -webkit-mask: repeating-linear-gradient(180deg, #000 0 14px, transparent 14px 18px); mask: repeating-linear-gradient(180deg, #000 0 14px, transparent 14px 18px);
+      filter: drop-shadow(0 0 40px rgba(255,61,242,.6)); }
+    /* Perspective grid floor */
+    .grid-floor { position: absolute; left: -50%; right: -50%; bottom: 0; height: 48%; z-index: -1; perspective: 300px; overflow: hidden; -webkit-mask-image: linear-gradient(0deg, #000 30%, transparent); mask-image: linear-gradient(0deg, #000 30%, transparent); }
+    .grid-floor::before { content: ""; position: absolute; inset: 0 0 -100% 0; transform: rotateX(62deg); transform-origin: 50% 0;
+      background-image: linear-gradient(rgba(255,61,242,.75) 2px, transparent 2px), linear-gradient(90deg, rgba(57,240,255,.55) 2px, transparent 2px);
+      background-size: 70px 70px; animation: gridmove 1.6s linear infinite; }
+    @keyframes gridmove { to { background-position: 0 70px; } }
+    .scan { position: absolute; inset: 0; z-index: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(0,0,0,.18) 0 2px, transparent 2px 4px); mix-blend-mode: multiply; }
+    .g-title { font-family: "Orbitron", sans-serif; font-weight: 900; font-size: clamp(46px, 7.2vw, 100px); letter-spacing: .04em; color: #fff;
+      text-shadow: 0 0 6px #fff, 0 0 18px var(--accent), 0 0 42px var(--accent), 0 0 80px #7a1fff; animation: flicker 6s infinite; }
+    @keyframes flicker { 0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; } 20%, 24%, 55% { opacity: .55; } }
+    .g-sub { font-family: "Press Start 2P", monospace; font-size: clamp(12px, 1.6vw, 18px); color: var(--gold); text-shadow: 0 0 12px rgba(255,211,77,.7); letter-spacing: .06em; margin-top: -4px; line-height: 1.6; }
+    .phones { position: relative; height: 600px; display: flex; justify-content: center; align-items: center; }
+    .phones .phone { position: absolute; }
+    .phones .phone:nth-child(1) { transform: translateX(-36%) rotate(-10deg) scale(.86); opacity: .85; }
+    .phones .phone:nth-child(2) { transform: translateX(36%) rotate(10deg) scale(.86); opacity: .85; }
+    .phones .phone:nth-child(3) { z-index: 1; animation: g-icon-float 7s ease-in-out infinite; }
+    @media (max-width: 600px) { .phones { height: 520px; } }
+    .feature { border-radius: 6px; }
+    .feature h3 { font-size: 17px; letter-spacing: .03em; }
+    .ficon { border-radius: 6px; }
+    .neon-box { border: 2px solid var(--accent); box-shadow: 0 0 18px rgba(255,61,242,.45), inset 0 0 18px rgba(255,61,242,.25); }
+
+    /* Mini blackjack table */
+    .table { border-radius: 26px; padding: clamp(20px, 4vw, 40px); background: radial-gradient(600px 300px at 50% 0%, rgba(57,240,255,.12), transparent 70%), #0f0820; }
+    .hand { display: flex; gap: 10px; min-height: 122px; flex-wrap: wrap; }
+    .hand-row { display: grid; grid-template-columns: 110px 1fr; gap: 16px; align-items: center; padding: 14px 0; border-bottom: 1px dashed rgba(190,120,255,.25); }
+    .hand-row:last-of-type { border: 0; }
+    .hand-row h3 { font-family: "Press Start 2P", monospace; font-size: 11px; color: var(--muted); line-height: 1.8; }
+    .hand-row h3 b { display: block; font-size: 26px; color: #fff; margin-top: 6px; text-shadow: 0 0 10px var(--accent); }
+    .bcard { width: 78px; height: 112px; border-radius: 8px; background: #f7f2ff; color: #1a1033; font-family: "Press Start 2P", monospace; font-size: 16px; display: flex; flex-direction: column; justify-content: space-between; padding: 8px; box-shadow: 0 0 0 3px #1a1033, 0 0 0 5px var(--accent-2), 0 10px 20px rgba(0,0,0,.6); animation: deal .45s var(--ease) both; }
+    .bcard.red { color: #e0156e; }
+    .bcard span:last-child { align-self: flex-end; font-size: 26px; }
+    .bcard.back { background: repeating-linear-gradient(45deg, #7a1fff 0 6px, #ff3df2 6px 12px); box-shadow: 0 0 0 3px #1a1033, 0 0 0 5px var(--accent), 0 10px 20px rgba(0,0,0,.6); }
+    .bcard.back span { visibility: hidden; }
+    @keyframes deal { from { transform: translate(60px, -40px) rotate(12deg); opacity: 0; } }
+    .controls { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; align-items: center; }
+    .pbtn { font-family: "Press Start 2P", monospace; font-size: 13px; padding: 16px 22px; border-radius: 10px; border: 0; cursor: pointer; color: #1a1033; box-shadow: 0 5px 0 rgba(0,0,0,.45); transition: transform .1s, filter .2s; }
+    .pbtn:active { transform: translateY(4px); box-shadow: 0 1px 0 rgba(0,0,0,.45); }
+    .pbtn:disabled { filter: grayscale(1) brightness(.6); cursor: not-allowed; }
+    .pbtn--hit { background: #3dff8b; }
+    .pbtn--stand { background: #ff4d6d; color: #fff; }
+    .pbtn--deal { background: var(--gold); }
+    .result { font-family: "Press Start 2P", monospace; font-size: 13px; color: var(--gold); line-height: 1.8; min-height: 24px; margin-left: auto; text-shadow: 0 0 10px rgba(255,211,77,.6); }
+    .streak { font-family: "Press Start 2P", monospace; font-size: 10px; color: var(--muted); margin-top: 16px; }
+    .note { font-size: 13px; color: var(--muted); }
+  </style>
+</head>
+<body class="game">
+<!-- @nav -->
+<a class="skip" href="#main">Aller au contenu</a>
+<header class="nav" data-nav>
+  <div class="container nav__inner">
+    <a class="brand" href="/fr/" aria-label="Accueil HanX Games">
+      <img src="/assets/brand/logo.webp" alt="" width="36" height="36">
+      <span>HanX<b>GAMES</b></span>
+    </a>
+    <nav class="nav__links" aria-label="Jeux">
+      <a href="/fr/rebirth/"><img src="/assets/games/rebirth/icon.webp" alt="" width="22" height="22" loading="lazy">ReBirth</a>
+      <a href="/fr/poker/"><img src="/assets/games/poker/icon.webp" alt="" width="22" height="22" loading="lazy">Hantro: Poker</a>
+      <a href="/fr/blackjack/" aria-current="page"><img src="/assets/games/blackjack/icon.webp" alt="" width="22" height="22" loading="lazy">Hantro: BlackJack</a>
+      <a href="/fr/911-idle-dispatch/"><img src="/assets/games/idle-dispatch/icon.webp" alt="" width="22" height="22" loading="lazy">911: Idle Dispatch</a>
+      <a href="/fr/darkway/"><img src="/assets/games/darkway/icon.webp" alt="" width="22" height="22" loading="lazy">DarkWay</a>
+      <a href="/fr/moba-manager/"><img src="/assets/games/moba-manager/icon.webp" alt="" width="22" height="22" loading="lazy">Moba Manager</a>
+      <a href="/fr/ember-keep/"><img src="/assets/games/ember-keep/icon.webp" alt="" width="22" height="22" loading="lazy">Ember Keep</a>
+    </nav>
+    <!-- @lang -->
+<details class="lang"><summary aria-label="Langue: Français"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg><span>FR</span></summary><div class="lang__menu"><a href="/blackjack/" hreflang="en" lang="en">English</a><a href="/tr/blackjack/" hreflang="tr" lang="tr">Türkçe</a><a href="/es/blackjack/" hreflang="es" lang="es">Español</a><a href="/pt/blackjack/" hreflang="pt" lang="pt">Português</a><a href="/de/blackjack/" hreflang="de" lang="de">Deutsch</a><a href="/fr/blackjack/" hreflang="fr" lang="fr" aria-current="true">Français</a></div></details>
+<!-- /@lang -->
+    <button class="nav__burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+<!-- /@nav -->
+
+<main id="main">
+  <header class="g-hero">
+    <div class="g-hero__bg" aria-hidden="true"></div>
+    <div class="nsun" aria-hidden="true"></div>
+    <div class="grid-floor" aria-hidden="true"></div>
+    <canvas class="fx" aria-hidden="true" data-fx='{"count":40,"shape":"square","colors":["#ff3df2","#39f0ff","#ffd34d","#3dff8b"],"size":[1.5,3],"dir":"none","drift":0.15,"twinkle":true}'></canvas>
+    <div class="scan" aria-hidden="true"></div>
+    <div class="container g-hero__grid">
+      <div class="g-hero__copy">
+        <img class="g-icon" src="/assets/games/blackjack/icon.webp" alt="Hantro: BlackJack – icône" width="96" height="96" data-reveal>
+        <p class="eyebrow" data-reveal style="--d:60ms">Cartes · Deckbuilder · Roguelike</p>
+        <h1 class="g-title" data-reveal style="--d:120ms">HANTRO</h1>
+        <p class="g-sub" data-reveal style="--d:160ms">BLACKJACK ROGUELIKE</p>
+        <p class="lead" data-reveal style="--d:220ms">Un jeu de stratégie de blackjack terriblement addictif, avec un deckbuilding roguelike profond. Construisez des decks puissants, déclenchez des combos de Jokers démentiels, battez des boss redoutables et survivez à des parties tactiques sans fin.</p>
+        <div class="stores" data-reveal style="--d:280ms"><!-- @stores gp="com.hantro.blackjack" apple="6761393761" -->
+<a class="store" href="https://play.google.com/store/apps/details?id=com.hantro.blackjack" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#FBBC04" d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594z"/><path fill="#4285F4" d="M1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924z"/><path fill="#34A853" d="M13.544 10.989l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973z"/><path fill="#EA4335" d="M13.544 13.056l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/></svg><span><small>Disponible sur</small><b>Google Play</b></span></a>
+<a class="store" href="https://apps.apple.com/app/id6761393761" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><span><small>Télécharger dans l’</small><b>App Store</b></span></a>
+<!-- /@stores --></div>
+      </div>
+      <div class="phones" data-reveal="zoom" style="--d:200ms" aria-hidden="true">
+        <div class="phone"><img src="/assets/games/blackjack/shot-4.webp" alt=""></div>
+        <div class="phone"><img src="/assets/games/blackjack/shot-7.webp" alt=""></div>
+        <div class="phone"><img src="/assets/games/blackjack/shot-5.webp" alt=""></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Try a hand -->
+  <section class="section">
+    <div class="container split">
+      <div data-reveal="left">
+        <p class="eyebrow">Insérez une pièce</p>
+        <h2 style="font-size:clamp(30px,4.4vw,52px);margin:14px 0 18px">Jouez une main ici même</h2>
+        <p class="lead">Le blackjack classique, rapide et simple : approchez-vous de 21 plus que le croupier, sans dépasser. Dans le jeu, les Jokers, les boss et votre deck font de chaque main une décision tactique.</p>
+        <p class="note" style="margin-top:16px">Démo uniquement. Jetons virtuels, pas d’argent réel.</p>
+      </div>
+      <div class="table neon-box" data-reveal="right">
+        <div class="hand-row"><h3>CROUPIER<b id="dTotal">0</b></h3><div class="hand" id="dHand" aria-live="polite"></div></div>
+        <div class="hand-row"><h3>VOUS<b id="pTotal">0</b></h3><div class="hand" id="pHand" aria-live="polite"></div></div>
+        <div class="controls">
+          <button class="pbtn pbtn--hit" id="hit" type="button">TIRER</button>
+          <button class="pbtn pbtn--stand" id="stand" type="button">RESTER</button>
+          <button class="pbtn pbtn--deal" id="deal" type="button">DISTRIBUER</button>
+          <p class="result" id="result" role="status"></p>
+        </div>
+        <p class="streak" id="streak">VICTOIRES 0 · DÉFAITES 0</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Fonctionnalités</p>
+        <h2>Le blackjack, réinventé en roguelike</h2>
+        <p>Le frisson du blackjack, la stratégie du deckbuilding et la rejouabilité des aventures roguelike, réunis dans une seule expérience mobile.</p>
+      </div>
+      <div class="features">
+        <div class="feature" data-reveal>
+          <div class="ficon"><svg viewBox="0 0 32 32"><path d="M6 16a10 10 0 0 1 17-7l3 3"/><path d="M26 6v6h-6"/><path d="M26 16a10 10 0 0 1-17 7l-3-3"/><path d="M6 26v-6h6"/></svg></div>
+          <h3>Parties roguelike</h3><p>Une nouvelle aventure à chaque partie, avec des rencontres aléatoires, des stratégies évolutives et des ennemis coriaces.</p>
+        </div>
+        <div class="feature" data-reveal style="--d:60ms">
+          <div class="ficon"><svg viewBox="0 0 32 32"><rect x="4" y="8" width="14" height="20" rx="2"/><rect x="14" y="4" width="14" height="20" rx="2"/><path d="M21 11v6M18 14h6"/></svg></div>
+          <h3>Deckbuilding</h3><p>Collectionnez des cartes puissantes, créez des synergies folles et construisez des decks combo de blackjack inarrêtables.</p>
+        </div>
+        <div class="feature" data-reveal style="--d:120ms">
+          <div class="ficon"><svg viewBox="0 0 32 32"><rect x="7" y="4" width="18" height="24" rx="3"/><path d="M12 12c0-3 8-3 8 0 0 3-4 3-4 6"/><circle cx="16" cy="22" r=".6"/></svg></div>
+          <h3>Jokers uniques</h3><p>Des cartes Joker rares aux effets décisifs, qui transforment votre stratégie et multiplient vos gains.</p>
+        </div>
+        <div class="feature" data-reveal>
+          <div class="ficon"><svg viewBox="0 0 32 32"><path d="M16 3v26"/><path d="M8 9l8-6 8 6"/><path d="M5 20h9M18 20h9"/></svg></div>
+          <h3>Tactiques de casino</h3><p>Maîtrisez l’art de tirer, rester, séparer, doubler et gérer le risque dans d’intenses batailles tactiques.</p>
+        </div>
+        <div class="feature" data-reveal style="--d:60ms">
+          <div class="ficon"><svg viewBox="0 0 32 32"><path d="M5 26l5-14 6 6 6-6 5 14z"/><path d="M4 26h24"/><circle cx="10" cy="9" r="2"/><circle cx="16" cy="6" r="2"/><circle cx="22" cy="9" r="2"/></svg></div>
+          <h3>Affrontements de boss</h3><p>Des boss redoutables aux mécaniques uniques vous obligent à adapter votre deck et votre stratégie.</p>
+        </div>
+        <div class="feature" data-reveal style="--d:120ms">
+          <div class="ficon"><svg viewBox="0 0 32 32"><rect x="4" y="16" width="7" height="12"/><rect x="12.5" y="8" width="7" height="20"/><rect x="21" y="12" width="7" height="16"/></svg></div>
+          <h3>Classements mondiaux</h3><p>Affrontez des joueurs du monde entier, grimpez dans le classement et prouvez que vous êtes le maître absolu.</p>
+        </div>
+        <div class="feature" data-reveal>
+          <div class="ficon"><svg viewBox="0 0 32 32"><path d="M4 28V14l12-9 12 9v14z"/><path d="M12 28v-8h8v8"/><path d="M9 16h2M21 16h2"/></svg></div>
+          <h3>Bâtissez votre casino</h3><p>Achetez de nouvelles tables, améliorez-les et agencez-les, et transformez vos gains en empire.</p>
+        </div>
+        <div class="feature" data-reveal style="--d:60ms">
+          <div class="ficon"><svg viewBox="0 0 32 32"><path d="M17 3L7 18h8l-2 11 10-15h-8z"/></svg></div>
+          <h3>Des parties rapides et addictives</h3><p>Des sessions rapides, un gameplay fluide et une rejouabilité infinie rendent chaque partie gratifiante.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section">
+    <div class="container about">
+      <div class="about__text" data-reveal>
+        <p class="eyebrow">À propos du jeu</p>
+        <h2>Le blackjack rencontre le deckbuilding roguelike</h2>
+        <p>Hantro: BlackJack Roguelike est un jeu de cartes de stratégie qui reprend les règles du 21 pour en faire une aventure roguelike. Tirez, restez, séparez et doublez comme d’habitude, mais chaque main dépend désormais des cartes, des Jokers et des améliorations que vous récoltez en chemin.</p>
+        <p>Construisez un deck autour de puissants effets de Jokers, battez des boss aux mécaniques uniques, achetez et agencez de nouvelles tables de casino et grimpez dans les classements mondiaux. Des sessions courtes et une rejouabilité infinie en font le jeu idéal pour les petites pauses.</p>
+        <p>Le jeu utilise uniquement des jetons virtuels : c’est de la stratégie et du plaisir à l’état pur, sans aucun jeu d’argent réel. Téléchargez-le gratuitement sur Android, iPhone et iPad.</p>
+      </div>
+      <aside class="facts" data-reveal="right">
+        <h3>En bref</h3>
+        <dl>
+          <div><dt>Genre</dt><dd>Jeu de cartes, blackjack, roguelike deckbuilder</dd></div>
+          <div><dt>Plateformes</dt><dd>Android, iPhone, iPad</dd></div>
+          <div><dt>Prix</dt><dd>Gratuit, avec publicités et achats intégrés facultatifs</dd></div>
+          <div><dt>Fonctions en ligne</dt><dd>Classements mondiaux</dd></div>
+          <div><dt>Jeux d’argent réel</dt><dd>Aucun</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="section">
+    <div class="container gallery">
+      <div class="gallery-head">
+        <div class="section-head" data-reveal><p class="eyebrow">Captures d’écran</p><h2>Appuyez sur Start</h2></div>
+        <div class="gallery__nav">
+          <button type="button" data-dir="-1" aria-label="Captures d’écran précédentes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button type="button" data-dir="1" aria-label="Captures d’écran suivantes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
+      <div class="shots shots--port">
+        <button class="shot" type="button"><img src="/assets/games/blackjack/shot-2.webp" alt="Écran titre : une expérience roguelike sans fin" loading="lazy"></button>
+        <button class="shot" type="button"><img src="/assets/games/blackjack/shot-3.webp" alt="Menu principal" loading="lazy"></button>
+        <button class="shot" type="button"><img src="/assets/games/blackjack/shot-4.webp" alt="Tirer ou rester" loading="lazy"></button>
+        <button class="shot" type="button"><img src="/assets/games/blackjack/shot-5.webp" alt="Construisez votre propre casino" loading="lazy"></button>
+        <button class="shot" type="button"><img src="/assets/games/blackjack/shot-6.webp" alt="La boutique et ses Jokers" loading="lazy"></button>
+        <button class="shot" type="button"><img src="/assets/games/blackjack/shot-7.webp" alt="Mise contre le boss" loading="lazy"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="padding-top:20px">
+    <div class="container">
+      <div class="section-head" data-reveal><p class="eyebrow">FAQ</p><h2>Hantro: BlackJack Roguelike – Questions fréquentes</h2></div>
+      <div class="faq" data-reveal>
+        <details class="faq__item"><summary>Hantro: BlackJack Roguelike est-il gratuit ?</summary><div class="faq__a"><p>Oui. Il est gratuit sur Google Play et l’App Store, avec des publicités et des achats intégrés facultatifs.</p></div></details>
+        <details class="faq__item"><summary>Puis-je gagner de l’argent réel ?</summary><div class="faq__a"><p>Non. Le jeu utilise uniquement des jetons virtuels. Il n’y a ni jeu d’argent réel ni récompenses en argent réel.</p></div></details>
+        <details class="faq__item"><summary>Quelle différence avec le blackjack classique ?</summary><div class="faq__a"><p>Les règles du 21 restent les mêmes, mais vous construisez un deck, débloquez des cartes Joker aux effets spéciaux, affrontez des boss et progressez au fil de parties roguelike.</p></div></details>
+        <details class="faq__item"><summary>Est-il disponible sur iPhone ?</summary><div class="faq__a"><p>Oui. Il est disponible sur l’App Store pour iPhone et iPad, et sur Google Play pour Android.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section g-cta" style="padding-top:0">
+    <div class="container">
+      <div class="g-cta__box neon-box" data-reveal="zoom">
+        <canvas class="fx" aria-hidden="true" data-fx='{"count":30,"shape":"square","colors":["#ff3df2","#39f0ff","#ffd34d"],"size":[1.5,2.5],"dir":"up","speed":[0.2,0.5],"twinkle":true}'></canvas>
+        <img class="g-icon" src="/assets/games/blackjack/icon.webp" alt="" width="110" height="110" loading="lazy">
+        <h2>Construisez le deck de blackjack ultime</h2>
+        <p class="lead">Découvrez des combos de Jokers légendaires et dominez le classement.</p>
+        <div class="stores"><!-- @stores gp="com.hantro.blackjack" apple="6761393761" -->
+<a class="store" href="https://play.google.com/store/apps/details?id=com.hantro.blackjack" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#FBBC04" d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594z"/><path fill="#4285F4" d="M1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924z"/><path fill="#34A853" d="M13.544 10.989l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973z"/><path fill="#EA4335" d="M13.544 13.056l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/></svg><span><small>Disponible sur</small><b>Google Play</b></span></a>
+<a class="store" href="https://apps.apple.com/app/id6761393761" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><span><small>Télécharger dans l’</small><b>App Store</b></span></a>
+<!-- /@stores --></div>
+        <p class="note">Un jeu de cartes de stratégie qui utilise uniquement des jetons virtuels. Aucun jeu ni gain d’argent réel. · <a href="https://doc-hosting.flycricket.io/hantro-blackjack-roguelike-privacy-policy/799486e4-9c9d-49e9-8dcf-2af24a633e7c/privacy" target="_blank" rel="noopener" style="text-decoration:underline">Politique de confidentialité</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <h2 style="font-size:22px;margin-bottom:18px">Autres jeux de HanX Games</h2>
+      <!-- @more -->
+<div class="more-games">
+<a href="/fr/rebirth/"><img src="/assets/games/rebirth/icon.webp" alt="" loading="lazy">ReBirth</a>
+<a href="/fr/poker/"><img src="/assets/games/poker/icon.webp" alt="" loading="lazy">Hantro: Poker</a>
+<a href="/fr/911-idle-dispatch/"><img src="/assets/games/idle-dispatch/icon.webp" alt="" loading="lazy">911: Idle Dispatch</a>
+<a href="/fr/darkway/"><img src="/assets/games/darkway/icon.webp" alt="" loading="lazy">DarkWay</a>
+<a href="/fr/moba-manager/"><img src="/assets/games/moba-manager/icon.webp" alt="" loading="lazy">Moba Manager</a>
+<a href="/fr/ember-keep/"><img src="/assets/games/ember-keep/icon.webp" alt="" loading="lazy">Ember Keep</a>
+</div>
+<!-- /@more -->
+    </div>
+  </section>
+</main>
+
+<!-- @footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a class="brand" href="/fr/" aria-label="Accueil HanX Games">
+          <img src="/assets/brand/logo.webp" alt="" width="36" height="36" loading="lazy">
+          <span>HanX<b>GAMES</b></span>
+        </a>
+        <p>Studio indépendant de jeux mobiles. Jeux de stratégie, de cartes, de simulation et RPG pour Android et iOS.</p>
+      </div>
+      <div>
+        <h4>Jeux</h4>
+        <ul class="footer__games">
+          <li><a href="/fr/rebirth/">ReBirth</a></li>
+          <li><a href="/fr/poker/">Hantro: Poker</a></li>
+          <li><a href="/fr/blackjack/">Hantro: BlackJack</a></li>
+          <li><a href="/fr/911-idle-dispatch/">911: Idle Dispatch</a></li>
+          <li><a href="/fr/darkway/">DarkWay</a></li>
+          <li><a href="/fr/moba-manager/">Moba Manager</a></li>
+          <li><a href="/fr/ember-keep/">Ember Keep</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Nous trouver</h4>
+        <ul>
+          <li><a href="https://play.google.com/store/apps/dev?id=4858435727768538175" target="_blank" rel="noopener">Google Play</a></li>
+          <li><a href="https://apps.apple.com/developer/id1885639647" target="_blank" rel="noopener">App Store</a></li>
+          <li><a href="mailto:hanxdestek@gmail.com">hanxdestek@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span data-year>2026</span> HanX Games. Tous droits réservés.</span>
+      <span>Google Play et le logo Google Play sont des marques de Google LLC. App Store est une marque de service d’Apple Inc.</span>
+    </div>
+  </div>
+</footer>
+<!-- /@footer -->
+<script src="/assets/js/site.js"></script>
+<script>
+  /* Tiny blackjack demo */
+  (function () {
+    var $ = function (id) { return document.getElementById(id); };
+    var suits = ['♠', '♥', '♦', '♣'], ranks = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
+    var deck, player, dealer, over, wins = 0, losses = 0;
+    var value = function (h) {
+      var t = 0, aces = 0;
+      h.forEach(function (c) { if (c.r === 'A') { aces++; t += 11; } else t += /[JQK]/.test(c.r) ? 10 : +c.r; });
+      while (t > 21 && aces) { t -= 10; aces--; }
+      return t;
+    };
+    var draw = function () {
+      if (!deck.length) deck = fresh();
+      return deck.pop();
+    };
+    var fresh = function () {
+      var d = [];
+      suits.forEach(function (s) { ranks.forEach(function (r) { d.push({ r: r, s: s }); }); });
+      for (var i = d.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = d[i]; d[i] = d[j]; d[j] = t; }
+      return d;
+    };
+    var cardEl = function (c, hidden) {
+      var red = c.s === '♥' || c.s === '♦';
+      return '<div class="bcard' + (red ? ' red' : '') + (hidden ? ' back' : '') + '" aria-label="' + (hidden ? 'Carte cachée' : c.r + ' ' + c.s) + '"><span>' + c.r + '</span><span>' + c.s + '</span></div>';
+    };
+    var render = function () {
+      $('pHand').innerHTML = player.map(function (c) { return cardEl(c); }).join('');
+      $('dHand').innerHTML = dealer.map(function (c, i) { return cardEl(c, i === 1 && !over); }).join('');
+      $('pTotal').textContent = value(player);
+      $('dTotal').textContent = over ? value(dealer) : (dealer.length ? value([dealer[0]]) : 0);
+      $('hit').disabled = $('stand').disabled = over;
+      $('streak').textContent = 'VICTOIRES ' + wins + ' · DÉFAITES ' + losses;
+    };
+    var end = function (msg, win) {
+      over = true;
+      if (win === true) wins++; else if (win === false) losses++;
+      $('result').textContent = msg;
+      render();
+    };
+    var deal = function () {
+      if (!deck || deck.length < 15) deck = fresh();
+      player = [draw(), draw()]; dealer = [draw(), draw()]; over = false; $('result').textContent = '';
+      render();
+      if (value(player) === 21) end('BLACKJACK!', true);
+    };
+    $('hit').addEventListener('click', function () {
+      if (over) return;
+      player.push(draw()); render();
+      if (value(player) > 21) end('VOUS SAUTEZ !', false);
+      else if (value(player) === 21) $('stand').click();
+    });
+    $('stand').addEventListener('click', function () {
+      if (over) return;
+      while (value(dealer) < 17) dealer.push(draw());
+      var p = value(player), d = value(dealer);
+      if (d > 21) end('LE CROUPIER SAUTE. VOUS GAGNEZ !', true);
+      else if (p > d) end('VOUS GAGNEZ !', true);
+      else if (p < d) end('LE CROUPIER GAGNE', false);
+      else end('ÉGALITÉ', null);
+    });
+    $('deal').addEventListener('click', deal);
+    deal();
+  })();
+</script>
+</body>
+</html>

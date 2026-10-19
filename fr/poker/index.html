@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hantro: Poker Roguelike – Jeu de cartes deckbuilder avec Jokers | HanX Games</title>
+  <meta name="description" content="Hantro: Poker Roguelike, jeu de cartes poker deckbuilder : des centaines de Jokers, des combos fous, des boss, des milliards de points. Hors ligne sur Android.">
+  <link rel="canonical" href="https://hanxgames.net/fr/poker/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="HanX Games">
+  <meta property="og:title" content="Hantro: Poker Roguelike">
+  <meta property="og:description" content="Du poker roguelike ! Collectionnez les Jokers, enchaînez des combos démentiels et battez les boss.">
+  <meta property="og:url" content="https://hanxgames.net/fr/poker/">
+  <meta property="og:image" content="https://hanxgames.net/assets/games/poker/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#08180f">
+  <!-- @head -->
+<link rel="alternate" hreflang="en" href="https://hanxgames.net/poker/">
+  <link rel="alternate" hreflang="tr" href="https://hanxgames.net/tr/poker/">
+  <link rel="alternate" hreflang="es" href="https://hanxgames.net/es/poker/">
+  <link rel="alternate" hreflang="pt" href="https://hanxgames.net/pt/poker/">
+  <link rel="alternate" hreflang="de" href="https://hanxgames.net/de/poker/">
+  <link rel="alternate" hreflang="fr" href="https://hanxgames.net/fr/poker/">
+  <link rel="alternate" hreflang="x-default" href="https://hanxgames.net/poker/">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="tr_TR">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:locale:alternate" content="pt_BR">
+  <meta property="og:locale:alternate" content="de_DE">
+<!-- /@head -->
+  <!-- @schema -->
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["VideoGame","MobileApplication"],"name":"Hantro: Poker Roguelike","url":"https://hanxgames.net/fr/poker/","inLanguage":"fr","description":"Hantro: Poker Roguelike, jeu de cartes poker deckbuilder : des centaines de Jokers, des combos fous, des boss, des milliards de points. Hors ligne sur Android.","image":"https://hanxgames.net/assets/games/poker/og.jpg","screenshot":["https://hanxgames.net/assets/games/poker/shot-1.webp","https://hanxgames.net/assets/games/poker/shot-2.webp","https://hanxgames.net/assets/games/poker/shot-3.webp","https://hanxgames.net/assets/games/poker/shot-4.webp","https://hanxgames.net/assets/games/poker/shot-5.webp"],"genre":["Card","Roguelike"],"applicationCategory":"GameApplication","operatingSystem":"Android","gamePlatform":["Android"],"playMode":"SinglePlayer","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@id":"https://hanxgames.net/#org"},"publisher":{"@id":"https://hanxgames.net/#org"},"installUrl":"https://play.google.com/store/apps/details?id=com.ilhantro.hantro","sameAs":["https://play.google.com/store/apps/details?id=com.ilhantro.hantro"]},{"@type":"Organization","@id":"https://hanxgames.net/#org","name":"HanX Games","url":"https://hanxgames.net/","logo":"https://hanxgames.net/assets/brand/logo.webp","email":"hanxdestek@gmail.com","sameAs":["https://play.google.com/store/apps/dev?id=4858435727768538175","https://apps.apple.com/developer/id1885639647"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HanX Games","item":"https://hanxgames.net/fr/"},{"@type":"ListItem","position":2,"name":"Hantro: Poker Roguelike","item":"https://hanxgames.net/fr/poker/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Hantro: Poker Roguelike est-il gratuit ?","acceptedAnswer":{"@type":"Answer","text":"Oui, il se télécharge gratuitement sur Google Play, avec des achats intégrés facultatifs."}},{"@type":"Question","name":"S’agit-il d’un jeu d’argent réel ?","acceptedAnswer":{"@type":"Answer","text":"Non. Hantro est un jeu de cartes de stratégie uniquement destiné au divertissement. Il n’y a ni jeu d’argent réel ni gains en argent réel."}},{"@type":"Question","name":"Puis-je jouer à ce roguelike de poker hors ligne ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Hantro se joue hors ligne : vous pouvez jouer partout, sans connexion internet."}},{"@type":"Question","name":"Est-ce que ça ressemble à Balatro ?","acceptedAnswer":{"@type":"Answer","text":"Si vous aimez les roguelikes de poker à la Balatro, vous serez en terrain connu : vous marquez des points avec des mains de poker, collectionnez des Jokers et construisez des combos. Hantro y ajoute ses propres boss, des duels contre l’IA et un monde magique rempli de chats."}}]}]}</script>
+<!-- /@schema -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,700&family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Rye&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <style>
+    :root {
+      --bg: #07160e; --bg-2: #0b2016; --fg: #f6eedb; --muted: #b7b08f;
+      --accent: #f0c35a; --accent-2: #d8414b; --accent-ink: #231703; --glow: rgba(240,195,90,.4);
+      --surface: rgba(255, 236, 180, .045); --surface-2: rgba(255, 236, 180, .085); --line: rgba(240, 195, 90, .18);
+      --font-display: "Cinzel", Georgia, serif;
+    }
+    body { background: radial-gradient(1400px 900px at 50% 0%, #0f3a24 0%, var(--bg) 60%) fixed, var(--bg); }
+    .g-hero__bg { background: radial-gradient(900px 600px at 70% 45%, rgba(29,110,64,.55), transparent 65%), radial-gradient(700px 500px at 10% 90%, rgba(150,30,40,.35), transparent 70%); }
+    .g-hero__bg::after { content: ""; position: absolute; inset: 0; opacity: .35; background-image: radial-gradient(rgba(255,255,255,.05) 1px, transparent 1px); background-size: 4px 4px; }
+    .felt-border { position: absolute; inset: 18px; border: 2px solid rgba(240,195,90,.18); border-radius: 40px; pointer-events: none; z-index: -1; box-shadow: inset 0 0 120px rgba(0,0,0,.6); }
+    .g-title { font-family: "Rye", serif; font-weight: 400; font-size: clamp(56px, 10vw, 118px); color: #f6e3b0; text-shadow: 0 4px 0 #8a5a16, 0 8px 0 #3b2306, 0 12px 30px rgba(0,0,0,.7); line-height: .95; }
+    .g-title small { display: block; font-family: "Cinzel", serif; font-weight: 800; font-size: .3em; letter-spacing: .3em; color: var(--accent); text-shadow: none; margin-top: 10px; }
+    .ribbon { display: inline-block; padding: 8px 22px; background: linear-gradient(180deg, #c8323c, #8e1d24); color: #fff3d6; font-family: "Cinzel", serif; font-weight: 800; letter-spacing: .2em; font-size: 13px; clip-path: polygon(0 0, 100% 0, 94% 50%, 100% 100%, 0 100%, 6% 50%); }
+
+    /* Animated card fan */
+    .fan { position: relative; height: 420px; display: grid; place-items: center; perspective: 1200px; }
+    .pcard { position: absolute; width: clamp(104px, 12vw, 140px); aspect-ratio: 5/7; border-radius: 14px; background: linear-gradient(160deg, #fffaf0, #efe4c8); box-shadow: 0 20px 40px -14px rgba(0,0,0,.8), inset 0 0 0 1px rgba(0,0,0,.08);
+      transform-origin: 50% 120%; transform: rotate(0) translateY(0); transition: transform 1s var(--ease); color: #1d1d1d; font-family: "Cinzel", serif; font-weight: 800; }
+    .pcard.red { color: #c22a33; }
+    .pcard::before { content: attr(data-r) "\A" attr(data-s); white-space: pre; position: absolute; top: 10px; left: 12px; font-size: 22px; line-height: 1; text-align: center; }
+    .pcard::after { content: attr(data-s); position: absolute; inset: 0; display: grid; place-items: center; font-size: 64px; }
+    .pcard.joker { background: linear-gradient(160deg, #2b0f3a, #6b1d2b); color: #f0c35a; border: 2px solid #f0c35a; }
+    .pcard.joker::after { content: "🃏"; font-size: 70px; }
+    .pcard.joker::before { content: "J\AO\AK\AE\AR"; font-size: 13px; }
+    .fan.is-in .pcard:nth-child(1) { transform: rotate(-24deg) translateY(-10px); transition-delay: .1s; }
+    .fan.is-in .pcard:nth-child(2) { transform: rotate(-14deg) translateY(-24px); transition-delay: .2s; }
+    .fan.is-in .pcard:nth-child(3) { transform: rotate(0) translateY(-30px); transition-delay: .3s; }
+    .fan.is-in .pcard:nth-child(4) { transform: rotate(14deg) translateY(-24px); transition-delay: .4s; }
+    .fan.is-in .pcard:nth-child(5) { transform: rotate(24deg) translateY(-10px); transition-delay: .5s; }
+    .fan.is-in:hover .pcard:nth-child(3) { transform: rotate(0) translateY(-60px) scale(1.05); }
+    .pcard.joker { animation: jokerglow 2.4s ease-in-out infinite; z-index: 5; }
+    @keyframes jokerglow { 50% { box-shadow: 0 20px 40px -14px rgba(0,0,0,.8), 0 0 40px rgba(240,195,90,.6); } }
+    .chip3d { position: absolute; width: 64px; height: 64px; border-radius: 50%; background: repeating-conic-gradient(#c8323c 0 30deg, #fff3d6 30deg 45deg); box-shadow: inset 0 0 0 8px rgba(0,0,0,.18), 0 10px 20px rgba(0,0,0,.6); animation: chipfloat 5s ease-in-out infinite; }
+    .chip3d::after { content: ""; position: absolute; inset: 14px; border-radius: 50%; background: #c8323c; box-shadow: inset 0 0 0 2px rgba(255,243,214,.6); }
+    .chip3d.black { background: repeating-conic-gradient(#1b1b1b 0 30deg, #f0c35a 30deg 45deg); }
+    .chip3d.black::after { background: #1b1b1b; }
+    @keyframes chipfloat { 50% { transform: translateY(-16px) rotate(20deg); } }
+
+    .score { text-align: center; padding: 50px 20px; border-radius: 28px; border: 1px solid var(--line); background: radial-gradient(500px 220px at 50% 0%, rgba(240,195,90,.16), transparent 70%), rgba(0,0,0,.25); }
+    .score__label { font-family: "Cinzel", serif; font-weight: 800; letter-spacing: .3em; color: var(--muted); font-size: 14px; }
+    .score__num { font-family: "Cinzel", serif; font-weight: 800; font-size: clamp(38px, 8vw, 96px); color: var(--accent); text-shadow: 0 0 40px rgba(240,195,90,.45); font-variant-numeric: tabular-nums; line-height: 1.1; margin: 10px 0; }
+    .score__mult { display: inline-flex; gap: 10px; align-items: center; font-weight: 700; }
+    .score__mult b { padding: 6px 14px; border-radius: 10px; background: #2d6cdf; color: #fff; font-family: "Cinzel", serif; }
+    .score__mult i { font-style: normal; color: var(--muted); }
+    .score__mult b + i + b { background: #c8323c; }
+    .feature h3 { font-family: "Cinzel", serif; font-weight: 800; }
+    .note { font-size: 13px; color: var(--muted); }
+  </style>
+</head>
+<body class="game">
+<!-- @nav -->
+<a class="skip" href="#main">Aller au contenu</a>
+<header class="nav" data-nav>
+  <div class="container nav__inner">
+    <a class="brand" href="/fr/" aria-label="Accueil HanX Games">
+      <img src="/assets/brand/logo.webp" alt="" width="36" height="36">
+      <span>HanX<b>GAMES</b></span>
+    </a>
+    <nav class="nav__links" aria-label="Jeux">
+      <a href="/fr/rebirth/"><img src="/assets/games/rebirth/icon.webp" alt="" width="22" height="22" loading="lazy">ReBirth</a>
+      <a href="/fr/poker/" aria-current="page"><img src="/assets/games/poker/icon.webp" alt="" width="22" height="22" loading="lazy">Hantro: Poker</a>
+      <a href="/fr/blackjack/"><img src="/assets/games/blackjack/icon.webp" alt="" width="22" height="22" loading="lazy">Hantro: BlackJack</a>
+      <a href="/fr/911-idle-dispatch/"><img src="/assets/games/idle-dispatch/icon.webp" alt="" width="22" height="22" loading="lazy">911: Idle Dispatch</a>
+      <a href="/fr/darkway/"><img src="/assets/games/darkway/icon.webp" alt="" width="22" height="22" loading="lazy">DarkWay</a>
+      <a href="/fr/moba-manager/"><img src="/assets/games/moba-manager/icon.webp" alt="" width="22" height="22" loading="lazy">Moba Manager</a>
+      <a href="/fr/ember-keep/"><img src="/assets/games/ember-keep/icon.webp" alt="" width="22" height="22" loading="lazy">Ember Keep</a>
+    </nav>
+    <!-- @lang -->
+<details class="lang"><summary aria-label="Langue: Français"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg><span>FR</span></summary><div class="lang__menu"><a href="/poker/" hreflang="en" lang="en">English</a><a href="/tr/poker/" hreflang="tr" lang="tr">Türkçe</a><a href="/es/poker/" hreflang="es" lang="es">Español</a><a href="/pt/poker/" hreflang="pt" lang="pt">Português</a><a href="/de/poker/" hreflang="de" lang="de">Deutsch</a><a href="/fr/poker/" hreflang="fr" lang="fr" aria-current="true">Français</a></div></details>
+<!-- /@lang -->
+    <button class="nav__burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+<!-- /@nav -->
+
+<main id="main">
+  <header class="g-hero">
+    <div class="g-hero__bg" aria-hidden="true"></div>
+    <div class="felt-border" aria-hidden="true"></div>
+    <canvas class="fx" aria-hidden="true" data-fx='{"count":34,"shape":"glyph","glyphs":["♠","♥","♦","♣"],"colors":["#f0c35a","#d8414b","#f6eedb"],"size":[2.5,6],"dir":"up","speed":[0.2,0.6],"drift":0.4,"alpha":[0.08,0.35]}'></canvas>
+    <div class="container g-hero__grid">
+      <div class="g-hero__copy">
+        <img class="g-icon" src="/assets/games/poker/icon.webp" alt="Hantro: Poker – icône" width="96" height="96" data-reveal>
+        <span class="ribbon" data-reveal style="--d:60ms">Nouvelle saison</span>
+        <h1 class="g-title" data-reveal style="--d:120ms">Hantro<small>Poker Roguelike</small></h1>
+        <p class="lead" data-reveal style="--d:200ms">Lassé des jeux de cartes ordinaires ? Hantro fusionne les mains de poker classiques avec un deckbuilding roguelike addictif. Créez des synergies folles avec des centaines de cartes Joker, améliorez votre deck entre les parties et visez des scores qui se comptent en milliards.</p>
+        <div class="stores" data-reveal style="--d:260ms"><!-- @stores gp="com.ilhantro.hantro" -->
+<a class="store" href="https://play.google.com/store/apps/details?id=com.ilhantro.hantro" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#FBBC04" d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594z"/><path fill="#4285F4" d="M1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924z"/><path fill="#34A853" d="M13.544 10.989l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973z"/><path fill="#EA4335" d="M13.544 13.056l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/></svg><span><small>Disponible sur</small><b>Google Play</b></span></a>
+<!-- /@stores --></div>
+        <ul class="chips" data-reveal style="--d:320ms">
+          <li class="chip">Decks roguelike</li><li class="chip">Jokers déjantés</li><li class="chip">Combats de boss</li><li class="chip">Jeu hors ligne</li>
+        </ul>
+      </div>
+      <div class="g-art" data-reveal="right" style="--d:200ms">
+        <div class="g-art__frame" data-tilt="6"><img src="/assets/games/poker/shot-1.webp" alt="Hantro: Poker Roguelike, visuel de la nouvelle saison" width="1400" height="783"></div>
+        <span class="chip3d" style="left:-24px;bottom:30px" aria-hidden="true"></span>
+        <span class="chip3d black" style="right:-18px;top:-20px;animation-delay:-2s" aria-hidden="true"></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Card fan + score -->
+  <section class="section">
+    <div class="container split">
+      <div class="fan" data-in aria-hidden="true">
+        <div class="pcard red" data-r="A" data-s="♥"></div>
+        <div class="pcard red" data-r="K" data-s="♥"></div>
+        <div class="pcard joker"></div>
+        <div class="pcard red" data-r="J" data-s="♥"></div>
+        <div class="pcard red" data-r="10" data-s="♥"></div>
+      </div>
+      <div data-reveal="right">
+        <p class="eyebrow">Des milliards de points</p>
+        <h2 style="font-size:clamp(32px,4.6vw,56px);margin:14px 0 18px">Chaque main est explosive</h2>
+        <p class="lead">Jouez une couleur, empilez vos Jokers et regardez les multiplicateurs s’envoler. Dans ce roguelike deckbuilder de poker, seuls les meilleurs atteignent le sommet.</p>
+        <div class="score" style="margin-top:28px">
+          <p class="score__label">Score de la main</p>
+          <p class="score__num" data-score="1248630000">0</p>
+          <p class="score__mult"><b>Jetons</b><i>×</i><b>Mult</b></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why play -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Pourquoi jouer à Hantro ?</p>
+        <h2>Cassez le jeu avec votre deck</h2>
+        <p>Parfait pour les fans de deckbuilders de poker et de jeux de cartes roguelike. Chaque partie est unique.</p>
+      </div>
+      <div class="features">
+        <div class="feature" data-reveal>
+          <div class="ficon"><svg viewBox="0 0 32 32"><rect x="7" y="4" width="18" height="24" rx="3"/><path d="M12 12c0-3 8-3 8 0 0 3-4 3-4 6"/><circle cx="16" cy="22" r=".6"/></svg></div>
+          <h3>Combos de Jokers démentiels</h3><p>Des centaines de Jokers uniques créent des synergies qui cassent le jeu et font exploser votre score de façon exponentielle.</p>
+        </div>
+        <div class="feature" data-reveal style="--d:60ms">
+          <div class="ficon"><svg viewBox="0 0 32 32"><path d="M6 16a10 10 0 0 1 17-7l3 3"/><path d="M26 6v6h-6"/><path d="M26 16a10 10 0 0 1-17 7l-3-3"/><path d="M6 26v-6h6"/></svg></div>
+          <h3>Aventure roguelike</h3><p>Des parties générées de façon procédurale, avec améliorations, risques et récompenses. Aucune partie ne se ressemble.</p>
+        </div>
+        <div class="feature" data-reveal style="--d:120ms">
+          <div class="ficon"><svg viewBox="0 0 32 32"><path d="M5 26l5-14 6 6 6-6 5 14z"/><path d="M4 26h24"/><circle cx="10" cy="9" r="2"/><circle cx="16" cy="6" r="2"/><circle cx="22" cy="9" r="2"/></svg></div>
+          <h3>Combats de boss épiques</h3><p>Affrontez des boss impitoyables aux contraintes spéciales et relevez des défis de poker intenses.</p>
+        </div>
+        <div class="feature" data-reveal>
+          <div class="ficon"><svg viewBox="0 0 32 32"><rect x="4" y="8" width="14" height="20" rx="2"/><rect x="14" y="4" width="14" height="20" rx="2"/><path d="M21 11v6M18 14h6"/></svg></div>
+          <h3>Deckbuilding stratégique</h3><p>Améliorez et modifiez votre deck avec soin pour remporter des mises toujours plus hautes.</p>
+        </div>
+        <div class="feature" data-reveal style="--d:60ms">
+          <div class="ficon"><svg viewBox="0 0 32 32"><circle cx="10" cy="11" r="4"/><circle cx="22" cy="11" r="4"/><path d="M3 27c1-5 4-7 7-7s6 2 7 7"/><path d="M15 27c1-5 4-7 7-7s6 2 7 7"/></svg></div>
+          <h3>Duels contre l’IA</h3><p>Mesurez-vous à des adversaires IA redoutables dans des matchs de poker 1v1 palpitants.</p>
+        </div>
+        <div class="feature" data-reveal style="--d:120ms">
+          <div class="ficon"><svg viewBox="0 0 32 32"><path d="M16 27s-10-6-10-13a5 5 0 0 1 10-2 5 5 0 0 1 10 2c0 7-10 13-10 13z"/></svg></div>
+          <h3>Un monde magique</h3><p>D’adorables personnages de chats, des visuels superbes, des animations fluides et un décompte des mains jouissif.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section">
+    <div class="container about">
+      <div class="about__text" data-reveal>
+        <p class="eyebrow">À propos du jeu</p>
+        <h2>Un roguelike deckbuilder de poker pour les fans de jeux de cartes à la Balatro</h2>
+        <p>Hantro: Poker Roguelike transforme les mains de poker classiques en aventure roguelike de deckbuilding. Jouez des paires, des quintes et des couleurs, puis laissez vos cartes Joker multiplier le score jusqu’à atteindre les milliards.</p>
+        <p>Chaque partie est générée de façon procédurale. Entre les manches, vous achetez des Jokers, améliorez vos mains de poker et remodelez votre deck, toujours à la recherche de la prochaine synergie qui cassera le jeu. Les manches de boss ajoutent des règles spéciales, et des adversaires IA redoutables mettent vos talents à l’épreuve en duels de poker 1v1.</p>
+        <p>Avec ses adorables personnages de chats, ses animations de score jouissives et son mode hors ligne, c’est un jeu de cartes à savourer dans le bus comme sur le canapé. Hantro est uniquement destiné au divertissement et ne contient aucun jeu d’argent réel.</p>
+      </div>
+      <aside class="facts" data-reveal="right">
+        <h3>En bref</h3>
+        <dl>
+          <div><dt>Genre</dt><dd>Jeu de cartes, roguelike deckbuilder</dd></div>
+          <div><dt>Plateforme</dt><dd>Android</dd></div>
+          <div><dt>Prix</dt><dd>Gratuit, avec achats intégrés facultatifs</dd></div>
+          <div><dt>Hors ligne</dt><dd>Oui</dd></div>
+          <div><dt>Jeux d’argent réel</dt><dd>Aucun</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="section">
+    <div class="container gallery">
+      <div class="gallery-head">
+        <div class="section-head" data-reveal><p class="eyebrow">Captures d’écran</p><h2>À la table</h2></div>
+        <div class="gallery__nav">
+          <button type="button" data-dir="-1" aria-label="Captures d’écran précédentes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button type="button" data-dir="1" aria-label="Captures d’écran suivantes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
+      <div class="shots shots--land">
+        <button class="shot" type="button"><img src="/assets/games/poker/shot-1.webp" alt="Visuel de la nouvelle saison" loading="lazy"></button>
+        <button class="shot" type="button"><img src="/assets/games/poker/shot-2.webp" alt="Une couleur jouée avec des Jokers" loading="lazy"></button>
+        <button class="shot" type="button"><img src="/assets/games/poker/shot-3.webp" alt="Manche de boss" loading="lazy"></button>
+        <button class="shot" type="button"><img src="/assets/games/poker/shot-4.webp" alt="Boutique de Jokers" loading="lazy"></button>
+        <button class="shot" type="button"><img src="/assets/games/poker/shot-5.webp" alt="Classement en ligne" loading="lazy"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="padding-top:20px">
+    <div class="container">
+      <div class="section-head" data-reveal><p class="eyebrow">FAQ</p><h2>Hantro: Poker Roguelike – Questions fréquentes</h2></div>
+      <div class="faq" data-reveal>
+        <details class="faq__item"><summary>Hantro: Poker Roguelike est-il gratuit ?</summary><div class="faq__a"><p>Oui, il se télécharge gratuitement sur Google Play, avec des achats intégrés facultatifs.</p></div></details>
+        <details class="faq__item"><summary>S’agit-il d’un jeu d’argent réel ?</summary><div class="faq__a"><p>Non. Hantro est un jeu de cartes de stratégie uniquement destiné au divertissement. Il n’y a ni jeu d’argent réel ni gains en argent réel.</p></div></details>
+        <details class="faq__item"><summary>Puis-je jouer à ce roguelike de poker hors ligne ?</summary><div class="faq__a"><p>Oui. Hantro se joue hors ligne : vous pouvez jouer partout, sans connexion internet.</p></div></details>
+        <details class="faq__item"><summary>Est-ce que ça ressemble à Balatro ?</summary><div class="faq__a"><p>Si vous aimez les roguelikes de poker à la Balatro, vous serez en terrain connu : vous marquez des points avec des mains de poker, collectionnez des Jokers et construisez des combos. Hantro y ajoute ses propres boss, des duels contre l’IA et un monde magique rempli de chats.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section g-cta" style="padding-top:0">
+    <div class="container">
+      <div class="g-cta__box" data-reveal="zoom">
+        <canvas class="fx" aria-hidden="true" data-fx='{"count":24,"shape":"glyph","glyphs":["♠","♥","♦","♣"],"colors":["#f0c35a","#d8414b"],"size":[2,4],"dir":"up","speed":[0.2,0.5],"alpha":[0.1,0.3]}'></canvas>
+        <img class="g-icon" src="/assets/games/poker/icon.webp" alt="" width="110" height="110" loading="lazy">
+        <h2>Risquez tout. Gagnez tout.</h2>
+        <p class="lead">Saurez-vous construire le deck ultime et battre le boss final ?</p>
+        <div class="stores"><!-- @stores gp="com.ilhantro.hantro" -->
+<a class="store" href="https://play.google.com/store/apps/details?id=com.ilhantro.hantro" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#FBBC04" d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594z"/><path fill="#4285F4" d="M1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924z"/><path fill="#34A853" d="M13.544 10.989l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973z"/><path fill="#EA4335" d="M13.544 13.056l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/></svg><span><small>Disponible sur</small><b>Google Play</b></span></a>
+<!-- /@stores --></div>
+        <p class="note">Uniquement destiné au divertissement. Ne contient aucun jeu d’argent réel. · <a href="https://hanxgames.github.io/hanxgames-privacy/hantro_privacy_policy.html" target="_blank" rel="noopener" style="text-decoration:underline">Politique de confidentialité</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <h2 style="font-size:22px;margin-bottom:18px">Autres jeux de HanX Games</h2>
+      <!-- @more -->
+<div class="more-games">
+<a href="/fr/rebirth/"><img src="/assets/games/rebirth/icon.webp" alt="" loading="lazy">ReBirth</a>
+<a href="/fr/blackjack/"><img src="/assets/games/blackjack/icon.webp" alt="" loading="lazy">Hantro: BlackJack</a>
+<a href="/fr/911-idle-dispatch/"><img src="/assets/games/idle-dispatch/icon.webp" alt="" loading="lazy">911: Idle Dispatch</a>
+<a href="/fr/darkway/"><img src="/assets/games/darkway/icon.webp" alt="" loading="lazy">DarkWay</a>
+<a href="/fr/moba-manager/"><img src="/assets/games/moba-manager/icon.webp" alt="" loading="lazy">Moba Manager</a>
+<a href="/fr/ember-keep/"><img src="/assets/games/ember-keep/icon.webp" alt="" loading="lazy">Ember Keep</a>
+</div>
+<!-- /@more -->
+    </div>
+  </section>
+</main>
+
+<!-- @footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a class="brand" href="/fr/" aria-label="Accueil HanX Games">
+          <img src="/assets/brand/logo.webp" alt="" width="36" height="36" loading="lazy">
+          <span>HanX<b>GAMES</b></span>
+        </a>
+        <p>Studio indépendant de jeux mobiles. Jeux de stratégie, de cartes, de simulation et RPG pour Android et iOS.</p>
+      </div>
+      <div>
+        <h4>Jeux</h4>
+        <ul class="footer__games">
+          <li><a href="/fr/rebirth/">ReBirth</a></li>
+          <li><a href="/fr/poker/">Hantro: Poker</a></li>
+          <li><a href="/fr/blackjack/">Hantro: BlackJack</a></li>
+          <li><a href="/fr/911-idle-dispatch/">911: Idle Dispatch</a></li>
+          <li><a href="/fr/darkway/">DarkWay</a></li>
+          <li><a href="/fr/moba-manager/">Moba Manager</a></li>
+          <li><a href="/fr/ember-keep/">Ember Keep</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Nous trouver</h4>
+        <ul>
+          <li><a href="https://play.google.com/store/apps/dev?id=4858435727768538175" target="_blank" rel="noopener">Google Play</a></li>
+          <li><a href="https://apps.apple.com/developer/id1885639647" target="_blank" rel="noopener">App Store</a></li>
+          <li><a href="mailto:hanxdestek@gmail.com">hanxdestek@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span data-year>2026</span> HanX Games. Tous droits réservés.</span>
+      <span>Google Play et le logo Google Play sont des marques de Google LLC. App Store est une marque de service d’Apple Inc.</span>
+    </div>
+  </div>
+</footer>
+<!-- /@footer -->
+<script src="/assets/js/site.js"></script>
+<script>
+  /* Score ticker: counts up when visible, then keeps "playing hands" */
+  (function () {
+    var el = document.querySelector('[data-score]');
+    if (!el) return;
+    var target = +el.getAttribute('data-score');
+    var fmt = function (v) { return Math.round(v).toLocaleString('fr-FR'); };
+    if (window.HX.reduced) { el.textContent = fmt(target); return; }
+    var run = function () {
+      var t0 = null, dur = 2600;
+      requestAnimationFrame(function step(t) {
+        if (!t0) t0 = t;
+        var p = Math.min(1, (t - t0) / dur);
+        el.textContent = fmt(target * Math.pow(p, 3));
+        if (p < 1) requestAnimationFrame(step);
+      });
+    };
+    new IntersectionObserver(function (en, o) { if (en[0].isIntersecting) { run(); o.disconnect(); } }, { threshold: .5 }).observe(el);
+  })();
+</script>
+</body>
+</html>

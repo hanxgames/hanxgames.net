@@ -35,7 +35,7 @@
       <a href="/ember-keep/"><img src="/assets/games/ember-keep/icon.webp" alt="" width="22" height="22" loading="lazy">Ember Keep</a>
     </nav>
     <!-- @lang -->
-<div class="lang" role="group" aria-label="Language"><a href="/" hreflang="en" lang="en" aria-current="true">EN</a><a href="/tr/" hreflang="tr" lang="tr">TR</a></div>
+<details class="lang"><summary aria-label="Language: English"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg><span>EN</span></summary><div class="lang__menu"><a href="/" hreflang="en" lang="en" aria-current="true">English</a><a href="/tr/" hreflang="tr" lang="tr">Türkçe</a><a href="/es/" hreflang="es" lang="es">Español</a><a href="/pt/" hreflang="pt" lang="pt">Português</a><a href="/de/" hreflang="de" lang="de">Deutsch</a><a href="/fr/" hreflang="fr" lang="fr">Français</a></div></details>
 <!-- /@lang -->
     <button class="nav__burger" type="button" aria-label="Open menu" aria-expanded="false"><span></span></button>
   </div>
@@ -88,20 +88,21 @@
   </div>
 </footer>
 <!-- /@footer -->
+<!-- @404i18n -->
 <script>
-  /* One 404 page serves every path; switch to Turkish under /tr/. */
-  if (/^\/tr(\/|$)/.test(location.pathname)) {
-    document.documentElement.lang = 'tr';
-    document.title = 'Sayfa bulunamadı | HanX Games';
-    document.querySelector('.lost p').textContent = 'Bu bölüm yok. Henüz.';
-    var back = document.querySelector('.lost .btn');
-    back.textContent = 'HanX Games’e dön'; back.href = '/tr/';
+  /* One 404 page serves every path; switch language under /<code>/. */
+  (function () {
+    var T = {"tr": ["Sayfa bulunamadı | HanX Games", "Bu bölüm yok. Henüz.", "HanX Games’e dön"], "es": ["Página no encontrada | HanX Games", "Este nivel no existe. Todavía.", "Volver a HanX Games"], "pt": ["Página não encontrada | HanX Games", "Esta fase não existe. Ainda.", "Voltar para a HanX Games"], "de": ["Seite nicht gefunden | HanX Games", "Dieses Level gibt es nicht. Noch nicht.", "Zurück zu HanX Games"], "fr": ["Page introuvable | HanX Games", "Ce niveau n’existe pas. Pas encore.", "Retour à HanX Games"]};
+    var m = location.pathname.match(/^\/(tr|es|pt|de|fr)(\/|$)/); if (!m) return;
+    var c = m[1], t = T[c]; document.documentElement.lang = c; document.title = t[0];
+    document.querySelector('.lost p').textContent = t[1];
+    var b = document.querySelector('.lost .btn'); b.textContent = t[2]; b.href = '/' + c + '/';
     document.querySelectorAll('.nav a[href^="/"], .footer a[href^="/"]').forEach(function (a) {
-      var h = a.getAttribute('href');
-      if (!/^\/(tr\/|assets\/)/.test(h)) a.setAttribute('href', '/tr' + h);
+      var h = a.getAttribute('href'); if (!/^\/(tr|es|pt|de|fr|assets)\//.test(h)) a.setAttribute('href', '/' + c + h);
     });
-  }
+  })();
 </script>
+<!-- /@404i18n -->
 <script src="/assets/js/site.js"></script>
 </body>
 </html>

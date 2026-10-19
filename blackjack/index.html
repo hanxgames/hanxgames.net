@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hantro: BlackJack Roguelike | HanX Games</title>
-  <meta name="description" content="Hantro: BlackJack Roguelike is a tactical blackjack deckbuilder. Build powerful decks, trigger Joker combos, defeat bosses and climb the global leaderboards. Android and iOS.">
+  <title>Hantro: BlackJack Roguelike – Blackjack Deckbuilder | HanX Games</title>
+  <meta name="description" content="Hantro: BlackJack Roguelike is a tactical blackjack deckbuilder. Build Joker decks, beat bosses and climb global leaderboards. Free on Android and iOS, no real money.">
   <link rel="canonical" href="https://hanxgames.net/blackjack/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="HanX Games">
@@ -17,10 +17,22 @@
   <!-- @head -->
 <link rel="alternate" hreflang="en" href="https://hanxgames.net/blackjack/">
   <link rel="alternate" hreflang="tr" href="https://hanxgames.net/tr/blackjack/">
+  <link rel="alternate" hreflang="es" href="https://hanxgames.net/es/blackjack/">
+  <link rel="alternate" hreflang="pt" href="https://hanxgames.net/pt/blackjack/">
+  <link rel="alternate" hreflang="de" href="https://hanxgames.net/de/blackjack/">
+  <link rel="alternate" hreflang="fr" href="https://hanxgames.net/fr/blackjack/">
   <link rel="alternate" hreflang="x-default" href="https://hanxgames.net/blackjack/">
   <meta property="og:locale" content="en_US">
-  <script>try{if(!localStorage.getItem('hx-lang')&&/^tr\b/i.test(navigator.language||''))location.replace('/tr'+location.pathname+location.hash)}catch(e){}</script>
+  <meta property="og:locale:alternate" content="tr_TR">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:locale:alternate" content="pt_BR">
+  <meta property="og:locale:alternate" content="de_DE">
+  <meta property="og:locale:alternate" content="fr_FR">
+  <script>try{if(!localStorage.getItem('hx-lang')){var L=['tr', 'es', 'pt', 'de', 'fr'],n=navigator.languages||[navigator.language||''];for(var i=0;i<n.length;i++){var c=(n[i]||'').slice(0,2).toLowerCase();if(c==='en')break;if(L.indexOf(c)>-1){location.replace('/'+c+location.pathname+location.hash);break}}}}catch(e){}</script>
 <!-- /@head -->
+  <!-- @schema -->
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["VideoGame","MobileApplication"],"name":"Hantro: BlackJack Roguelike","url":"https://hanxgames.net/blackjack/","inLanguage":"en","description":"Hantro: BlackJack Roguelike is a tactical blackjack deckbuilder. Build Joker decks, beat bosses and climb global leaderboards. Free on Android and iOS, no real money.","image":"https://hanxgames.net/assets/games/blackjack/og.jpg","screenshot":["https://hanxgames.net/assets/games/blackjack/shot-2.webp","https://hanxgames.net/assets/games/blackjack/shot-3.webp","https://hanxgames.net/assets/games/blackjack/shot-4.webp","https://hanxgames.net/assets/games/blackjack/shot-5.webp","https://hanxgames.net/assets/games/blackjack/shot-6.webp","https://hanxgames.net/assets/games/blackjack/shot-7.webp"],"genre":["Card","Strategy","Roguelike"],"applicationCategory":"GameApplication","operatingSystem":"Android, iOS","gamePlatform":["Android","iOS"],"playMode":"SinglePlayer","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@id":"https://hanxgames.net/#org"},"publisher":{"@id":"https://hanxgames.net/#org"},"installUrl":"https://play.google.com/store/apps/details?id=com.hantro.blackjack","sameAs":["https://play.google.com/store/apps/details?id=com.hantro.blackjack","https://apps.apple.com/app/id6761393761"]},{"@type":"Organization","@id":"https://hanxgames.net/#org","name":"HanX Games","url":"https://hanxgames.net/","logo":"https://hanxgames.net/assets/brand/logo.webp","email":"hanxdestek@gmail.com","sameAs":["https://play.google.com/store/apps/dev?id=4858435727768538175","https://apps.apple.com/developer/id1885639647"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HanX Games","item":"https://hanxgames.net/"},{"@type":"ListItem","position":2,"name":"Hantro: BlackJack Roguelike","item":"https://hanxgames.net/blackjack/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Hantro: BlackJack Roguelike free?","acceptedAnswer":{"@type":"Answer","text":"Yes. It is free on Google Play and the App Store, with ads and optional in-app purchases."}},{"@type":"Question","name":"Can I win real money?","acceptedAnswer":{"@type":"Answer","text":"No. The game uses virtual chips only. There is no real-money gambling and there are no real-money rewards."}},{"@type":"Question","name":"How is it different from regular blackjack?","acceptedAnswer":{"@type":"Answer","text":"The rules of 21 stay the same, but you build a deck, unlock Joker cards with special effects, face bosses and progress through roguelike runs."}},{"@type":"Question","name":"Is it available on iPhone?","acceptedAnswer":{"@type":"Answer","text":"Yes. It is on the App Store for iPhone and iPad, and on Google Play for Android."}}]}]}</script>
+<!-- /@schema -->
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -108,7 +120,7 @@
       <a href="/ember-keep/"><img src="/assets/games/ember-keep/icon.webp" alt="" width="22" height="22" loading="lazy">Ember Keep</a>
     </nav>
     <!-- @lang -->
-<div class="lang" role="group" aria-label="Language"><a href="/blackjack/" hreflang="en" lang="en" aria-current="true">EN</a><a href="/tr/blackjack/" hreflang="tr" lang="tr">TR</a></div>
+<details class="lang"><summary aria-label="Language: English"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg><span>EN</span></summary><div class="lang__menu"><a href="/blackjack/" hreflang="en" lang="en" aria-current="true">English</a><a href="/tr/blackjack/" hreflang="tr" lang="tr">Türkçe</a><a href="/es/blackjack/" hreflang="es" lang="es">Español</a><a href="/pt/blackjack/" hreflang="pt" lang="pt">Português</a><a href="/de/blackjack/" hreflang="de" lang="de">Deutsch</a><a href="/fr/blackjack/" hreflang="fr" lang="fr">Français</a></div></details>
 <!-- /@lang -->
     <button class="nav__burger" type="button" aria-label="Open menu" aria-expanded="false"><span></span></button>
   </div>
@@ -210,6 +222,29 @@
     </div>
   </section>
 
+  <!-- About -->
+  <section class="section">
+    <div class="container about">
+      <div class="about__text" data-reveal>
+        <p class="eyebrow">About the game</p>
+        <h2>Blackjack meets roguelike deckbuilding</h2>
+        <p>Hantro: BlackJack Roguelike is a strategy card game that takes the rules of 21 and turns them into a roguelike run. Hit, stand, split and double down as usual, but every hand is now shaped by the cards, Jokers and upgrades you collect along the way.</p>
+        <p>Build a deck around powerful Joker effects, defeat bosses with unique mechanics, buy and arrange new casino tables and climb the global leaderboards. Short sessions and endless replayability make it perfect for quick breaks.</p>
+        <p>The game uses virtual chips only, so it is pure strategy and fun with no real-money gambling. Download it free on Android, iPhone and iPad.</p>
+      </div>
+      <aside class="facts" data-reveal="right">
+        <h3>At a glance</h3>
+        <dl>
+          <div><dt>Genre</dt><dd>Card game, blackjack, roguelike deckbuilder</dd></div>
+          <div><dt>Platforms</dt><dd>Android, iPhone, iPad</dd></div>
+          <div><dt>Price</dt><dd>Free, with ads and optional in-app purchases</dd></div>
+          <div><dt>Online features</dt><dd>Global leaderboards</dd></div>
+          <div><dt>Real-money gambling</dt><dd>None</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
   <!-- Gallery -->
   <section class="section">
     <div class="container gallery">
@@ -227,6 +262,19 @@
         <button class="shot" type="button"><img src="/assets/games/blackjack/shot-5.webp" alt="Build your own casino" loading="lazy"></button>
         <button class="shot" type="button"><img src="/assets/games/blackjack/shot-6.webp" alt="Shop with Jokers" loading="lazy"></button>
         <button class="shot" type="button"><img src="/assets/games/blackjack/shot-7.webp" alt="Boss bet" loading="lazy"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="padding-top:20px">
+    <div class="container">
+      <div class="section-head" data-reveal><p class="eyebrow">FAQ</p><h2>Hantro: BlackJack Roguelike – FAQ</h2></div>
+      <div class="faq" data-reveal>
+        <details class="faq__item"><summary>Is Hantro: BlackJack Roguelike free?</summary><div class="faq__a"><p>Yes. It is free on Google Play and the App Store, with ads and optional in-app purchases.</p></div></details>
+        <details class="faq__item"><summary>Can I win real money?</summary><div class="faq__a"><p>No. The game uses virtual chips only. There is no real-money gambling and there are no real-money rewards.</p></div></details>
+        <details class="faq__item"><summary>How is it different from regular blackjack?</summary><div class="faq__a"><p>The rules of 21 stay the same, but you build a deck, unlock Joker cards with special effects, face bosses and progress through roguelike runs.</p></div></details>
+        <details class="faq__item"><summary>Is it available on iPhone?</summary><div class="faq__a"><p>Yes. It is on the App Store for iPhone and iPad, and on Google Play for Android.</p></div></details>
       </div>
     </div>
   </section>

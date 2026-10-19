@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>911: Idle Dispatch – Simulador de Central de Emergência | HanX Games</title>
+  <meta name="description" content="911: Idle Dispatch é um simulador de central de emergência. Atenda o 911 e envie polícia, bombeiros e ambulâncias em mapas reais. Grátis no Android e iOS.">
+  <link rel="canonical" href="https://hanxgames.net/pt/911-idle-dispatch/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="HanX Games">
+  <meta property="og:title" content="911: Idle Dispatch">
+  <meta property="og:description" content="Gerencie polícia, bombeiros e ambulâncias em um simulador de emergência 911 em tempo real.">
+  <meta property="og:url" content="https://hanxgames.net/pt/911-idle-dispatch/">
+  <meta property="og:image" content="https://hanxgames.net/assets/games/idle-dispatch/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#05070d">
+  <!-- @head -->
+<link rel="alternate" hreflang="en" href="https://hanxgames.net/911-idle-dispatch/">
+  <link rel="alternate" hreflang="tr" href="https://hanxgames.net/tr/911-idle-dispatch/">
+  <link rel="alternate" hreflang="es" href="https://hanxgames.net/es/911-idle-dispatch/">
+  <link rel="alternate" hreflang="pt" href="https://hanxgames.net/pt/911-idle-dispatch/">
+  <link rel="alternate" hreflang="de" href="https://hanxgames.net/de/911-idle-dispatch/">
+  <link rel="alternate" hreflang="fr" href="https://hanxgames.net/fr/911-idle-dispatch/">
+  <link rel="alternate" hreflang="x-default" href="https://hanxgames.net/911-idle-dispatch/">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="tr_TR">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:locale:alternate" content="de_DE">
+  <meta property="og:locale:alternate" content="fr_FR">
+<!-- /@head -->
+  <!-- @schema -->
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["VideoGame","MobileApplication"],"name":"911: Idle Dispatch","url":"https://hanxgames.net/pt/911-idle-dispatch/","inLanguage":"pt","description":"911: Idle Dispatch é um simulador de central de emergência. Atenda o 911 e envie polícia, bombeiros e ambulâncias em mapas reais. Grátis no Android e iOS.","image":"https://hanxgames.net/assets/games/idle-dispatch/og.jpg","screenshot":["https://hanxgames.net/assets/games/idle-dispatch/shot-1.webp","https://hanxgames.net/assets/games/idle-dispatch/shot-2.webp","https://hanxgames.net/assets/games/idle-dispatch/shot-3.webp","https://hanxgames.net/assets/games/idle-dispatch/shot-4.webp","https://hanxgames.net/assets/games/idle-dispatch/shot-5.webp","https://hanxgames.net/assets/games/idle-dispatch/shot-6.webp"],"genre":["Simulation","Strategy","Idle"],"applicationCategory":"GameApplication","operatingSystem":"Android, iOS","gamePlatform":["Android","iOS"],"playMode":"SinglePlayer","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@id":"https://hanxgames.net/#org"},"publisher":{"@id":"https://hanxgames.net/#org"},"installUrl":"https://play.google.com/store/apps/details?id=com.hantro.wwiii","sameAs":["https://play.google.com/store/apps/details?id=com.hantro.wwiii","https://apps.apple.com/app/id6813881867"]},{"@type":"Organization","@id":"https://hanxgames.net/#org","name":"HanX Games","url":"https://hanxgames.net/","logo":"https://hanxgames.net/assets/brand/logo.webp","email":"hanxdestek@gmail.com","sameAs":["https://play.google.com/store/apps/dev?id=4858435727768538175","https://apps.apple.com/developer/id1885639647"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HanX Games","item":"https://hanxgames.net/pt/"},{"@type":"ListItem","position":2,"name":"911: Idle Dispatch","item":"https://hanxgames.net/pt/911-idle-dispatch/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"911: Idle Dispatch é grátis?","acceptedAnswer":{"@type":"Answer","text":"Sim. É grátis para jogar no Android e iOS. Tem anúncios, e uma compra opcional única remove os anúncios obrigatórios."}},{"@type":"Question","name":"Dá para jogar 911: Idle Dispatch offline?","acceptedAnswer":{"@type":"Answer","text":"Sim. Você pode jogar sem conexão com a internet."}},{"@type":"Question","name":"O que você faz em um jogo de central 911?","acceptedAnswer":{"@type":"Answer","text":"Você atende chamadas de emergência, decide quais unidades são necessárias, envia policiais, bombeiros e paramédicos e gerencia suas equipes, melhorias e a reação do público em cada turno."}},{"@type":"Question","name":"O jogo usa mapas reais?","acceptedAnswer":{"@type":"Answer","text":"Sim. Você joga em locais do mundo real, da sua própria rua a cidades do mundo todo."}}]}]}</script>
+<!-- /@schema -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Teko:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <style>
+    :root {
+      --bg: #05070d; --bg-2: #0a0e18; --fg: #eef2ff; --muted: #8f9ab4;
+      --accent: #ff2d43; --accent-2: #2d7bff; --accent-ink: #fff; --glow: rgba(255,45,67,.45);
+      --surface: rgba(140, 170, 255, .05); --surface-2: rgba(140, 170, 255, .09); --line: rgba(140, 170, 255, .14);
+      --font-display: "Teko", "Inter", sans-serif;
+    }
+    h1, h2, h3 { text-transform: uppercase; letter-spacing: .02em; line-height: .95; }
+    .section-head h2 { font-size: clamp(40px, 6vw, 72px); }
+    .btn--primary { color: #fff; }
+    .mono { font-family: "JetBrains Mono", monospace; }
+    .g-hero__bg { background: linear-gradient(180deg, #05070d 0%, #0b1020 60%, #05070d 100%); }
+    .skyline { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 34vh; z-index: -1; }
+    .skyline path { fill: #070b16; }
+    .skyline rect { fill: #ffd27a; opacity: .75; animation: win 7s steps(1) infinite; }
+    .skyline .w2 { fill: #9fc3ff; animation-delay: -2s; animation-duration: 9s; }
+    .skyline .w3 { animation-delay: -4s; animation-duration: 11s; }
+    .skyline .w4 { fill: #ffe9b8; opacity: .45; animation: none; }
+    @keyframes win { 30% { opacity: .1; } 60% { opacity: .75; } }
+    /* Siren light sweep */
+    .siren { position: absolute; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+    .siren::before, .siren::after { content: ""; position: absolute; top: -20%; width: 70vw; height: 70vw; border-radius: 50%; filter: blur(60px); opacity: 0; }
+    .siren::before { left: -25vw; background: radial-gradient(circle, rgba(255,45,67,.65), transparent 60%); animation: sirenR 1.4s ease-in-out infinite; }
+    .siren::after { right: -25vw; background: radial-gradient(circle, rgba(45,123,255,.65), transparent 60%); animation: sirenB 1.4s ease-in-out infinite; }
+    @keyframes sirenR { 0%, 45% { opacity: .75; } 50%, 100% { opacity: .05; } }
+    @keyframes sirenB { 0%, 45% { opacity: .05; } 50%, 95% { opacity: .75; } 100% { opacity: .05; } }
+    .lightbar { position: absolute; top: var(--nav-h); left: 0; right: 0; height: 3px; z-index: 2; background: linear-gradient(90deg, var(--accent) 0 50%, var(--accent-2) 50% 100%); background-size: 200% 100%; animation: bar 1.4s steps(2) infinite; box-shadow: 0 0 20px var(--accent); }
+    @keyframes bar { to { background-position: -200% 0; } }
+    .g-title { font-family: "Teko", sans-serif; font-weight: 700; font-size: clamp(76px, 13vw, 160px); line-height: .82; font-style: italic; transform: skewX(-6deg); }
+    .g-title .n911 { color: var(--accent); text-shadow: 0 0 30px rgba(255,45,67,.6), 4px 4px 0 #6b0010; }
+    .g-title small { display: block; font-size: .42em; color: #fff; letter-spacing: .04em; }
+    .taglines { font-family: "Teko", sans-serif; font-size: clamp(24px, 3vw, 34px); text-transform: uppercase; line-height: 1; color: #ffcf3a; letter-spacing: .02em; }
+    .art911 { position: relative; display: flex; justify-content: center; align-items: center; }
+    .art911 .g-art__frame { width: 100%; }
+    .art911 .phone { position: absolute; right: -10px; bottom: -60px; width: min(210px, 42vw); animation: g-icon-float 7s ease-in-out infinite; }
+    @media (max-width: 980px) { .art911 { margin-bottom: 60px; } }
+
+    /* Dispatch console */
+    .console { display: grid; gap: 18px; grid-template-columns: 1fr; border-radius: 24px; padding: 18px; background: #070a12; border: 1px solid var(--line); box-shadow: 0 30px 80px -40px rgba(45,123,255,.5); }
+    @media (min-width: 900px) { .console { grid-template-columns: 1.2fr .8fr; } }
+    .console__head { grid-column: 1 / -1; display: flex; align-items: center; gap: 14px; font-family: "JetBrains Mono", monospace; font-size: 12.5px; color: var(--muted); }
+    .live { display: inline-flex; align-items: center; gap: 8px; color: #fff; font-weight: 700; }
+    .live::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent); animation: blink 1s steps(1) infinite; }
+    @keyframes blink { 50% { opacity: .2; } }
+    .console__head .units { margin-left: auto; display: flex; gap: 14px; }
+    .radar { position: relative; aspect-ratio: 1.35; border-radius: 16px; overflow: hidden; background: #08101d; border: 1px solid rgba(45,123,255,.25); }
+    .radar canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .log { display: flex; flex-direction: column; gap: 8px; max-height: 420px; overflow: hidden; font-family: "JetBrains Mono", monospace; font-size: 12.5px; }
+    .log li { display: grid; grid-template-columns: auto 1fr; gap: 4px 10px; padding: 10px 12px; border-radius: 10px; background: rgba(255,255,255,.035); border-left: 3px solid var(--c, var(--accent)); animation: logIn .5s var(--ease) both; }
+    .log li time { color: var(--muted); }
+    .log li b { color: #fff; font-weight: 700; }
+    .log li span { grid-column: 2; color: var(--muted); }
+    .log li em { grid-column: 2; font-style: normal; color: var(--c); font-weight: 700; }
+    @keyframes logIn { from { opacity: 0; transform: translateX(20px); } }
+
+    .units3 { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    .unit { position: relative; padding: 26px 22px; border-radius: 18px; border: 1px solid var(--line); background: var(--surface); overflow: hidden; }
+    .unit::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: var(--c); box-shadow: 0 0 20px var(--c); }
+    .unit h3 { font-size: 34px; margin: 14px 0 6px; }
+    .unit p { color: var(--muted); font-size: 15px; }
+    .unit .ficon { color: var(--c); border-color: color-mix(in srgb, var(--c) 40%, transparent); background: color-mix(in srgb, var(--c) 12%, transparent); }
+    .feature h3 { font-size: 28px; }
+    .note { font-size: 13px; color: var(--muted); }
+  </style>
+</head>
+<body class="game">
+<!-- @nav -->
+<a class="skip" href="#main">Pular para o conteúdo</a>
+<header class="nav" data-nav>
+  <div class="container nav__inner">
+    <a class="brand" href="/pt/" aria-label="Página inicial da HanX Games">
+      <img src="/assets/brand/logo.webp" alt="" width="36" height="36">
+      <span>HanX<b>GAMES</b></span>
+    </a>
+    <nav class="nav__links" aria-label="Jogos">
+      <a href="/pt/rebirth/"><img src="/assets/games/rebirth/icon.webp" alt="" width="22" height="22" loading="lazy">ReBirth</a>
+      <a href="/pt/poker/"><img src="/assets/games/poker/icon.webp" alt="" width="22" height="22" loading="lazy">Hantro: Poker</a>
+      <a href="/pt/blackjack/"><img src="/assets/games/blackjack/icon.webp" alt="" width="22" height="22" loading="lazy">Hantro: BlackJack</a>
+      <a href="/pt/911-idle-dispatch/" aria-current="page"><img src="/assets/games/idle-dispatch/icon.webp" alt="" width="22" height="22" loading="lazy">911: Idle Dispatch</a>
+      <a href="/pt/darkway/"><img src="/assets/games/darkway/icon.webp" alt="" width="22" height="22" loading="lazy">DarkWay</a>
+      <a href="/pt/moba-manager/"><img src="/assets/games/moba-manager/icon.webp" alt="" width="22" height="22" loading="lazy">Moba Manager</a>
+      <a href="/pt/ember-keep/"><img src="/assets/games/ember-keep/icon.webp" alt="" width="22" height="22" loading="lazy">Ember Keep</a>
+    </nav>
+    <!-- @lang -->
+<details class="lang"><summary aria-label="Idioma: Português"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg><span>PT</span></summary><div class="lang__menu"><a href="/911-idle-dispatch/" hreflang="en" lang="en">English</a><a href="/tr/911-idle-dispatch/" hreflang="tr" lang="tr">Türkçe</a><a href="/es/911-idle-dispatch/" hreflang="es" lang="es">Español</a><a href="/pt/911-idle-dispatch/" hreflang="pt" lang="pt" aria-current="true">Português</a><a href="/de/911-idle-dispatch/" hreflang="de" lang="de">Deutsch</a><a href="/fr/911-idle-dispatch/" hreflang="fr" lang="fr">Français</a></div></details>
+<!-- /@lang -->
+    <button class="nav__burger" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+<!-- /@nav -->
+
+<main id="main">
+  <header class="g-hero">
+    <div class="g-hero__bg" aria-hidden="true"></div>
+    <svg class="skyline" viewBox="0 0 1440 260" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><path d="M0 260 V101 H98 V61 H160 V105 H248 V105 H293 V64 H378 V59 H437 V136 H485 V30 H584 V123 H690 V151 H771 V140 H842 V193 H948 V80 H1001 V92 H1046 V174 H1123 V96 H1225 V100 H1289 V32 H1346 V63 H1424 V153 H1507 V260 Z"/><rect class="w2" x="8" y="149" width="6" height="8"/><rect class="w1" x="8" y="239" width="6" height="8"/><rect class="w2" x="22" y="149" width="6" height="8"/><rect class="w1" x="22" y="185" width="6" height="8"/><rect class="w3" x="22" y="203" width="6" height="8"/><rect class="w1" x="36" y="167" width="6" height="8"/><rect class="w2" x="50" y="167" width="6" height="8"/><rect class="w3" x="50" y="203" width="6" height="8"/><rect class="w4" x="50" y="221" width="6" height="8"/><rect class="w4" x="64" y="185" width="6" height="8"/><rect class="w4" x="64" y="203" width="6" height="8"/><rect class="w4" x="78" y="113" width="6" height="8"/><rect class="w2" x="78" y="221" width="6" height="8"/><rect class="w4" x="106" y="73" width="6" height="8"/><rect class="w2" x="106" y="109" width="6" height="8"/><rect class="w3" x="106" y="145" width="6" height="8"/><rect class="w1" x="106" y="163" width="6" height="8"/><rect class="w2" x="120" y="109" width="6" height="8"/><rect class="w4" x="120" y="181" width="6" height="8"/><rect class="w3" x="134" y="127" width="6" height="8"/><rect class="w1" x="134" y="235" width="6" height="8"/><rect class="w1" x="168" y="171" width="6" height="8"/><rect class="w2" x="168" y="243" width="6" height="8"/><rect class="w4" x="182" y="189" width="6" height="8"/><rect class="w4" x="182" y="207" width="6" height="8"/><rect class="w1" x="196" y="117" width="6" height="8"/><rect class="w2" x="196" y="243" width="6" height="8"/><rect class="w4" x="210" y="135" width="6" height="8"/><rect class="w1" x="224" y="153" width="6" height="8"/><rect class="w4" x="224" y="207" width="6" height="8"/><rect class="w4" x="256" y="117" width="6" height="8"/><rect class="w4" x="256" y="135" width="6" height="8"/><rect class="w4" x="256" y="153" width="6" height="8"/><rect class="w1" x="256" y="171" width="6" height="8"/><rect class="w4" x="256" y="189" width="6" height="8"/><rect class="w4" x="256" y="207" width="6" height="8"/><rect class="w4" x="256" y="243" width="6" height="8"/><rect class="w1" x="270" y="153" width="6" height="8"/><rect class="w4" x="270" y="243" width="6" height="8"/><rect class="w3" x="301" y="130" width="6" height="8"/><rect class="w3" x="301" y="148" width="6" height="8"/><rect class="w4" x="315" y="76" width="6" height="8"/><rect class="w2" x="329" y="148" width="6" height="8"/><rect class="w4" x="329" y="202" width="6" height="8"/><rect class="w2" x="343" y="130" width="6" height="8"/><rect class="w1" x="343" y="184" width="6" height="8"/><rect class="w3" x="343" y="220" width="6" height="8"/><rect class="w1" x="357" y="76" width="6" height="8"/><rect class="w4" x="357" y="184" width="6" height="8"/><rect class="w4" x="357" y="220" width="6" height="8"/><rect class="w3" x="386" y="107" width="6" height="8"/><rect class="w1" x="400" y="89" width="6" height="8"/><rect class="w2" x="400" y="161" width="6" height="8"/><rect class="w1" x="400" y="215" width="6" height="8"/><rect class="w3" x="400" y="233" width="6" height="8"/><rect class="w2" x="414" y="197" width="6" height="8"/><rect class="w4" x="414" y="215" width="6" height="8"/><rect class="w2" x="414" y="233" width="6" height="8"/><rect class="w1" x="445" y="184" width="6" height="8"/><rect class="w3" x="445" y="220" width="6" height="8"/><rect class="w2" x="459" y="238" width="6" height="8"/><rect class="w2" x="473" y="148" width="6" height="8"/><rect class="w3" x="473" y="184" width="6" height="8"/><rect class="w4" x="473" y="202" width="6" height="8"/><rect class="w4" x="473" y="220" width="6" height="8"/><rect class="w1" x="493" y="78" width="6" height="8"/><rect class="w1" x="493" y="168" width="6" height="8"/><rect class="w2" x="493" y="186" width="6" height="8"/><rect class="w1" x="493" y="204" width="6" height="8"/><rect class="w3" x="507" y="60" width="6" height="8"/><rect class="w2" x="507" y="78" width="6" height="8"/><rect class="w3" x="507" y="132" width="6" height="8"/><rect class="w1" x="521" y="78" width="6" height="8"/><rect class="w3" x="521" y="132" width="6" height="8"/><rect class="w2" x="521" y="240" width="6" height="8"/><rect class="w1" x="535" y="132" width="6" height="8"/><rect class="w1" x="535" y="204" width="6" height="8"/><rect class="w2" x="535" y="240" width="6" height="8"/><rect class="w4" x="549" y="60" width="6" height="8"/><rect class="w1" x="549" y="150" width="6" height="8"/><rect class="w1" x="549" y="222" width="6" height="8"/><rect class="w1" x="563" y="60" width="6" height="8"/><rect class="w4" x="563" y="150" width="6" height="8"/><rect class="w3" x="563" y="240" width="6" height="8"/><rect class="w1" x="592" y="189" width="6" height="8"/><rect class="w1" x="592" y="207" width="6" height="8"/><rect class="w4" x="592" y="225" width="6" height="8"/><rect class="w1" x="606" y="135" width="6" height="8"/><rect class="w4" x="606" y="171" width="6" height="8"/><rect class="w2" x="620" y="153" width="6" height="8"/><rect class="w1" x="634" y="243" width="6" height="8"/><rect class="w4" x="648" y="171" width="6" height="8"/><rect class="w1" x="662" y="225" width="6" height="8"/><rect class="w2" x="676" y="243" width="6" height="8"/><rect class="w2" x="712" y="199" width="6" height="8"/><rect class="w1" x="712" y="217" width="6" height="8"/><rect class="w3" x="712" y="235" width="6" height="8"/><rect class="w1" x="726" y="199" width="6" height="8"/><rect class="w2" x="726" y="217" width="6" height="8"/><rect class="w1" x="740" y="163" width="6" height="8"/><rect class="w3" x="740" y="235" width="6" height="8"/><rect class="w1" x="779" y="242" width="6" height="8"/><rect class="w4" x="793" y="242" width="6" height="8"/><rect class="w3" x="807" y="206" width="6" height="8"/><rect class="w4" x="821" y="152" width="6" height="8"/><rect class="w2" x="821" y="170" width="6" height="8"/><rect class="w4" x="892" y="241" width="6" height="8"/><rect class="w4" x="920" y="205" width="6" height="8"/><rect class="w3" x="956" y="164" width="6" height="8"/><rect class="w4" x="956" y="236" width="6" height="8"/><rect class="w2" x="970" y="164" width="6" height="8"/><rect class="w4" x="970" y="200" width="6" height="8"/><rect class="w2" x="984" y="128" width="6" height="8"/><rect class="w2" x="984" y="182" width="6" height="8"/><rect class="w1" x="1009" y="104" width="6" height="8"/><rect class="w3" x="1009" y="158" width="6" height="8"/><rect class="w3" x="1009" y="194" width="6" height="8"/><rect class="w4" x="1023" y="158" width="6" height="8"/><rect class="w4" x="1082" y="204" width="6" height="8"/><rect class="w3" x="1096" y="222" width="6" height="8"/><rect class="w2" x="1131" y="144" width="6" height="8"/><rect class="w4" x="1131" y="216" width="6" height="8"/><rect class="w2" x="1145" y="180" width="6" height="8"/><rect class="w2" x="1159" y="234" width="6" height="8"/><rect class="w3" x="1173" y="162" width="6" height="8"/><rect class="w1" x="1187" y="162" width="6" height="8"/><rect class="w3" x="1187" y="234" width="6" height="8"/><rect class="w1" x="1201" y="216" width="6" height="8"/><rect class="w1" x="1233" y="112" width="6" height="8"/><rect class="w2" x="1233" y="148" width="6" height="8"/><rect class="w2" x="1233" y="184" width="6" height="8"/><rect class="w4" x="1247" y="130" width="6" height="8"/><rect class="w1" x="1247" y="220" width="6" height="8"/><rect class="w1" x="1261" y="202" width="6" height="8"/><rect class="w2" x="1261" y="220" width="6" height="8"/><rect class="w3" x="1275" y="166" width="6" height="8"/><rect class="w2" x="1275" y="184" width="6" height="8"/><rect class="w3" x="1275" y="220" width="6" height="8"/><rect class="w4" x="1297" y="134" width="6" height="8"/><rect class="w2" x="1311" y="80" width="6" height="8"/><rect class="w4" x="1311" y="134" width="6" height="8"/><rect class="w4" x="1325" y="134" width="6" height="8"/><rect class="w4" x="1325" y="152" width="6" height="8"/><rect class="w4" x="1325" y="206" width="6" height="8"/><rect class="w1" x="1354" y="183" width="6" height="8"/><rect class="w2" x="1354" y="237" width="6" height="8"/><rect class="w2" x="1368" y="93" width="6" height="8"/><rect class="w1" x="1368" y="183" width="6" height="8"/><rect class="w2" x="1368" y="219" width="6" height="8"/><rect class="w3" x="1368" y="237" width="6" height="8"/><rect class="w4" x="1410" y="75" width="6" height="8"/><rect class="w3" x="1410" y="237" width="6" height="8"/><rect class="w1" x="1432" y="219" width="6" height="8"/><rect class="w4" x="1460" y="165" width="6" height="8"/><rect class="w1" x="1460" y="183" width="6" height="8"/><rect class="w1" x="1460" y="201" width="6" height="8"/><rect class="w4" x="1488" y="201" width="6" height="8"/></svg>
+    <div class="siren" aria-hidden="true"></div>
+    <div class="lightbar" aria-hidden="true"></div>
+    <canvas class="fx" aria-hidden="true" data-fx='{"count":90,"shape":"rain","colors":["#9fb6ff","#c9d6ff"],"size":[1,2],"dir":"down","speed":[6,11],"drift":0,"alpha":[0.08,0.25]}'></canvas>
+    <div class="container g-hero__grid">
+      <div class="g-hero__copy">
+        <img class="g-icon" src="/assets/games/idle-dispatch/icon.webp" alt="911: Idle Dispatch – ícone" width="96" height="96" data-reveal>
+        <p class="eyebrow" data-reveal style="--d:60ms">Simulação · Central de emergência</p>
+        <h1 class="g-title" lang="en" data-reveal style="--d:120ms"><span class="n911">911:</span><small>Idle Dispatch</small></h1>
+        <p class="taglines" data-reveal style="--d:180ms">Atenda. Despache. Salve vidas.</p>
+        <p class="lead" data-reveal style="--d:220ms">A cidade está chamando. Seja um atendente do 911, atenda chamadas de emergência, acompanhe as ocorrências no mapa e envie polícia, bombeiros e ambulâncias para onde mais precisam.</p>
+        <div class="stores" data-reveal style="--d:280ms"><!-- @stores gp="com.hantro.wwiii" apple="6813881867" -->
+<a class="store" href="https://play.google.com/store/apps/details?id=com.hantro.wwiii" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#FBBC04" d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594z"/><path fill="#4285F4" d="M1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924z"/><path fill="#34A853" d="M13.544 10.989l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973z"/><path fill="#EA4335" d="M13.544 13.056l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/></svg><span><small>Disponível no</small><b>Google Play</b></span></a>
+<a class="store" href="https://apps.apple.com/app/id6813881867" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><span><small>Baixar na</small><b>App Store</b></span></a>
+<!-- /@stores --></div>
+        <ul class="chips" data-reveal style="--d:340ms">
+          <li class="chip">Mapas do mundo real</li><li class="chip">Jogue offline</li><li class="chip">Vários idiomas</li><li class="chip">Ranking global</li>
+        </ul>
+      </div>
+      <div class="art911" data-reveal="right" style="--d:200ms">
+        <div class="g-art__frame"><img src="/assets/games/idle-dispatch/shot-1.webp" alt="Arte principal de 911: Idle Dispatch com unidades de polícia, bombeiros e ambulância" width="1400" height="933"></div>
+        <div class="phone" aria-hidden="true"><img src="/assets/games/idle-dispatch/shot-3.webp" alt=""></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Live console -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Central de despacho · ao vivo</p>
+        <h2>Cada chamada é uma decisão</h2>
+        <p>Escolha a unidade certa, responda rápido e transforme uma pequena central de emergência em uma operação de comando que cobre a cidade inteira.</p>
+      </div>
+      <div class="console" data-reveal="zoom">
+        <div class="console__head"><span class="live">AO VIVO</span><span>TURNO 07 · CENTRO</span><span class="units"><span style="color:#2d7bff">● POLÍCIA</span><span style="color:#ff2d43">● BOMBEIROS</span><span style="color:#3dff9a">● AMBULÂNCIA</span></span></div>
+        <div class="radar"><canvas id="radar" aria-label="Mapa animado da cidade com ocorrências" role="img"></canvas></div>
+        <ul class="log" id="log" aria-live="off"></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Units -->
+  <section class="section" style="padding-top:20px">
+    <div class="container">
+      <div class="units3">
+        <div class="unit" data-reveal style="--c:#2d7bff">
+          <div class="ficon"><svg viewBox="0 0 32 32"><path d="M16 3l11 4v8c0 7-5 12-11 14C10 27 5 22 5 15V7z"/><path d="M16 10l1.8 3.7 4 .6-2.9 2.8.7 4L16 19.2l-3.6 1.9.7-4-2.9-2.8 4-.6z"/></svg></div>
+          <h3>Polícia</h3><p>Envie policiais para cenas de crime, faça verificações de identidade e tome decisões em campo conforme a situação evolui.</p>
+        </div>
+        <div class="unit" data-reveal style="--c:#ff2d43;--d:80ms">
+          <div class="ficon"><svg viewBox="0 0 32 32"><path d="M16 29c-6 0-10-4-10-9 0-6 6-8 6-14 3 2 5 5 5 8 1-1 2-3 2-5 4 3 7 7 7 11 0 5-4 9-10 9z"/><path d="M16 29c-2.5 0-4-1.8-4-4 0-3 4-4 4-7 2 2 4 4 4 7 0 2.2-1.5 4-4 4z"/></svg></div>
+          <h3>Bombeiros</h3><p>Envie bombeiros para incêndios e operações de resgate antes que uma única chamada vire uma grande ocorrência.</p>
+        </div>
+        <div class="unit" data-reveal style="--c:#3dff9a;--d:160ms">
+          <div class="ficon"><svg viewBox="0 0 32 32"><rect x="4" y="4" width="24" height="24" rx="6"/><path d="M16 10v12M10 16h12"/></svg></div>
+          <h3>Ambulância</h3><p>Leve as equipes de resgate às emergências médicas o mais rápido possível. As equipes se cansam, então planeje cada envio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Recursos do jogo</p>
+        <h2>Sobreviva a cada turno</h2>
+      </div>
+      <div class="features">
+        <div class="feature" data-reveal>
+          <div class="ficon"><svg viewBox="0 0 32 32"><path d="M6 4h6l3 7-4 2a16 16 0 0 0 8 8l2-4 7 3v6a2 2 0 0 1-2 2C14 28 4 18 4 6a2 2 0 0 1 2-2z"/></svg></div>
+          <h3>Atenda chamadas do 911</h3><p>Entenda cada situação: algumas pedem uma ambulância; outras, polícia, bombeiros ou várias unidades trabalhando juntas.</p>
+        </div>
+        <div class="feature" data-reveal style="--d:60ms">
+          <div class="ficon"><svg viewBox="0 0 32 32"><path d="M11 4L3 7v21l8-3 10 3 8-3V4l-8 3z"/><path d="M11 4v21M21 7v21"/></svg></div>
+          <h3>Mapa em tempo real</h3><p>Acompanhe as ocorrências no mapa da cidade, siga as rotas de atendimento e veja suas unidades se deslocando por locais reais.</p>
+        </div>
+        <div class="feature" data-reveal style="--d:120ms">
+          <div class="ficon"><svg viewBox="0 0 32 32"><path d="M4 22l7-7 5 5 12-12"/><path d="M20 8h8v8"/></svg></div>
+          <h3>Melhorias e prestígio</h3><p>Ganhe experiência e recompensas, melhore sua frota e suas equipes e construa um progresso de longo prazo com níveis e prestígio.</p>
+        </div>
+        <div class="feature" data-reveal>
+          <div class="ficon"><svg viewBox="0 0 32 32"><rect x="4" y="6" width="24" height="16" rx="3"/><path d="M10 27h12M16 22v5"/><path d="M9 12h8M9 16h12"/></svg></div>
+          <h3>Reação do público</h3><p>Acompanhe as reações nas redes sociais, lide com a pressão pública e encare a imprensa quando grandes ocorrências acontecerem.</p>
+        </div>
+        <div class="feature" data-reveal style="--d:60ms">
+          <div class="ficon"><svg viewBox="0 0 32 32"><path d="M16 3l3 9h9l-7 5 3 9-8-6-8 6 3-9-7-5h9z"/></svg></div>
+          <h3>Eventos especiais</h3><p>Ocorrências especiais, unidades de intervenção e missões de cerco deixam cada turno diferente.</p>
+        </div>
+        <div class="feature" data-reveal style="--d:120ms">
+          <div class="ficon"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="12"/><path d="M4 16h24M16 4c4 4 4 20 0 24M16 4c-4 4-4 20 0 24"/></svg></div>
+          <h3>Jogue do seu jeito</h3><p>Vários idiomas, jogo offline e progresso que continua enquanto você está fora.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section">
+    <div class="container about">
+      <div class="about__text" data-reveal>
+        <p class="eyebrow">Sobre o jogo</p>
+        <h2>Um simulador de emergência 911 para fãs de jogos de polícia, bombeiro e ambulância</h2>
+        <p>911: Idle Dispatch coloca você na cadeira de um atendente de emergência. Atenda chamadas do 911, avalie cada situação e envie as unidades certas de polícia, bombeiros ou ambulância por um mapa detalhado da cidade.</p>
+        <p>Acidentes de trânsito, incêndios em prédios, assaltos e emergências médicas chegam em tempo real. Suas equipes se cansam, os recursos são limitados e a opinião pública reage nas redes sociais, então cada chamada é uma decisão. Ganhe recompensas, melhore sua frota e transforme uma pequena central em uma operação de comando que cobre a cidade inteira, com progresso idle que continua enquanto você está fora.</p>
+        <p>Jogue em mapas do mundo real, no seu idioma, online ou offline. Se você curte jogos de polícia, jogos de bombeiro, jogos de ambulância e simuladores de gestão de emergências, este é o seu próximo plantão.</p>
+      </div>
+      <aside class="facts" data-reveal="right">
+        <h3>Visão geral</h3>
+        <dl>
+          <div><dt>Gênero</dt><dd>Simulação, estratégia, idle</dd></div>
+          <div><dt>Plataformas</dt><dd>Android, iPhone, iPad</dd></div>
+          <div><dt>Preço</dt><dd>Grátis, com anúncios e compras opcionais no app</dd></div>
+          <div><dt>Offline</dt><dd>Sim</dd></div>
+          <div><dt>Idiomas</dt><dd>Vários idiomas, incluindo inglês e turco</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="section">
+    <div class="container gallery">
+      <div class="gallery-head">
+        <div class="section-head" data-reveal><p class="eyebrow">Capturas de tela</p><h2>Da sua rua para o mundo</h2></div>
+        <div class="gallery__nav">
+          <button type="button" data-dir="-1" aria-label="Capturas de tela anteriores"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button type="button" data-dir="1" aria-label="Próximas capturas de tela"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
+      <div class="shots shots--port">
+        <button class="shot" type="button"><img src="/assets/games/idle-dispatch/shot-2.webp" alt="Mundo real, locais reais, ação real" loading="lazy"></button>
+        <button class="shot" type="button"><img src="/assets/games/idle-dispatch/shot-3.webp" alt="Inúmeras ocorrências, uma missão" loading="lazy"></button>
+        <button class="shot" type="button"><img src="/assets/games/idle-dispatch/shot-4.webp" alt="Gerencie cada chamada" loading="lazy"></button>
+        <button class="shot" type="button"><img src="/assets/games/idle-dispatch/shot-5.webp" alt="Jogue do seu jeito, no seu idioma" loading="lazy"></button>
+        <button class="shot" type="button"><img src="/assets/games/idle-dispatch/shot-6.webp" alt="Sem internet? Sem problema" loading="lazy"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="padding-top:20px">
+    <div class="container">
+      <div class="section-head" data-reveal><p class="eyebrow">Perguntas frequentes</p><h2>911: Idle Dispatch – Perguntas frequentes</h2></div>
+      <div class="faq" data-reveal>
+        <details class="faq__item"><summary>911: Idle Dispatch é grátis?</summary><div class="faq__a"><p>Sim. É grátis para jogar no Android e iOS. Tem anúncios, e uma compra opcional única remove os anúncios obrigatórios.</p></div></details>
+        <details class="faq__item"><summary>Dá para jogar 911: Idle Dispatch offline?</summary><div class="faq__a"><p>Sim. Você pode jogar sem conexão com a internet.</p></div></details>
+        <details class="faq__item"><summary>O que você faz em um jogo de central 911?</summary><div class="faq__a"><p>Você atende chamadas de emergência, decide quais unidades são necessárias, envia policiais, bombeiros e paramédicos e gerencia suas equipes, melhorias e a reação do público em cada turno.</p></div></details>
+        <details class="faq__item"><summary>O jogo usa mapas reais?</summary><div class="faq__a"><p>Sim. Você joga em locais do mundo real, da sua própria rua a cidades do mundo todo.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section g-cta" style="padding-top:0">
+    <div class="container">
+      <div class="g-cta__box" data-reveal="zoom">
+        <div class="siren" aria-hidden="true" style="opacity:.6"></div>
+        <img class="g-icon" src="/assets/games/idle-dispatch/icon.webp" alt="" width="110" height="110" loading="lazy">
+        <h2 style="font-size:clamp(40px,6vw,76px)">A cidade está em alerta. Assuma seu posto.</h2>
+        <p class="lead">Envie suas unidades e assuma o controle do turno.</p>
+        <div class="stores"><!-- @stores gp="com.hantro.wwiii" apple="6813881867" -->
+<a class="store" href="https://play.google.com/store/apps/details?id=com.hantro.wwiii" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#FBBC04" d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594z"/><path fill="#4285F4" d="M1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924z"/><path fill="#34A853" d="M13.544 10.989l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973z"/><path fill="#EA4335" d="M13.544 13.056l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/></svg><span><small>Disponível no</small><b>Google Play</b></span></a>
+<a class="store" href="https://apps.apple.com/app/id6813881867" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><span><small>Baixar na</small><b>App Store</b></span></a>
+<!-- /@stores --></div>
+        <a class="note" href="https://doc-hosting.flycricket.io/hantro-wwiii-privacy-policy/2cc37ebc-da45-4107-83df-6f37846e8d2a/privacy" target="_blank" rel="noopener" style="text-decoration:underline">Política de privacidade</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <h2 style="font-size:28px;margin-bottom:18px">Mais jogos da HanX Games</h2>
+      <!-- @more -->
+<div class="more-games">
+<a href="/pt/rebirth/"><img src="/assets/games/rebirth/icon.webp" alt="" loading="lazy">ReBirth</a>
+<a href="/pt/poker/"><img src="/assets/games/poker/icon.webp" alt="" loading="lazy">Hantro: Poker</a>
+<a href="/pt/blackjack/"><img src="/assets/games/blackjack/icon.webp" alt="" loading="lazy">Hantro: BlackJack</a>
+<a href="/pt/darkway/"><img src="/assets/games/darkway/icon.webp" alt="" loading="lazy">DarkWay</a>
+<a href="/pt/moba-manager/"><img src="/assets/games/moba-manager/icon.webp" alt="" loading="lazy">Moba Manager</a>
+<a href="/pt/ember-keep/"><img src="/assets/games/ember-keep/icon.webp" alt="" loading="lazy">Ember Keep</a>
+</div>
+<!-- /@more -->
+    </div>
+  </section>
+</main>
+
+<!-- @footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a class="brand" href="/pt/" aria-label="Página inicial da HanX Games">
+          <img src="/assets/brand/logo.webp" alt="" width="36" height="36" loading="lazy">
+          <span>HanX<b>GAMES</b></span>
+        </a>
+        <p>Estúdio independente de jogos mobile. Jogos de estratégia, cartas, simulação e RPG para Android e iOS.</p>
+      </div>
+      <div>
+        <h4>Jogos</h4>
+        <ul class="footer__games">
+          <li><a href="/pt/rebirth/">ReBirth</a></li>
+          <li><a href="/pt/poker/">Hantro: Poker</a></li>
+          <li><a href="/pt/blackjack/">Hantro: BlackJack</a></li>
+          <li><a href="/pt/911-idle-dispatch/">911: Idle Dispatch</a></li>
+          <li><a href="/pt/darkway/">DarkWay</a></li>
+          <li><a href="/pt/moba-manager/">Moba Manager</a></li>
+          <li><a href="/pt/ember-keep/">Ember Keep</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Onde nos encontrar</h4>
+        <ul>
+          <li><a href="https://play.google.com/store/apps/dev?id=4858435727768538175" target="_blank" rel="noopener">Google Play</a></li>
+          <li><a href="https://apps.apple.com/developer/id1885639647" target="_blank" rel="noopener">App Store</a></li>
+          <li><a href="mailto:hanxdestek@gmail.com">hanxdestek@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span data-year>2026</span> HanX Games. Todos os direitos reservados.</span>
+      <span>Google Play e o logotipo do Google Play são marcas registradas da Google LLC. App Store é uma marca de serviço da Apple Inc.</span>
+    </div>
+  </div>
+</footer>
+<!-- /@footer -->
+<script src="/assets/js/site.js"></script>
+<script>
+  /* Dispatch console: radar map with incidents + call log */
+  (function () {
+    var cv = document.getElementById('radar'), log = document.getElementById('log');
+    if (!cv) return;
+    var ctx = cv.getContext('2d'), dpr = Math.min(window.devicePixelRatio || 1, 2), W, H;
+    var TYPES = [
+      { t: 'Acidente de trânsito', u: 'AMBULÂNCIA + POLÍCIA', c: '#3dff9a' }, { t: 'Incêndio em prédio', u: 'BOMBEIROS', c: '#ff2d43' },
+      { t: 'Assalto em andamento', u: 'POLÍCIA', c: '#2d7bff' }, { t: 'Parada cardíaca', u: 'AMBULÂNCIA', c: '#3dff9a' },
+      { t: 'Vazamento de gás', u: 'BOMBEIROS + POLÍCIA', c: '#ff2d43' }, { t: 'Veículo suspeito', u: 'POLÍCIA', c: '#2d7bff' },
+      { t: 'Incêndio na cozinha', u: 'BOMBEIROS', c: '#ff2d43' }, { t: 'Vítima de queda', u: 'AMBULÂNCIA', c: '#3dff9a' },
+      { t: 'Briga de rua', u: 'POLÍCIA + AMBULÂNCIA', c: '#2d7bff' }, { t: 'Carro em chamas', u: 'BOMBEIROS', c: '#ff2d43' }
+    ];
+    var STREETS = ['Market St', 'Harbor Ave', 'Oak Blvd', '5th Ave', 'Station Rd', 'Riverside Dr', 'Hill St', 'Central Sq'];
+    var roads = [], pins = [], units = [], t = 0;
+    var resize = function () {
+      var r = cv.getBoundingClientRect(); W = r.width; H = r.height;
+      cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      roads = [];
+      for (var i = 1; i < 8; i++) roads.push([0, H * i / 8 + Math.sin(i) * 8, W, H * i / 8 - Math.cos(i) * 10]);
+      for (var j = 1; j < 10; j++) roads.push([W * j / 10 + Math.sin(j) * 10, 0, W * j / 10 - Math.cos(j) * 14, H]);
+    };
+    var base = function () { return { x: W * 0.5, y: H * 0.52 }; };
+    var addIncident = function () {
+      var k = TYPES[(Math.random() * TYPES.length) | 0];
+      var p = { x: W * (0.1 + Math.random() * 0.8), y: H * (0.1 + Math.random() * 0.8), c: k.c, born: t };
+      pins.push(p); if (pins.length > 7) pins.shift();
+      var b = base(); units.push({ x: b.x, y: b.y, tx: p.x, ty: p.y, c: k.c, p: 0 });
+      if (units.length > 7) units.shift();
+      var now = new Date(), hh = String(now.getHours()).padStart(2, '0'), mm = String(now.getMinutes()).padStart(2, '0'), ss = String(now.getSeconds()).padStart(2, '0');
+      var li = document.createElement('li');
+      li.style.setProperty('--c', k.c);
+      li.innerHTML = '<time>' + hh + ':' + mm + ':' + ss + '</time><b>' + k.t + '</b><span>' + (100 + ((Math.random() * 900) | 0)) + ' ' + STREETS[(Math.random() * STREETS.length) | 0] + '</span><em>→ ' + k.u + ' A CAMINHO</em>';
+      log.insertBefore(li, log.firstChild);
+      while (log.children.length > 6) log.removeChild(log.lastChild);
+    };
+    var frame = function () {
+      t += 1;
+      ctx.clearRect(0, 0, W, H);
+      ctx.strokeStyle = 'rgba(80,120,200,.18)'; ctx.lineWidth = 2;
+      roads.forEach(function (r) { ctx.beginPath(); ctx.moveTo(r[0], r[1]); ctx.lineTo(r[2], r[3]); ctx.stroke(); });
+      var b = base(), ang = t * 0.02;
+      var g = ctx.createRadialGradient(b.x, b.y, 0, b.x, b.y, Math.max(W, H) * 0.7);
+      g.addColorStop(0, 'rgba(45,123,255,.10)'); g.addColorStop(1, 'rgba(45,123,255,0)');
+      ctx.fillStyle = g; ctx.beginPath(); ctx.moveTo(b.x, b.y); ctx.arc(b.x, b.y, Math.max(W, H), ang - 0.6, ang); ctx.closePath(); ctx.fill();
+      ctx.strokeStyle = 'rgba(45,123,255,.25)'; ctx.lineWidth = 1;
+      [0.18, 0.34, 0.5].forEach(function (k) { ctx.beginPath(); ctx.arc(b.x, b.y, Math.min(W, H) * k, 0, 6.283); ctx.stroke(); });
+      ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(b.x, b.y, 5, 0, 6.283); ctx.fill();
+      pins.forEach(function (p) {
+        var age = (t - p.born) / 60, pulse = (t % 60) / 60;
+        ctx.globalAlpha = 1 - pulse; ctx.strokeStyle = p.c; ctx.lineWidth = 2;
+        ctx.beginPath(); ctx.arc(p.x, p.y, 6 + pulse * 22, 0, 6.283); ctx.stroke();
+        ctx.globalAlpha = 1; ctx.fillStyle = p.c; ctx.beginPath(); ctx.arc(p.x, p.y, 6, 0, 6.283); ctx.fill();
+        ctx.shadowBlur = 0;
+      });
+      units.forEach(function (u) {
+        u.p = Math.min(1, u.p + 0.006);
+        var x = u.x + (u.tx - u.x) * u.p, y = u.y + (u.ty - u.y) * u.p;
+        ctx.setLineDash([4, 6]); ctx.strokeStyle = u.c; ctx.globalAlpha = .5; ctx.lineWidth = 1.5;
+        ctx.beginPath(); ctx.moveTo(u.x, u.y); ctx.lineTo(x, y); ctx.stroke(); ctx.setLineDash([]);
+        ctx.globalAlpha = 1; ctx.fillStyle = (t % 20 < 10) ? '#ff2d43' : '#2d7bff';
+        ctx.fillRect(x - 4, y - 4, 8, 8);
+      });
+      raf = requestAnimationFrame(frame);
+    };
+    var raf = 0, timer = 0, on = false;
+    resize(); window.addEventListener('resize', resize);
+    for (var i = 0; i < 4; i++) addIncident();
+    if (window.HX.reduced) { frame(); cancelAnimationFrame(raf); return; }
+    new IntersectionObserver(function (en) {
+      if (en[0].isIntersecting && !on) { on = true; raf = requestAnimationFrame(frame); timer = setInterval(addIncident, 2200); }
+      else if (!en[0].isIntersecting && on) { on = false; cancelAnimationFrame(raf); clearInterval(timer); }
+    }).observe(cv);
+  })();
+</script>
+</body>
+</html>

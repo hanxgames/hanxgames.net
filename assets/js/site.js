@@ -4,16 +4,27 @@
   var HX = (window.HX = window.HX || {});
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   HX.reduced = reduced;
-  var isTR = document.documentElement.lang === 'tr';
-  HX.locale = isTR ? 'tr-TR' : 'en-US';
-  var T = isTR
-    ? { viewer: 'Ekran görüntüsü görüntüleyici', close: 'Kapat', prev: 'Önceki', next: 'Sonraki' }
-    : { viewer: 'Screenshot viewer', close: 'Close', prev: 'Previous', next: 'Next' };
+  var lang = document.documentElement.lang || 'en';
+  var I18N = {
+    en: ['en-US', 'Screenshot viewer', 'Close', 'Previous', 'Next'],
+    tr: ['tr-TR', 'Ekran görüntüsü görüntüleyici', 'Kapat', 'Önceki', 'Sonraki'],
+    es: ['es-ES', 'Visor de capturas', 'Cerrar', 'Anterior', 'Siguiente'],
+    pt: ['pt-BR', 'Visualizador de capturas', 'Fechar', 'Anterior', 'Próxima'],
+    de: ['de-DE', 'Screenshot-Ansicht', 'Schließen', 'Zurück', 'Weiter'],
+    fr: ['fr-FR', 'Visionneuse de captures', 'Fermer', 'Précédente', 'Suivante']
+  }[lang] || ['en-US', 'Screenshot viewer', 'Close', 'Previous', 'Next'];
+  HX.locale = I18N[0];
+  var T = { viewer: I18N[1], close: I18N[2], prev: I18N[3], next: I18N[4] };
 
-  /* ---------- Language switch remembers the choice ---------- */
+  /* ---------- Language menu: remember the choice, close on outside click ---------- */
   document.querySelectorAll('.lang a').forEach(function (a) {
     a.addEventListener('click', function () { try { localStorage.setItem('hx-lang', a.getAttribute('hreflang')); } catch (e) { /* storage blocked */ } });
   });
+  var langMenu = document.querySelector('details.lang');
+  if (langMenu) {
+    document.addEventListener('click', function (e) { if (langMenu.open && !langMenu.contains(e.target)) langMenu.open = false; });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') langMenu.open = false; });
+  }
 
   /* ---------- Navigation ---------- */
   var nav = document.querySelector('.nav');

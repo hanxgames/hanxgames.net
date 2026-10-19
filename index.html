@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>HanX Games | Mobile Game Studio</title>
-  <meta name="description" content="HanX Games is an independent mobile game studio making strategy, card, simulation and RPG games for Android and iOS: ReBirth, Hantro: Poker, Hantro: BlackJack, 911: Idle Dispatch, DarkWay, Moba Manager and Ember Keep.">
+  <title>HanX Games | Mobile Strategy, Card &amp; Simulation Games</title>
+  <meta name="description" content="HanX Games is an independent mobile game studio. Play offline strategy, roguelike card, simulation, RPG and tower defense games on Android and iOS.">
   <link rel="canonical" href="https://hanxgames.net/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="HanX Games">
-  <meta property="og:title" content="HanX Games | Mobile Game Studio">
+  <meta property="og:title" content="HanX Games | Mobile Strategy, Card &amp; Simulation Games">
   <meta property="og:description" content="Strategy, card, simulation and RPG games for Android and iOS.">
   <meta property="og:url" content="https://hanxgames.net/">
   <meta property="og:image" content="https://hanxgames.net/assets/brand/og-image.jpg">
@@ -17,10 +17,22 @@
   <!-- @head -->
 <link rel="alternate" hreflang="en" href="https://hanxgames.net/">
   <link rel="alternate" hreflang="tr" href="https://hanxgames.net/tr/">
+  <link rel="alternate" hreflang="es" href="https://hanxgames.net/es/">
+  <link rel="alternate" hreflang="pt" href="https://hanxgames.net/pt/">
+  <link rel="alternate" hreflang="de" href="https://hanxgames.net/de/">
+  <link rel="alternate" hreflang="fr" href="https://hanxgames.net/fr/">
   <link rel="alternate" hreflang="x-default" href="https://hanxgames.net/">
   <meta property="og:locale" content="en_US">
-  <script>try{if(!localStorage.getItem('hx-lang')&&/^tr\b/i.test(navigator.language||''))location.replace('/tr'+location.pathname+location.hash)}catch(e){}</script>
+  <meta property="og:locale:alternate" content="tr_TR">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:locale:alternate" content="pt_BR">
+  <meta property="og:locale:alternate" content="de_DE">
+  <meta property="og:locale:alternate" content="fr_FR">
+  <script>try{if(!localStorage.getItem('hx-lang')){var L=['tr', 'es', 'pt', 'de', 'fr'],n=navigator.languages||[navigator.language||''];for(var i=0;i<n.length;i++){var c=(n[i]||'').slice(0,2).toLowerCase();if(c==='en')break;if(L.indexOf(c)>-1){location.replace('/'+c+location.pathname+location.hash);break}}}}catch(e){}</script>
 <!-- /@head -->
+  <!-- @schema -->
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://hanxgames.net/#org","name":"HanX Games","url":"https://hanxgames.net/","logo":"https://hanxgames.net/assets/brand/logo.webp","email":"hanxdestek@gmail.com","sameAs":["https://play.google.com/store/apps/dev?id=4858435727768538175","https://apps.apple.com/developer/id1885639647"]},{"@type":"WebSite","name":"HanX Games","url":"https://hanxgames.net/","inLanguage":"en","publisher":{"@id":"https://hanxgames.net/#org"}},{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":1,"url":"https://hanxgames.net/rebirth/","name":"ReBirth: Rebuild & Resist"},{"@type":"ListItem","position":2,"url":"https://hanxgames.net/poker/","name":"Hantro: Poker Roguelike"},{"@type":"ListItem","position":3,"url":"https://hanxgames.net/blackjack/","name":"Hantro: BlackJack Roguelike"},{"@type":"ListItem","position":4,"url":"https://hanxgames.net/911-idle-dispatch/","name":"911: Idle Dispatch"},{"@type":"ListItem","position":5,"url":"https://hanxgames.net/darkway/","name":"DarkWay: Kingdom Choices"},{"@type":"ListItem","position":6,"url":"https://hanxgames.net/moba-manager/","name":"Moba Manager: Esports Coach"},{"@type":"ListItem","position":7,"url":"https://hanxgames.net/ember-keep/","name":"Hantro: Ember Keep"}]}]}</script>
+<!-- /@schema -->
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -28,10 +40,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,500;0,600;0,700;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/site.css">
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","name":"HanX Games","url":"https://hanxgames.net/","logo":"https://hanxgames.net/assets/brand/logo.webp","email":"hanxdestek@gmail.com",
-   "sameAs":["https://play.google.com/store/apps/dev?id=4858435727768538175","https://apps.apple.com/developer/id1885639647"]}
-  </script>
   <style>
     /* ---------- Hero ---------- */
     .hero { position: relative; min-height: 100svh; display: flex; align-items: center; overflow: hidden; isolation: isolate; padding: calc(var(--nav-h) + 30px) 0 90px; }
@@ -166,7 +174,7 @@
       <a href="/ember-keep/"><img src="/assets/games/ember-keep/icon.webp" alt="" width="22" height="22" loading="lazy">Ember Keep</a>
     </nav>
     <!-- @lang -->
-<div class="lang" role="group" aria-label="Language"><a href="/" hreflang="en" lang="en" aria-current="true">EN</a><a href="/tr/" hreflang="tr" lang="tr">TR</a></div>
+<details class="lang"><summary aria-label="Language: English"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg><span>EN</span></summary><div class="lang__menu"><a href="/" hreflang="en" lang="en" aria-current="true">English</a><a href="/tr/" hreflang="tr" lang="tr">Türkçe</a><a href="/es/" hreflang="es" lang="es">Español</a><a href="/pt/" hreflang="pt" lang="pt">Português</a><a href="/de/" hreflang="de" lang="de">Deutsch</a><a href="/fr/" hreflang="fr" lang="fr">Français</a></div></details>
 <!-- /@lang -->
     <button class="nav__burger" type="button" aria-label="Open menu" aria-expanded="false"><span></span></button>
   </div>
@@ -382,6 +390,29 @@
           <p>Short, satisfying sessions and controls built for thumbs, on phones and tablets.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Our games, in words -->
+  <section class="section" style="padding-top:20px">
+    <div class="container about">
+      <div class="about__text seo-links" data-reveal>
+        <p class="eyebrow">Mobile games by HanX</p>
+        <h2>Strategy, card and simulation games for Android and iOS</h2>
+        <p>HanX Games makes mobile games across many genres. Rebuild a province in the offline 3D strategy game <a href="/rebirth/">ReBirth</a>, chase billions in the poker roguelike <a href="/poker/">Hantro: Poker</a>, and build broken decks in the blackjack deckbuilder <a href="/blackjack/">Hantro: BlackJack</a>.</p>
+        <p>Run a city’s emergency line in the 911 dispatcher simulator <a href="/911-idle-dispatch/">911: Idle Dispatch</a>, rule a medieval kingdom in the swipe RPG <a href="/darkway/">DarkWay</a>, coach an esports team in the MOBA manager game <a href="/moba-manager/">Moba Manager</a> and defend your castle in the tower defense roguelike <a href="/ember-keep/">Hantro: Ember Keep</a>.</p>
+        <p>Most of our games can be played offline and are designed for short sessions on phones and tablets. All of them are on Google Play, and many are also on the App Store.</p>
+      </div>
+      <aside class="facts" data-reveal="right">
+        <h3>HanX Games at a glance</h3>
+        <dl>
+          <div><dt>Games</dt><dd>7 mobile games</dd></div>
+          <div><dt>Genres</dt><dd>Strategy, card, roguelike, simulation, RPG, tower defense</dd></div>
+          <div><dt>Platforms</dt><dd>Android, iPhone, iPad</dd></div>
+          <div><dt>Offline</dt><dd>Most games play without internet</dd></div>
+          <div><dt>Contact</dt><dd>hanxdestek@gmail.com</dd></div>
+        </dl>
+      </aside>
     </div>
   </section>
 
