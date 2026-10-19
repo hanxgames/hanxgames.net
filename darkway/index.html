@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DarkWay: Kingdom Choices | HanX Games</title>
+  <meta name="description" content="DarkWay is a swipe-to-rule kingdom builder RPG. Balance the church, the people, the army and the treasury in a dark medieval world. Fully offline. Android and iOS.">
+  <link rel="canonical" href="https://hanxgames.net/darkway/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="HanX Games">
+  <meta property="og:title" content="DarkWay: Kingdom Choices">
+  <meta property="og:description" content="Rule a kingdom where every choice leaves a mark.">
+  <meta property="og:url" content="https://hanxgames.net/darkway/">
+  <meta property="og:image" content="https://hanxgames.net/assets/games/darkway/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0e0a07">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,700&family=Cinzel:wght@500;700;800&family=IM+Fell+English:ital@0;1&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <style>
+    :root {
+      --bg: #0d0907; --bg-2: #16100b; --fg: #efe3c8; --muted: #a8977a;
+      --accent: #d4a85a; --accent-2: #9b1c1c; --accent-ink: #1a1006; --glow: rgba(212,168,90,.35);
+      --surface: rgba(239, 227, 200, .04); --surface-2: rgba(239, 227, 200, .08); --line: rgba(212, 168, 90, .18);
+      --font-display: "Cinzel", Georgia, serif; --font-body: "IM Fell English", Georgia, serif;
+      --parch: #e9dcbf; --ink: #2a1d10;
+    }
+    body { font-size: 18px; }
+    .lead, .feature p, .section-head p { font-size: 18.5px; }
+    .eyebrow { font-family: "Cinzel", serif; letter-spacing: .26em; }
+    .btn, .store b, .chip, .nav__links a { font-family: "Inter", sans-serif; }
+    .g-hero__bg { background: radial-gradient(900px 600px at 30% 40%, rgba(120,70,20,.35), transparent 65%), radial-gradient(800px 600px at 80% 80%, rgba(110,20,20,.3), transparent 65%), #0d0907; }
+    .g-hero__bg::after { content: ""; position: absolute; inset: 0; opacity: .5; background: repeating-linear-gradient(90deg, rgba(60,35,15,.0) 0 120px, rgba(60,35,15,.35) 120px 122px), repeating-linear-gradient(0deg, rgba(255,200,140,.015) 0 3px, transparent 3px 7px); }
+    .candle { position: absolute; z-index: -1; width: 46vmin; height: 46vmin; border-radius: 50%; background: radial-gradient(circle, rgba(255,170,70,.35), transparent 65%); animation: flick 3.2s ease-in-out infinite; pointer-events: none; }
+    @keyframes flick { 0%, 100% { opacity: .9; transform: scale(1); } 20% { opacity: .7; } 40% { opacity: 1; transform: scale(1.04); } 60% { opacity: .75; } 80% { opacity: .95; transform: scale(.98); } }
+    .vignette { position: absolute; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,.75) 100%); }
+    .g-title { font-family: "Cinzel", serif; font-weight: 800; font-size: clamp(50px, 7.4vw, 104px); color: var(--parch); letter-spacing: .04em; text-shadow: 0 0 40px rgba(255,170,70,.25); }
+    .g-sub { font-family: "IM Fell English", serif; font-style: italic; text-transform: none; color: var(--accent); letter-spacing: .02em; font-size: clamp(20px, 2.4vw, 28px); }
+    .seal { width: 74px; height: 74px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #c2372f, #7a1414 70%); box-shadow: inset 0 0 0 5px rgba(0,0,0,.18), 0 6px 14px rgba(0,0,0,.6); display: grid; place-items: center; color: #f3c9a8; font-family: "Cinzel", serif; font-weight: 800; font-size: 24px; transform: rotate(-12deg); }
+    .g-art__frame { border-color: rgba(212,168,90,.35); }
+
+    /* Swipe card demo */
+    .court { display: grid; gap: 28px; justify-items: center; }
+    .meters { display: flex; gap: clamp(14px, 4vw, 40px); justify-content: center; }
+    .meter { display: flex; flex-direction: column; align-items: center; gap: 8px; font-family: "Cinzel", serif; font-size: 12px; letter-spacing: .14em; color: var(--muted); }
+    .meter__icon { position: relative; width: 54px; height: 54px; }
+    .meter__icon svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .meter__icon .bg { fill: rgba(239,227,200,.12); }
+    .meter__icon .fill { fill: var(--accent); clip-path: inset(calc(100% - var(--v, 50) * 1%) 0 0 0); transition: clip-path .7s var(--ease); }
+    .meter.bump .meter__icon { animation: bump .6s var(--ease); }
+    .meter.low .fill { fill: #d0453a; }
+    @keyframes bump { 40% { transform: scale(1.18); } }
+    .stage { position: relative; width: min(340px, 86vw); height: 380px; perspective: 1000px; }
+    .petition { position: absolute; inset: 0; border-radius: 16px; padding: 26px 24px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; cursor: grab; touch-action: pan-y; user-select: none;
+      background: radial-gradient(circle at 50% 30%, #f3e8cf, #dcc79c 85%); color: var(--ink); box-shadow: 0 30px 60px -20px rgba(0,0,0,.9), inset 0 0 40px rgba(120,80,30,.35);
+      transition: transform .5s var(--ease), opacity .5s; }
+    .petition.dragging { transition: none; cursor: grabbing; }
+    .petition .who { font-family: "Cinzel", serif; font-weight: 800; font-size: 13px; letter-spacing: .24em; color: #7a1414; }
+    .petition .portrait { width: 110px; height: 110px; border-radius: 50%; display: grid; place-items: center; font-size: 56px; background: radial-gradient(circle, #e9dcbf, #b89a64); box-shadow: inset 0 0 0 3px #8b6a35; }
+    .petition p { font-family: "IM Fell English", serif; font-size: 19px; line-height: 1.35; }
+    .petition .drag { margin-top: auto; font-family: "Cinzel", serif; font-weight: 700; font-size: 12px; letter-spacing: .2em; color: #8b6a35; }
+    .petition .drag::before, .petition .drag::after { content: ""; display: inline-block; width: 28px; height: 1px; background: currentColor; vertical-align: middle; margin: 0 10px; }
+    .petition .hint { position: absolute; top: 18px; padding: 6px 10px; border: 2px solid; border-radius: 8px; font-family: "Cinzel", serif; font-weight: 800; font-size: 12px; letter-spacing: .1em; opacity: 0; transition: opacity .2s; max-width: 45%; }
+    .petition .hint--l { left: 14px; color: #7a1414; transform: rotate(-8deg); }
+    .petition .hint--r { right: 14px; color: #2f5a1e; transform: rotate(8deg); }
+    .choices { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .choice { min-height: 50px; padding: 0 20px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); color: var(--fg); font-family: "Cinzel", serif; font-weight: 700; cursor: pointer; transition: background .2s, transform .2s; }
+    .choice:hover { background: var(--surface-2); transform: translateY(-2px); }
+    .reign { font-family: "Cinzel", serif; letter-spacing: .14em; color: var(--muted); font-size: 13px; text-align: center; }
+    .reign b { color: var(--accent); font-size: 18px; }
+    .feature h3 { font-family: "Cinzel", serif; font-weight: 800; }
+    .events { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+    .event { padding: 24px 20px; text-align: center; border-radius: 12px; background: radial-gradient(circle at 50% 20%, #efe3c8, #d5bf92 90%); color: var(--ink); box-shadow: 0 20px 40px -20px rgba(0,0,0,.9); transform: rotate(var(--r, 0deg)); transition: transform .4s var(--ease); }
+    .event:hover { transform: rotate(0) translateY(-6px) scale(1.03); }
+    .event b { display: block; font-size: 44px; line-height: 1; margin-bottom: 10px; }
+    .event h3 { font-family: "Cinzel", serif; font-weight: 800; font-size: 20px; color: #3a2210; }
+    .event p { font-size: 16px; margin-top: 6px; color: #4b3520; }
+    .note { font-size: 14px; color: var(--muted); }
+  </style>
+</head>
+<body class="game">
+<!-- @nav -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav" data-nav>
+  <div class="container nav__inner">
+    <a class="brand" href="/" aria-label="HanX Games home">
+      <img src="/assets/brand/logo.webp" alt="" width="36" height="36">
+      <span>HanX<b>GAMES</b></span>
+    </a>
+    <nav class="nav__links" aria-label="Games">
+      <a href="/rebirth/"><img src="/assets/games/rebirth/icon.webp" alt="" width="22" height="22" loading="lazy">ReBirth</a>
+      <a href="/poker/"><img src="/assets/games/poker/icon.webp" alt="" width="22" height="22" loading="lazy">Hantro: Poker</a>
+      <a href="/blackjack/"><img src="/assets/games/blackjack/icon.webp" alt="" width="22" height="22" loading="lazy">Hantro: BlackJack</a>
+      <a href="/911-idle-dispatch/"><img src="/assets/games/idle-dispatch/icon.webp" alt="" width="22" height="22" loading="lazy">911: Idle Dispatch</a>
+      <a href="/darkway/" aria-current="page"><img src="/assets/games/darkway/icon.webp" alt="" width="22" height="22" loading="lazy">DarkWay</a>
+      <a href="/moba-manager/"><img src="/assets/games/moba-manager/icon.webp" alt="" width="22" height="22" loading="lazy">Moba Manager</a>
+      <a href="/ember-keep/"><img src="/assets/games/ember-keep/icon.webp" alt="" width="22" height="22" loading="lazy">Ember Keep</a>
+    </nav>
+    <button class="nav__burger" type="button" aria-label="Open menu" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+<!-- /@nav -->
+
+<main id="main">
+  <header class="g-hero">
+    <div class="g-hero__bg" aria-hidden="true"></div>
+    <div class="candle" style="left:4%;top:12%" aria-hidden="true"></div>
+    <div class="candle" style="right:6%;bottom:6%;animation-delay:-1.4s" aria-hidden="true"></div>
+    <div class="vignette" aria-hidden="true"></div>
+    <canvas class="fx" aria-hidden="true" data-fx='{"count":55,"colors":["#ffb35c","#ff8a3d","#ffd08a"],"size":[0.6,1.8],"dir":"up","speed":[0.3,0.9],"drift":0.6,"twinkle":true,"glow":true}'></canvas>
+    <div class="container g-hero__grid">
+      <div class="g-hero__copy">
+        <div style="display:flex;gap:16px;align-items:center" data-reveal>
+          <img class="g-icon" src="/assets/games/darkway/icon.webp" alt="DarkWay icon" width="96" height="96">
+          <span class="seal" aria-hidden="true">H</span>
+        </div>
+        <p class="eyebrow" data-reveal style="--d:60ms">RPG · Kingdom builder</p>
+        <h1 class="g-title" data-reveal style="--d:120ms">DarkWay</h1>
+        <p class="g-sub" data-reveal style="--d:160ms">Don your crown and walk the dark path of power.</p>
+        <p class="lead" data-reveal style="--d:220ms">In a dark medieval age, the fate of your kingdom lies in your hands. Every card brings a royal dilemma: swipe left or right, accept the consequences, and keep the church, the people, the army and the treasury in balance.</p>
+        <div class="stores" data-reveal style="--d:280ms"><!-- @stores gp="com.hantro.darkway.rpg" apple="6801437989" -->
+<a class="store" href="https://play.google.com/store/apps/details?id=com.hantro.darkway.rpg" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#FBBC04" d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594z"/><path fill="#4285F4" d="M1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924z"/><path fill="#34A853" d="M13.544 10.989l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973z"/><path fill="#EA4335" d="M13.544 13.056l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/></svg><span><small>Get it on</small><b>Google Play</b></span></a>
+<a class="store" href="https://apps.apple.com/app/id6801437989" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><span><small>Download on the</small><b>App Store</b></span></a>
+<!-- /@stores --></div>
+        <ul class="chips" data-reveal style="--d:340ms">
+          <li class="chip">175+ royal dilemmas</li><li class="chip">Fully offline</li><li class="chip">Five legacies</li>
+        </ul>
+      </div>
+      <div class="g-art" data-reveal="right" style="--d:200ms">
+        <div class="g-art__frame" data-tilt="5"><img src="/assets/games/darkway/shot-1.webp" alt="Hantro: DarkWay RPG, the ultimate medieval kingdom management simulation" width="1400" height="788"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Swipe demo -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head section-head--center" data-reveal>
+        <p class="eyebrow">Rule by the swipe</p>
+        <h2>The court is in session</h2>
+        <p>Drag the petition left or right, or use the buttons. Favor one power too much, or let another collapse, and your reign may end.</p>
+      </div>
+      <div class="court" data-reveal="zoom">
+        <div class="meters" id="meters">
+          <div class="meter" data-k="church"><div class="meter__icon"><svg viewBox="0 0 24 24"><path class="bg" d="M11 1h2v3h3v2h-3v3l6 4v10h-5v-5a2 2 0 0 0-4 0v5H5V13l6-4V6H8V4h3z"/></svg><svg viewBox="0 0 24 24"><path class="fill" d="M11 1h2v3h3v2h-3v3l6 4v10h-5v-5a2 2 0 0 0-4 0v5H5V13l6-4V6H8V4h3z"/></svg></div>Church</div>
+          <div class="meter" data-k="people"><div class="meter__icon"><svg viewBox="0 0 24 24"><path class="bg" d="M8 4a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm8 0a3 3 0 1 1 0 6 3 3 0 0 1 0-6zM2 21c0-5 3-8 6-8s6 3 6 8zm10 0c.3-3-1-5.5-2.4-7 1.6-.7 3.2-1 4.4-1 3 0 6 3 6 8z"/></svg><svg viewBox="0 0 24 24"><path class="fill" d="M8 4a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm8 0a3 3 0 1 1 0 6 3 3 0 0 1 0-6zM2 21c0-5 3-8 6-8s6 3 6 8zm10 0c.3-3-1-5.5-2.4-7 1.6-.7 3.2-1 4.4-1 3 0 6 3 6 8z"/></svg></div>People</div>
+          <div class="meter" data-k="army"><div class="meter__icon"><svg viewBox="0 0 24 24"><path class="bg" d="M4 2l8 8 8-8 2 2-8 8 3 3 2-2 2 2-2 2 3 3-2 2-3-3-2 2-2-2 2-2-3-3-3 3 2 2-2 2-2-2-3 3-2-2 3-3-2-2 2-2 2 2 3-3-8-8z"/></svg><svg viewBox="0 0 24 24"><path class="fill" d="M4 2l8 8 8-8 2 2-8 8 3 3 2-2 2 2-2 2 3 3-2 2-3-3-2 2-2-2 2-2-3-3-3 3 2 2-2 2-2-2-3 3-2-2 3-3-2-2 2-2 2 2 3-3-8-8z"/></svg></div>Army</div>
+          <div class="meter" data-k="treasury"><div class="meter__icon"><svg viewBox="0 0 24 24"><path class="bg" d="M12 3c5 0 9 1.6 9 3.5S17 10 12 10 3 8.4 3 6.5 7 3 12 3zM3 9c0 1.9 4 3.5 9 3.5S21 10.9 21 9v4c0 1.9-4 3.5-9 3.5S3 14.9 3 13zm0 6c0 1.9 4 3.5 9 3.5s9-1.6 9-3.5v3.5C21 20.4 17 22 12 22s-9-1.6-9-3.5z"/></svg><svg viewBox="0 0 24 24"><path class="fill" d="M12 3c5 0 9 1.6 9 3.5S17 10 12 10 3 8.4 3 6.5 7 3 12 3zM3 9c0 1.9 4 3.5 9 3.5S21 10.9 21 9v4c0 1.9-4 3.5-9 3.5S3 14.9 3 13zm0 6c0 1.9 4 3.5 9 3.5s9-1.6 9-3.5v3.5C21 20.4 17 22 12 22s-9-1.6-9-3.5z"/></svg></div>Treasury</div>
+        </div>
+        <div class="stage">
+          <div class="petition" id="petition" role="group" aria-roledescription="petition card">
+            <span class="hint hint--l" id="hintL"></span><span class="hint hint--r" id="hintR"></span>
+            <span class="who" id="who"></span>
+            <div class="portrait" id="portrait" aria-hidden="true"></div>
+            <p id="ask"></p>
+            <span class="drag" aria-hidden="true">DRAG TO DECIDE</span>
+          </div>
+        </div>
+        <div class="choices">
+          <button class="choice" type="button" id="btnL">◀ <span id="labelL"></span></button>
+          <button class="choice" type="button" id="btnR"><span id="labelR"></span> ▶</button>
+        </div>
+        <p class="reign" id="reign" aria-live="polite">YEAR <b>1</b> OF YOUR REIGN</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Events -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Epic events &amp; deadly dangers</p>
+        <h2>The realm will test you</h2>
+      </div>
+      <div class="events">
+        <div class="event" data-reveal style="--r:-2deg"><b>🐉</b><h3>Dragon attacks</h3><p>Protect your realm from fire.</p></div>
+        <div class="event" data-reveal style="--r:1.5deg;--d:60ms"><b>☠️</b><h3>Plague outbreaks</h3><p>Save your people from disease.</p></div>
+        <div class="event" data-reveal style="--r:-1deg;--d:120ms"><b>⚔️</b><h3>Wars &amp; alliances</h3><p>Fight or unite neighboring kingdoms.</p></div>
+        <div class="event" data-reveal style="--r:2deg;--d:180ms"><b>🎉</b><h3>Festivals</h3><p>Boost morale and keep your subjects loyal.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section">
+    <div class="container">
+      <div class="features">
+        <div class="feature" data-reveal>
+          <div class="ficon"><svg viewBox="0 0 32 32"><path d="M5 24l3-14 5 6 3-9 3 9 5-6 3 14z"/><path d="M5 28h22"/></svg></div>
+          <h3>Your choices shape the kingdom</h3><p>Advisors, generals, merchants, priests, spies and witches beg for your help. Earlier decisions return with unexpected consequences.</p>
+        </div>
+        <div class="feature" data-reveal style="--d:60ms">
+          <div class="ficon"><svg viewBox="0 0 32 32"><path d="M6 4h16l4 4v20H6z"/><path d="M10 12h12M10 17h12M10 22h8"/></svg></div>
+          <h3>A deep, branching story</h3><p>Rich story chains, witty dialogue and hundreds of surprising twists. War, famine, eclipses and rebellion unfold differently every reign.</p>
+        </div>
+        <div class="feature" data-reveal style="--d:120ms">
+          <div class="ficon"><svg viewBox="0 0 32 32"><path d="M8 4h14a3 3 0 0 1 3 3v21H11a3 3 0 0 1-3-3z"/><path d="M8 25a3 3 0 0 1 3-3h14"/><path d="M13 10h7"/></svg></div>
+          <h3>The Book of Kings</h3><p>Unlock achievements, chase higher scores and preserve every ruler. Five legacies await: mercy, faith, might, wealth or shadow.</p>
+        </div>
+        <div class="feature" data-reveal>
+          <div class="ficon"><svg viewBox="0 0 32 32"><rect x="9" y="3" width="14" height="26" rx="3"/><path d="M14 25h4"/><path d="M2 4l28 24"/></svg></div>
+          <h3>Play anywhere</h3><p>Fully offline and single-player. On the subway, the bus or a plane, with simple left-or-right controls.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="section">
+    <div class="container gallery">
+      <div class="gallery-head">
+        <div class="section-head" data-reveal><p class="eyebrow">Screenshots</p><h2>Glory or total ruin</h2></div>
+        <div class="gallery__nav">
+          <button type="button" data-dir="-1" aria-label="Previous screenshots"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button type="button" data-dir="1" aria-label="Next screenshots"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
+      <div class="shots shots--land">
+        <button class="shot" type="button"><img src="/assets/games/darkway/shot-1.webp" alt="DarkWay title card" loading="lazy"></button>
+        <button class="shot" type="button"><img src="/assets/games/darkway/shot-2.webp" alt="The court's endless petitions" loading="lazy"></button>
+        <button class="shot" type="button"><img src="/assets/games/darkway/shot-3.webp" alt="Epic events and deadly dangers" loading="lazy"></button>
+        <button class="shot" type="button"><img src="/assets/games/darkway/shot-4.webp" alt="The architecture of power" loading="lazy"></button>
+        <button class="shot" type="button"><img src="/assets/games/darkway/shot-5.webp" alt="Rule by the swipe" loading="lazy"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section g-cta" style="padding-top:0">
+    <div class="container">
+      <div class="g-cta__box" data-reveal="zoom">
+        <canvas class="fx" aria-hidden="true" data-fx='{"count":30,"colors":["#ffb35c","#ff8a3d"],"size":[0.6,1.6],"dir":"up","speed":[0.3,0.8],"drift":0.5,"twinkle":true}'></canvas>
+        <img class="g-icon" src="/assets/games/darkway/icon.webp" alt="" width="110" height="110" loading="lazy">
+        <h2>The throne is waiting. How long will your kingdom survive?</h2>
+        <div class="stores"><!-- @stores gp="com.hantro.darkway.rpg" apple="6801437989" -->
+<a class="store" href="https://play.google.com/store/apps/details?id=com.hantro.darkway.rpg" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#FBBC04" d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594z"/><path fill="#4285F4" d="M1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924z"/><path fill="#34A853" d="M13.544 10.989l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973z"/><path fill="#EA4335" d="M13.544 13.056l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/></svg><span><small>Get it on</small><b>Google Play</b></span></a>
+<a class="store" href="https://apps.apple.com/app/id6801437989" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><span><small>Download on the</small><b>App Store</b></span></a>
+<!-- /@stores --></div>
+        <a class="note" href="https://doc-hosting.flycricket.io/hantro-dark-way-privacy-policy/aeac09f1-3bb2-44f7-b15b-60a0fec9671c/privacy" target="_blank" rel="noopener" style="text-decoration:underline">Privacy policy</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <h2 style="font-size:22px;margin-bottom:18px">More from HanX Games</h2>
+      <!-- @more -->
+<div class="more-games">
+<a href="/rebirth/"><img src="/assets/games/rebirth/icon.webp" alt="" loading="lazy">ReBirth</a>
+<a href="/poker/"><img src="/assets/games/poker/icon.webp" alt="" loading="lazy">Hantro: Poker</a>
+<a href="/blackjack/"><img src="/assets/games/blackjack/icon.webp" alt="" loading="lazy">Hantro: BlackJack</a>
+<a href="/911-idle-dispatch/"><img src="/assets/games/idle-dispatch/icon.webp" alt="" loading="lazy">911: Idle Dispatch</a>
+<a href="/moba-manager/"><img src="/assets/games/moba-manager/icon.webp" alt="" loading="lazy">Moba Manager</a>
+<a href="/ember-keep/"><img src="/assets/games/ember-keep/icon.webp" alt="" loading="lazy">Ember Keep</a>
+</div>
+<!-- /@more -->
+    </div>
+  </section>
+</main>
+
+<!-- @footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a class="brand" href="/" aria-label="HanX Games home">
+          <img src="/assets/brand/logo.webp" alt="" width="36" height="36" loading="lazy">
+          <span>HanX<b>GAMES</b></span>
+        </a>
+        <p>Independent mobile game studio. Strategy, cards, simulation and RPG games for Android and iOS.</p>
+      </div>
+      <div>
+        <h4>Games</h4>
+        <ul class="footer__games">
+          <li><a href="/rebirth/">ReBirth</a></li>
+          <li><a href="/poker/">Hantro: Poker</a></li>
+          <li><a href="/blackjack/">Hantro: BlackJack</a></li>
+          <li><a href="/911-idle-dispatch/">911: Idle Dispatch</a></li>
+          <li><a href="/darkway/">DarkWay</a></li>
+          <li><a href="/moba-manager/">Moba Manager</a></li>
+          <li><a href="/ember-keep/">Ember Keep</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Find us</h4>
+        <ul>
+          <li><a href="https://play.google.com/store/apps/dev?id=4858435727768538175" target="_blank" rel="noopener">Google Play</a></li>
+          <li><a href="https://apps.apple.com/developer/id1885639647" target="_blank" rel="noopener">App Store</a></li>
+          <li><a href="mailto:hanxdestek@gmail.com">hanxdestek@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span data-year>2026</span> HanX Games. All rights reserved.</span>
+      <span>Google Play and the Google Play logo are trademarks of Google LLC. App Store is a service mark of Apple Inc.</span>
+    </div>
+  </div>
+</footer>
+<!-- /@footer -->
+<script src="/assets/js/site.js"></script>
+<script>
+  /* Swipe-to-rule demo */
+  (function () {
+    var cards = [
+      { who: 'The Witch', face: '🧙‍♀️', ask: 'Hide me from the inquisitors, my liege, and my magic is yours.', l: ['Burn her', { church: 12, people: -6 }], r: ['Hide her', { church: -14, treasury: 8 }] },
+      { who: 'The General', face: '🛡️', ask: 'The northern border is weak. Give me gold for new recruits.', l: ['Refuse', { army: -12 }], r: ['Pay him', { army: 14, treasury: -12 }] },
+      { who: 'The Merchant', face: '💰', ask: 'Lower the tolls on the river and trade will flow to your coffers.', l: ['Keep the tolls', { treasury: 6, people: -8 }], r: ['Lower them', { treasury: -8, people: 10 }] },
+      { who: 'The Bishop', face: '⛪', ask: 'Build a cathedral and the heavens will smile upon your reign.', l: ['Not now', { church: -12 }], r: ['Build it', { church: 15, treasury: -14 }] },
+      { who: 'The Peasants', face: '🌾', ask: 'The harvest failed. Open the royal granaries or we starve.', l: ['Keep them shut', { people: -16, treasury: 6 }], r: ['Open them', { people: 15, treasury: -10 }] },
+      { who: 'The Spy', face: '🗝️', ask: 'Your advisor plots against you. Shall I deal with him quietly?', l: ['Spare him', { people: 6, army: -6 }], r: ['Do it', { army: 8, church: -8 }] },
+      { who: 'The Herald', face: '🐉', ask: 'A dragon burns the eastern villages! What are your orders?', l: ['Pray', { church: 10, people: -12 }], r: ['Send knights', { army: -14, people: 12 }] },
+      { who: 'The Jester', face: '🎭', ask: 'A grand festival would lift every heart in the land, sire!', l: ['Bah, humbug', { people: -8, treasury: 4 }], r: ['Let us feast', { people: 14, treasury: -12 }] }
+    ];
+    var keys = ['church', 'people', 'army', 'treasury'];
+    var state, year, idx, deck;
+    var $ = function (id) { return document.getElementById(id); };
+    var card = $('petition'), meters = {};
+    document.querySelectorAll('.meter').forEach(function (m) { meters[m.getAttribute('data-k')] = m; });
+    var shuffle = function (a) { for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; };
+    var paint = function () {
+      keys.forEach(function (k) { var m = meters[k]; m.style.setProperty('--v', state[k]); m.classList.toggle('low', state[k] < 20 || state[k] > 85); });
+      $('reign').innerHTML = 'YEAR <b>' + year + '</b> OF YOUR REIGN';
+    };
+    var show = function () {
+      var c = deck[idx % deck.length];
+      $('who').textContent = c.who.toUpperCase(); $('portrait').textContent = c.face; $('ask').textContent = '“' + c.ask + '”';
+      $('labelL').textContent = c.l[0]; $('labelR').textContent = c.r[0];
+      $('hintL').textContent = c.l[0]; $('hintR').textContent = c.r[0];
+      card.style.transform = ''; card.style.opacity = 1;
+    };
+    var reset = function () { state = { church: 50, people: 50, army: 50, treasury: 50 }; year = 1; idx = 0; deck = shuffle(cards.slice()); paint(); show(); };
+    var decide = function (side) {
+      var c = deck[idx % deck.length], fx = (side < 0 ? c.l : c.r)[1];
+      card.style.transform = 'translateX(' + (side * 140) + '%) rotate(' + (side * 24) + 'deg)'; card.style.opacity = 0;
+      var fell = null;
+      Object.keys(fx).forEach(function (k) {
+        state[k] = Math.max(0, Math.min(100, state[k] + fx[k]));
+        meters[k].classList.remove('bump'); void meters[k].offsetWidth; meters[k].classList.add('bump');
+        if (state[k] <= 0 || state[k] >= 100) fell = k;
+      });
+      year++; idx++; paint();
+      setTimeout(function () {
+        if (fell) {
+          var why = { church: state.church <= 0 ? 'The church excommunicates you.' : 'The church seizes the throne.', people: state.people <= 0 ? 'The people rise in rebellion.' : 'The mob crowns a new king.', army: state.army <= 0 ? 'Invaders storm the gates.' : 'The generals stage a coup.', treasury: state.treasury <= 0 ? 'The crown is bankrupt.' : 'Greedy lords poison your wine.' }[fell];
+          $('reign').innerHTML = 'YOUR REIGN ENDS IN YEAR <b>' + (year - 1) + '</b>. ' + why.toUpperCase();
+          setTimeout(reset, 2600);
+        } else show();
+      }, 420);
+    };
+    $('btnL').addEventListener('click', function () { decide(-1); });
+    $('btnR').addEventListener('click', function () { decide(1); });
+    var sx = 0, dx = 0, drag = false;
+    card.addEventListener('pointerdown', function (e) { drag = true; sx = e.clientX; dx = 0; card.classList.add('dragging'); card.setPointerCapture(e.pointerId); });
+    card.addEventListener('pointermove', function (e) {
+      if (!drag) return;
+      dx = e.clientX - sx;
+      card.style.transform = 'translateX(' + dx + 'px) rotate(' + (dx / 14) + 'deg)';
+      $('hintL').style.opacity = Math.min(1, Math.max(0, -dx / 80));
+      $('hintR').style.opacity = Math.min(1, Math.max(0, dx / 80));
+    });
+    var up = function () {
+      if (!drag) return;
+      drag = false; card.classList.remove('dragging'); $('hintL').style.opacity = $('hintR').style.opacity = 0;
+      if (Math.abs(dx) > 90) decide(dx > 0 ? 1 : -1); else card.style.transform = '';
+    };
+    card.addEventListener('pointerup', up); card.addEventListener('pointercancel', up);
+    reset();
+  })();
+</script>
+</body>
+</html>
