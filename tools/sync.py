@@ -61,14 +61,16 @@ APPLE_SVG = ('<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M
              '1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857'
              '-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 '
              '1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>')
+ITCH_SVG = ('<svg viewBox="0 0 24 24" fill="none" stroke="#fa5c5c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+            '<rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M10 7.5l4.5 2.5-4.5 2.5z" fill="#fa5c5c"/></svg>')
 GLOBE_SVG = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">'
              '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>')
 
-EN_TEXT = dict(badges=(('Get it on', 'Google Play'), ('Download on the', 'App Store')), lang_label='Language')
+EN_TEXT = dict(badges=(('Get it on', 'Google Play'), ('Download on the', 'App Store')), itch=('Windows &amp; Linux on', 'itch.io'), lang_label='Language')
 
 # Facts used for the VideoGame structured data (descriptions come from each page).
 GAMES = {
-    '/rebirth/': dict(name='ReBirth: Rebuild & Resist', slug='rebirth', genre=['Strategy', 'Simulation'], gp='com.hantro.business', price='0', community='https://www.reddit.com/r/ReBirthSocial/'),
+    '/rebirth/': dict(name='ReBirth: Rebuild & Resist', slug='rebirth', genre=['Strategy', 'Simulation'], gp='com.hantro.business', price='0', itch='https://hanx-games.itch.io/rebirth', community='https://www.reddit.com/r/ReBirthSocial/'),
     '/poker/': dict(name='Hantro: Poker Roguelike', slug='poker', genre=['Card', 'Roguelike'], gp='com.ilhantro.hantro', price='0'),
     '/blackjack/': dict(name='Hantro: BlackJack Roguelike', slug='blackjack', genre=['Card', 'Strategy', 'Roguelike'], gp='com.hantro.blackjack', apple='6761393761', price='0'),
     '/911-idle-dispatch/': dict(name='911: Idle Dispatch', slug='idle-dispatch', genre=['Simulation', 'Strategy', 'Idle'], gp='com.hantro.wwiii', apple='6813881867', price='0'),
@@ -82,7 +84,10 @@ DEV_LINKS = ['https://play.google.com/store/apps/dev?id=4858435727768538175', 'h
 
 
 def text_for(lang):
-    return EN_TEXT if lang == 'en' else dict(badges=MODULES[lang].BADGES, lang_label=MODULES[lang].LANG_LABEL)
+    if lang == 'en':
+        return EN_TEXT
+    m = MODULES[lang]
+    return dict(badges=m.BADGES, itch=getattr(m, 'ITCH', EN_TEXT['itch']), lang_label=m.LANG_LABEL)
 
 
 def lang_url(here, lang):
@@ -99,6 +104,9 @@ def stores(attrs, lang='en'):
     if a.get('apple'):
         url = a['apple'] if a['apple'].startswith('http') else APPLE_URL + a['apple']
         out.append(f'<a class="store" href="{url}" target="_blank" rel="noopener">{APPLE_SVG}<span><small>{as_}</small><b>{ab}</b></span></a>')
+    if a.get('itch'):
+        isml, ibig = text_for(lang)['itch']
+        out.append(f'<a class="store store--itch" href="{a["itch"]}" target="_blank" rel="noopener">{ITCH_SVG}<span><small>{isml}</small><b>{ibig}</b></span></a>')
     return '\n'.join(out)
 
 
@@ -169,12 +177,12 @@ def schema(html, here, lang):
             'image': meta(html, 'property', 'og:image'),
             'screenshot': [SITE + s for s in shots],
             'genre': g['genre'], 'applicationCategory': 'GameApplication',
-            'operatingSystem': 'Android, iOS' if g.get('apple') else 'Android',
-            'gamePlatform': ['Android', 'iOS'] if g.get('apple') else ['Android'],
+            'operatingSystem': ', '.join(['Android'] + (['iOS'] if g.get('apple') else []) + (['Windows', 'Linux'] if g.get('itch') else [])),
+            'gamePlatform': ['Android'] + (['iOS'] if g.get('apple') else []) + (['PC'] if g.get('itch') else []),
             'playMode': 'SinglePlayer',
             'offers': {'@type': 'Offer', 'price': g['price'], 'priceCurrency': 'USD'},
             'author': {'@id': SITE + '/#org'}, 'publisher': {'@id': SITE + '/#org'},
-            'installUrl': stores_[0], 'sameAs': stores_ + ([g['community']] if g.get('community') else []),
+            'installUrl': stores_[0], 'sameAs': stores_ + ([g['itch']] if g.get('itch') else []) + ([g['community']] if g.get('community') else []),
         })
         graph.append(org)
         graph.append({'@type': 'BreadcrumbList', 'itemListElement': [

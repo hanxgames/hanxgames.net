@@ -178,10 +178,11 @@ ul { margin: 0; padding: 0; list-style: none; }
 .store:hover { transform: translateY(-3px); border-color: rgba(255,255,255,.5); box-shadow: 0 14px 34px -14px var(--glow); }
 .store:hover::after { transform: translateX(120%); }
 .store svg { width: 26px; height: 26px; flex-shrink: 0; }
-.store span { display: flex; flex-direction: column; line-height: 1.1; text-align: left; }
-.store small { font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; opacity: .82; }
-.store b { font-size: 19px; font-weight: 600; letter-spacing: -.01em; font-family: "Inter", sans-serif; }
+.store > span { display: flex; flex-direction: column; line-height: 1.1; text-align: left; }
+.store > span > small { font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; opacity: .82; }
+.store > span > b { font-size: 19px; font-weight: 600; letter-spacing: -.01em; font-family: "Inter", sans-serif; }
 .store--soon { opacity: .55; pointer-events: none; }
+.store--itch:hover { border-color: #fa5c5c; box-shadow: 0 14px 34px -14px rgba(250,92,92,.6); }
 
 /* ---------- Common blocks ---------- */
 .section { position: relative; padding: 96px 0; }
