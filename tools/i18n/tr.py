@@ -1277,6 +1277,6 @@ PAGES['rebirth/index.html'] += [
      '<li>Her eylemin haritada görünen, zincirleme sonuçları var: baskı artınca misyon şehirlerden çekiliyor ve ajanlarıyla peşine düşüyor.</li>'),
     ('<li>Share button on victory screens, smoother effects and translation fixes.</li>',
      '<li>Zafer ekranlarında Paylaş düğmesi, daha akıcı efektler ve çeviri düzeltmeleri.</li>'),
-    ('<a href="https://rebirthgame.tr/haberler.html?lang=en#2026-10-23-surum-2-1-1" target="_blank" rel="noopener">Read the full patch notes</a>',
-     '<a href="https://rebirthgame.tr/haberler.html?lang=tr#2026-10-23-surum-2-1-1" target="_blank" rel="noopener">Güncelleme notlarının tamamı</a>'),
+    ('<a href="https://rebirthgame.tr/haberler.html?lang=en#2026-10-23-surum-2-1-1" target="_blank" rel="noopener" class="btn">Read the full patch notes</a>',
+     '<a href="https://rebirthgame.tr/haberler.html?lang=tr#2026-10-23-surum-2-1-1" target="_blank" rel="noopener" class="btn">Güncelleme notlarının tamamı</a>'),
 ]

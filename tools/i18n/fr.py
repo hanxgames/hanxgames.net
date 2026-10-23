@@ -1277,6 +1277,6 @@ PAGES['rebirth/index.html'] += [
      '<li>Chaque action a des conséquences visibles en chaîne sur la carte : sous pression, la Mission quitte les villes et lance des agents à vos trousses.</li>'),
     ('<li>Share button on victory screens, smoother effects and translation fixes.</li>',
      '<li>Bouton Partager sur les écrans de victoire, effets plus fluides et corrections de traduction.</li>'),
-    ('<a href="https://rebirthgame.tr/haberler.html?lang=en#2026-10-23-surum-2-1-1" target="_blank" rel="noopener">Read the full patch notes</a>',
-     '<a href="https://rebirthgame.tr/haberler.html?lang=en#2026-10-23-surum-2-1-1" target="_blank" rel="noopener">Lire les notes de mise à jour complètes (en anglais)</a>'),
+    ('<a href="https://rebirthgame.tr/haberler.html?lang=en#2026-10-23-surum-2-1-1" target="_blank" rel="noopener" class="btn">Read the full patch notes</a>',
+     '<a href="https://rebirthgame.tr/haberler.html?lang=en#2026-10-23-surum-2-1-1" target="_blank" rel="noopener" class="btn">Lire les notes de mise à jour complètes (en anglais)</a>'),
 ]
