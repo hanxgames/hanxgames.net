@@ -1280,3 +1280,23 @@ PAGES['rebirth/index.html'] += [
     ('<a href="https://rebirthgame.tr/haberler.html?lang=en#2026-10-23-surum-2-1-1" target="_blank" rel="noopener" class="btn">Read the full patch notes</a>',
      '<a href="https://rebirthgame.tr/haberler.html?lang=tr#2026-10-23-surum-2-1-1" target="_blank" rel="noopener" class="btn">Güncelleme notlarının tamamı</a>'),
 ]
+
+# 2026 ana sayfa tasarımı (yeni logo ve intro, 2026-10-25): kaldırılan yörünge bölümünün çiftleri çıkar, yeni metinler
+PAGES['index.html'] = [p for p in PAGES['index.html'] if p[0] not in ('aria-label="Our games"', 'alt="HanX Games logo"')] + [
+    ('aria-label="Replay intro"',
+     'aria-label="İntroyu yeniden oynat"'),
+    ('<b class="kw">Strategy</b>',
+     '<b class="kw">Strateji</b>'),
+    ('<b class="kw">Cards</b>',
+     '<b class="kw">Kart</b>'),
+    ('<b class="kw">Simulation</b>',
+     '<b class="kw">Simülasyon</b>'),
+    ('<b class="kw">Tower defense</b>',
+     '<b class="kw">Kule savunma</b>'),
+    ('<b class="kw">Esports</b>',
+     '<b class="kw">Espor</b>'),
+    ('<span class="spot__newtag">New mode</span>',
+     '<span class="spot__newtag">Yeni mod</span>'),
+    ('<span class="spot__newtxt">Shadow Front: this time, you are the rebellion</span>',
+     '<span class="spot__newtxt">Gölge Cephesi: bu kez isyancı sensin</span>'),
+]

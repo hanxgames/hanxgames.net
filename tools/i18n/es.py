@@ -1280,3 +1280,23 @@ PAGES['rebirth/index.html'] += [
     ('<a href="https://rebirthgame.tr/haberler.html?lang=en#2026-10-23-surum-2-1-1" target="_blank" rel="noopener" class="btn">Read the full patch notes</a>',
      '<a href="https://rebirthgame.tr/haberler.html?lang=en#2026-10-23-surum-2-1-1" target="_blank" rel="noopener" class="btn">Lee las notas completas de la actualización (en inglés)</a>'),
 ]
+
+# 2026 ana sayfa tasarımı (yeni logo ve intro, 2026-10-25): kaldırılan yörünge bölümünün çiftleri çıkar, yeni metinler
+PAGES['index.html'] = [p for p in PAGES['index.html'] if p[0] not in ('aria-label="Our games"', 'alt="HanX Games logo"')] + [
+    ('aria-label="Replay intro"',
+     'aria-label="Volver a ver la intro"'),
+    ('<b class="kw">Strategy</b>',
+     '<b class="kw">Estrategia</b>'),
+    ('<b class="kw">Cards</b>',
+     '<b class="kw">Cartas</b>'),
+    ('<b class="kw">Simulation</b>',
+     '<b class="kw">Simulación</b>'),
+    ('<b class="kw">Tower defense</b>',
+     '<b class="kw">Defensa de torres</b>'),
+    ('<b class="kw">Esports</b>',
+     '<b class="kw">eSports</b>'),
+    ('<span class="spot__newtag">New mode</span>',
+     '<span class="spot__newtag">Nuevo modo</span>'),
+    ('<span class="spot__newtxt">Shadow Front: this time, you are the rebellion</span>',
+     '<span class="spot__newtxt">Frente Sombra: esta vez, la rebelión eres tú</span>'),
+]
