@@ -1263,22 +1263,26 @@ PAGES['ember-keep/index.html'] = [
      '<h2>Kaleyi savun!</h2>'),
 ]
 
-# 2.1.1 güncellemesi bölümü (2026-10-23)
+# 2.1.2 güncellemesi bölümü (2026-10-28; 2.1.1 bölümünün yerine)
 PAGES['rebirth/index.html'] += [
-    ('alt="The Shadow Front council meets by candlelight around a map"',
-     'alt="Gölge Cephesi Konseyi mum ışığında bir harita başında toplanıyor"'),
-    ('<p class="eyebrow">What\'s new · Update 2.1.1</p>',
-     '<p class="eyebrow">Yenilikler · Güncelleme 2.1.1</p>'),
-    ('>New mode: Shadow Front</h2>',
-     '>Yeni mod: Gölge Cephesi</h2>'),
-    ('<li>This time you are the rebellion: lead secret cells, win the people over and bring the mission to the peace table.</li>',
-     '<li>Bu kez isyancı sensin: gizli hücrelerini yönet, halkı kazan, misyonu barış masasına oturt.</li>'),
-    ('<li>Every action has visible, chain-reaction consequences on the map: under pressure the mission pulls out of cities and sends agents after you.</li>',
-     '<li>Her eylemin haritada görünen, zincirleme sonuçları var: baskı artınca misyon şehirlerden çekiliyor ve ajanlarıyla peşine düşüyor.</li>'),
-    ('<li>Share button on victory screens, smoother effects and translation fixes.</li>',
-     '<li>Zafer ekranlarında Paylaş düğmesi, daha akıcı efektler ve çeviri düzeltmeleri.</li>'),
-    ('<a href="https://rebirthgame.tr/haberler.html?lang=en#2026-10-23-surum-2-1-1" target="_blank" rel="noopener" class="btn">Read the full patch notes</a>',
-     '<a href="https://rebirthgame.tr/haberler.html?lang=tr#2026-10-23-surum-2-1-1" target="_blank" rel="noopener" class="btn">Güncelleme notlarının tamamı</a>'),
+    ('alt="The order wheel around a selected unit on the ReBirth map"',
+     'alt="ReBirth haritasında seçili birliğin çevresindeki emir çarkı"'),
+    ('<p class="eyebrow">What\'s new · Update 2.1.2</p>',
+     '<p class="eyebrow">Yenilikler · Güncelleme 2.1.2</p>'),
+    ('>A deeper campaign, shaped by players</h2>',
+     '>Oyuncu önerileriyle daha derin bir harekât</h2>'),
+    ('<li>Order wheel: tap a unit and pick its orders from the slices around it.</li>',
+     '<li>Emir çarkı: birliğe dokun, emirlerini çevresindeki dilimlerden ver.</li>'),
+    ('<li>Budget deficits now bite gradually, Easy, Medium and Hard feel clearly different, and the rebuilt Custom campaign lets you combine scenarios.</li>',
+     '<li>Bütçe açığı artık kademeli sonuçlar doğuruyor, Kolay, Orta ve Zor belirgin biçimde ayrışıyor; yenilenen Özel harekâtta senaryoları birleştirebilirsin.</li>'),
+    ('<li>5 strategies for the Shadow Front, a rebuilt Story of the Campaign and fixes for reported bugs.</li>',
+     "<li>Gölge Cephesi'ne 5 strateji, yenilenen Harekâtın Hikâyesi ve bildirilen hataların düzeltmeleri.</li>"),
+    ('>Thank you, Prempiti, for the detailed feedback behind many of these changes!</p>',
+     '>Bu değişikliklerin birçoğunun arkasındaki ayrıntılı geri bildirim için teşekkürler, Prempiti!</p>'),
+    ('>Out now on PC (itch.io); arriving on Google Play after store review.</p>',
+     ">PC'de itch.io'da; Google Play'de mağaza onayının ardından.</p>"),
+    ('<a href="https://rebirthgame.tr/haberler.html?lang=en#2026-10-28-surum-2-1-2" target="_blank" rel="noopener" class="btn">Read the full patch notes</a>',
+     '<a href="https://rebirthgame.tr/haberler.html?lang=tr#2026-10-28-surum-2-1-2" target="_blank" rel="noopener" class="btn">Güncelleme notlarının tamamı</a>'),
 ]
 
 # 2026 ana sayfa tasarımı (yeni logo ve intro, 2026-10-25): kaldırılan yörünge bölümünün çiftleri çıkar, yeni metinler

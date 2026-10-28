@@ -1263,22 +1263,26 @@ PAGES['ember-keep/index.html'] = [
      '<h2>¡Defiende la fortaleza!</h2>'),
 ]
 
-# 2.1.1 güncellemesi bölümü (2026-10-23)
+# 2.1.2 güncellemesi bölümü (2026-10-28; 2.1.1 bölümünün yerine)
 PAGES['rebirth/index.html'] += [
-    ('alt="The Shadow Front council meets by candlelight around a map"',
-     'alt="El Consejo del Frente Sombra se reúne a la luz de las velas alrededor de un mapa"'),
-    ('<p class="eyebrow">What\'s new · Update 2.1.1</p>',
-     '<p class="eyebrow">Novedades · Actualización 2.1.1</p>'),
-    ('>New mode: Shadow Front</h2>',
-     '>Nuevo modo: Frente Sombra</h2>'),
-    ('<li>This time you are the rebellion: lead secret cells, win the people over and bring the mission to the peace table.</li>',
-     '<li>Esta vez la rebelión eres tú: dirige células secretas, gánate al pueblo y sienta a la Misión en la mesa de paz.</li>'),
-    ('<li>Every action has visible, chain-reaction consequences on the map: under pressure the mission pulls out of cities and sends agents after you.</li>',
-     '<li>Cada acción tiene consecuencias visibles y en cadena en el mapa: bajo presión, la Misión se retira de las ciudades y envía agentes tras de ti.</li>'),
-    ('<li>Share button on victory screens, smoother effects and translation fixes.</li>',
-     '<li>Botón Compartir en las pantallas de victoria, efectos más fluidos y correcciones de traducción.</li>'),
-    ('<a href="https://rebirthgame.tr/haberler.html?lang=en#2026-10-23-surum-2-1-1" target="_blank" rel="noopener" class="btn">Read the full patch notes</a>',
-     '<a href="https://rebirthgame.tr/haberler.html?lang=en#2026-10-23-surum-2-1-1" target="_blank" rel="noopener" class="btn">Lee las notas completas de la actualización (en inglés)</a>'),
+    ('alt="The order wheel around a selected unit on the ReBirth map"',
+     'alt="La rueda de órdenes alrededor de una unidad seleccionada en el mapa de ReBirth"'),
+    ('<p class="eyebrow">What\'s new · Update 2.1.2</p>',
+     '<p class="eyebrow">Novedades · Actualización 2.1.2</p>'),
+    ('>A deeper campaign, shaped by players</h2>',
+     '>Una campaña más profunda, hecha con los jugadores</h2>'),
+    ('<li>Order wheel: tap a unit and pick its orders from the slices around it.</li>',
+     '<li>Rueda de órdenes: toca una unidad y elige sus órdenes en los sectores que la rodean.</li>'),
+    ('<li>Budget deficits now bite gradually, Easy, Medium and Hard feel clearly different, and the rebuilt Custom campaign lets you combine scenarios.</li>',
+     '<li>El déficit presupuestario ahora tiene consecuencias graduales, Fácil, Medio y Difícil se distinguen claramente y la Campaña personalizada renovada te permite combinar escenarios.</li>'),
+    ('<li>5 strategies for the Shadow Front, a rebuilt Story of the Campaign and fixes for reported bugs.</li>',
+     '<li>5 estrategias para el Frente Sombra, La historia de la campaña renovada y correcciones de errores reportados.</li>'),
+    ('>Thank you, Prempiti, for the detailed feedback behind many of these changes!</p>',
+     '>¡Gracias, Prempiti, por los comentarios detallados detrás de muchos de estos cambios!</p>'),
+    ('>Out now on PC (itch.io); arriving on Google Play after store review.</p>',
+     '>Ya disponible en PC (itch.io); en Google Play tras la revisión de la tienda.</p>'),
+    ('<a href="https://rebirthgame.tr/haberler.html?lang=en#2026-10-28-surum-2-1-2" target="_blank" rel="noopener" class="btn">Read the full patch notes</a>',
+     '<a href="https://rebirthgame.tr/haberler.html?lang=en#2026-10-28-surum-2-1-2" target="_blank" rel="noopener" class="btn">Lee las notas completas de la actualización (en inglés)</a>'),
 ]
 
 # 2026 ana sayfa tasarımı (yeni logo ve intro, 2026-10-25): kaldırılan yörünge bölümünün çiftleri çıkar, yeni metinler
