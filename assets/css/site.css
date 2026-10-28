@@ -429,3 +429,8 @@ canvas.fx { position: absolute; inset: 0; width: 100%; height: 100%; pointer-eve
   [data-reveal] { opacity: 1; transform: none; }
   canvas.fx { display: none; }
 }
+
+/* itch.io purchase box (ReBirth page); fixed 552x167 widget, hidden on narrow screens where the store button stays */
+.itch-kutu { margin: 22px auto 0; width: 552px; max-width: 100%; }
+.itch-kutu iframe { display: block; width: 552px; height: 167px; border: 0; border-radius: 12px; background: #0b0906; }
+@media (max-width: 600px) { .itch-kutu { display: none; } }

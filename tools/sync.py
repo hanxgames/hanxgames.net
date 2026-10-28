@@ -94,12 +94,17 @@ def lang_url(here, lang):
     return here if lang == 'en' else '/' + lang + here
 
 
-def stores(attrs, lang='en'):
+def gp_referrer(here):
+    """Campaign tag on Google Play links: Play Console acquisition reports and Firebase show installs per page. No personal data."""
+    return '&amp;referrer=utm_source%3Dhanxgames.net%26utm_medium%3Dweb%26utm_campaign%3D' + (here.strip('/').replace('/', '-') or 'home')
+
+
+def stores(attrs, lang='en', here='/'):
     a = dict(re.findall(r'(\w+)="([^"]*)"', attrs))
     (gs, gb), (as_, ab) = text_for(lang)['badges']
     out = []
     if a.get('gp'):
-        url = a['gp'] if a['gp'].startswith('http') else GP_URL + a['gp']
+        url = a['gp'] if a['gp'].startswith('http') else GP_URL + a['gp'] + gp_referrer(here)
         out.append(f'<a class="store" href="{url}" target="_blank" rel="noopener">{GP_SVG}<span><small>{gs}</small><b>{gb}</b></span></a>')
     if a.get('apple'):
         url = a['apple'] if a['apple'].startswith('http') else APPLE_URL + a['apple']
@@ -243,7 +248,7 @@ def translate(html, rel, here, lang):
         html = html.replace(en, tx)
     html = html.replace('<html lang="en">', f'<html lang="{lang}">', 1)
     html = re.sub(r'<!-- @stores([^>]*?)-->.*?<!-- /@stores -->',
-                  lambda m: '<!-- @stores' + m.group(1) + '-->\n' + stores(m.group(1), lang) + '\n<!-- /@stores -->', html, flags=re.S)
+                  lambda m: '<!-- @stores' + m.group(1) + '-->\n' + stores(m.group(1), lang, here) + '\n<!-- /@stores -->', html, flags=re.S)
     html = INTERNAL.sub(f'href="/{lang}/', html)  # internal links -> same language; assets are shared
     html = re.sub(r'(rel="canonical" href="%s/)' % re.escape(SITE), rf'\g<1>{lang}/', html)
     html = re.sub(r'(property="og:url" content="%s/)' % re.escape(SITE), rf'\g<1>{lang}/', html)
@@ -281,7 +286,7 @@ def main():
             html = block(html, 'footer', FOOTER)
             html = block(html, 'head', head_block(here, 'en'))
             html = re.sub(r'<!-- @stores([^>]*?)-->.*?<!-- /@stores -->',
-                          lambda m: '<!-- @stores' + m.group(1) + '-->\n' + stores(m.group(1)) + '\n<!-- /@stores -->', html, flags=re.S)
+                          lambda m: '<!-- @stores' + m.group(1) + '-->\n' + stores(m.group(1), 'en', here) + '\n<!-- /@stores -->', html, flags=re.S)
             html = block(html, 'more', more(here))
             html = block(html, 'schema', schema(html, here, 'en'))
             html = block(html, '404i18n', not_found_script())
