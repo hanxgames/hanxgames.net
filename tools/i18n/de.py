@@ -1460,3 +1460,7 @@ PAGES['index.html'] += [
     ('See the packs',
      'Pakete ansehen'),
 ]
+PAGES['index.html'] += [
+    ('<a class="btn" href="/low-poly-assets/">Asset packs',
+     '<a class="btn" href="/low-poly-assets/">Asset-Pakete'),
+]
