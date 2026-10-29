@@ -434,3 +434,13 @@ canvas.fx { position: absolute; inset: 0; width: 100%; height: 100%; pointer-eve
 .itch-kutu { margin: 22px auto 0; width: 552px; max-width: 100%; }
 .itch-kutu iframe { display: block; width: 552px; height: 167px; border: 0; border-radius: 12px; background: #0b0906; }
 @media (max-width: 600px) { .itch-kutu { display: none; } }
+.nav__links a .nav__ico { width: 22px; height: 22px; color: var(--accent); flex: none; }
+/* home: HanX Assets teaser */
+.hx-assets { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 32px; padding: 18px; border-radius: var(--radius);
+  background: var(--surface); border: 1px solid var(--line); color: inherit; text-decoration: none; transition: border-color .3s, transform .3s var(--ease); }
+.hx-assets:hover { border-color: var(--accent); transform: translateY(-3px); }
+.hx-assets img { width: 100%; height: auto; border-radius: 12px; display: block; }
+.hx-assets__txt { display: grid; gap: 12px; justify-items: start; }
+.hx-assets__txt strong { font-family: var(--font-display); font-size: clamp(24px, 3vw, 36px); line-height: 1.1; }
+.hx-assets__p { color: var(--muted); }
+@media (max-width: 800px) { .hx-assets { grid-template-columns: 1fr; } }
