@@ -1293,6 +1293,10 @@ PAGES['rebirth/index.html'] += [
      'Îles Saranis</h3>'),
     ('The pressure inside Morasca keeps rising: ash buries the fields and an eruption can send a giant wave ashore. Build sea walls, run ferries and plant vineyards in the volcanic soil.',
      'La pression de Morasca ne cesse de monter : les cendres ensevelissent les champs et une éruption peut projeter une vague géante sur la côte. Bâtissez des digues, faites circuler des ferries et plantez des vignes dans le sol volcanique.'),
+    ('Kesra Delta</h3>',
+     'Delta de Kesra</h3>'),
+    ('Varzan Plateau</h3>',
+     'Plateau de Varzan</h3>'),
 ]
 
 # 2026 ana sayfa tasarımı (yeni logo ve intro, 2026-10-25): kaldırılan yörünge bölümünün çiftleri çıkar, yeni metinler
