@@ -65,12 +65,17 @@
     .g-art__badge b { font-family: "Oswald", sans-serif; font-size: 28px; color: var(--accent); line-height: 1; }
     .g-art__badge span { font-size: 12px; color: var(--muted); line-height: 1.3; text-transform: uppercase; letter-spacing: .1em; }
 
-    .maps { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .maps { display: grid; gap: 18px; grid-template-columns: repeat(6, 1fr); }
+    .maps .map { grid-column: span 2; }
+    .maps .map:nth-child(n+4) { grid-column: span 3; }
+    @media (max-width: 900px) { .maps { grid-template-columns: 1fr; } .maps .map, .maps .map:nth-child(n+4) { grid-column: auto; } }
     .map { position: relative; border-radius: 20px; overflow: hidden; border: 1px solid var(--line); min-height: 360px; display: flex; align-items: flex-end; isolation: isolate; }
     .map__bg { position: absolute; inset: 0; z-index: -2; background: url(/assets/games/rebirth/shot-3.webp) no-repeat; background-size: 340% auto; transition: transform .8s var(--ease); }
     .map:nth-child(1) .map__bg { background-position: 5% 64%; }
     .map:nth-child(2) .map__bg { background-position: 50% 64%; }
     .map:nth-child(3) .map__bg { background-position: 95% 64%; }
+    .map:nth-child(4) .map__bg { background: url(/assets/games/rebirth/map-halvarya.webp) center / cover no-repeat; }
+    .map:nth-child(5) .map__bg { background: url(/assets/games/rebirth/map-saranis.webp) center 70% / cover no-repeat; }
     .map:hover .map__bg { transform: scale(1.08); }
     .map::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(0deg, rgba(11,9,6,.97) 10%, rgba(11,9,6,.55) 55%, rgba(11,9,6,.15)); }
     .map__body { padding: 24px; }
@@ -144,7 +149,7 @@
 <!-- /@stores --></div>
         <a class="community" href="https://www.reddit.com/r/ReBirthSocial/" target="_blank" rel="noopener" data-reveal style="--d:310ms"><span class="community__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg></span><span class="community__text"><small><span lang="en">Reddit</span> topluluğumuza katıl</small><b>r/ReBirthSocial</b></span><svg class="community__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
         <ul class="chips" data-reveal style="--d:340ms">
-          <li class="chip">3 harita</li><li class="chip">3 felaket</li><li class="chip">Çevrimdışı oynanır</li><li class="chip">11 dil</li>
+          <li class="chip">5 harita</li><li class="chip">5 felaket</li><li class="chip">Çevrimdışı oynanır</li><li class="chip">11 dil</li>
         </ul>
       </div>
       <div class="g-art" data-reveal="right" style="--d:200ms">
@@ -154,21 +159,21 @@
     </div>
   </header>
 
-  <!-- What's new (update 2.1.2) -->
+  <!-- What's new (updates 2.1.3 and 2.1.4) -->
   <section class="section" style="padding-top:40px">
     <div class="container split">
-      <div class="g-art__frame" data-reveal="left"><img src="/assets/games/rebirth/order-wheel.webp" alt="ReBirth haritasında seçili birliğin çevresindeki emir çarkı" width="1280" height="720" loading="lazy"></div>
+      <div class="g-art__frame" data-reveal="left"><img src="/assets/games/rebirth/halvarya-saranis.webp" alt="ReBirth'ün iki yeni harekât haritası: Halvarya Fiyortları ve Saranis Adaları" width="1280" height="720" loading="lazy"></div>
       <div data-reveal="right">
-        <p class="eyebrow">Yenilikler · Güncelleme 2.1.2</p>
-        <h2 style="font-size:clamp(30px,4.4vw,50px);margin-top:14px">Oyuncu önerileriyle daha derin bir harekât</h2>
+        <p class="eyebrow">Yenilikler · Güncelleme 2.1.3 ve 2.1.4</p>
+        <h2 style="font-size:clamp(30px,4.4vw,50px);margin-top:14px">İki yeni cephe ve gizli bir isyan</h2>
         <ul class="ticks">
-          <li>Emir çarkı: birliğe dokun, emirlerini çevresindeki dilimlerden ver.</li>
-          <li>Bütçe açığı artık kademeli sonuçlar doğuruyor, Kolay, Orta ve Zor belirgin biçimde ayrışıyor; yenilenen Özel harekâtta senaryoları birleştirebilirsin.</li>
-          <li>Gölge Cephesi'ne 5 strateji, yenilenen Harekâtın Hikâyesi ve bildirilen hataların düzeltmeleri.</li>
+          <li>İki yeni harekât haritası: çığları ve dondurucu soğuğuyla Halvarya Fiyortları, uyanan volkanı, kül bulutları ve dev dalgasıyla Saranis Adaları.</li>
+          <li>Misyon karargâhını nereye kuracağını sen seçiyorsun; Gölge Cephesi ise artık her oyunda gizli bir ilde doğuyor. Gölge Cephesi modunda kendi üssünü sen seçersin.</li>
+          <li>Kara Kolera etkinliği: Arden kampını sürüye karşı savun ve tedaviyi bul, 30 Kasım'a kadar açık. Ayrıca her mod için Devam et sunan yeni ana menü.</li>
         </ul>
-        <p style="margin-top:16px">Bu değişikliklerin birçoğunun arkasındaki ayrıntılı geri bildirim için teşekkürler, Prempiti!</p>
-        <p style="margin-top:6px;color:var(--muted)">PC'de itch.io'da; Google Play'de mağaza onayının ardından.</p>
-        <p style="margin-top:22px"><a href="https://rebirthgame.tr/haberler.html?lang=tr#2026-10-28-surum-2-1-2" target="_blank" rel="noopener" class="btn">Güncelleme notlarının tamamı</a></p>
+        <p style="margin-top:16px">Beş harita, beş felaket ve oyuncularımızdan gelen birçok fikir. Teşekkürler!</p>
+        <p style="margin-top:6px;color:var(--muted)">Google Play'de ve PC'de (itch.io) yayında.</p>
+        <p style="margin-top:22px"><a href="https://rebirthgame.tr/haberler.html?lang=tr#2026-11-02-surum-2-1-4" target="_blank" rel="noopener" class="btn">Güncelleme notlarının tamamı</a></p>
       </div>
     </div>
   </section>
@@ -195,7 +200,7 @@
   <section class="section" style="padding-top:20px">
     <div class="container">
       <div class="section-head" data-reveal>
-        <p class="eyebrow">Üç harita · üç felaket · üç strateji</p>
+        <p class="eyebrow">Beş harita · beş felaket · üç strateji</p>
         <h2>Her eyalet farklı bir şekilde yıkılmış</h2>
       </div>
       <div class="maps">
@@ -221,6 +226,22 @@
             <div class="ficon"><svg viewBox="0 0 32 32"><circle cx="16" cy="13" r="5"/><path d="M16 2v3M16 21v2M5 13H2M30 13h-3M8 5l2 2M24 5l-2 2"/><path d="M4 28l5-3 4 3 4-3 4 3 4-3 3 2"/></svg></div>
             <h3><small>Kuraklık</small>Varzan Plateau</h3>
             <p>Her bölgenin kendine özgü su sıkıntısı var. Kuyular aç, sarnıçlar inşa et, su tankerleri işlet ve yeşil kuşak dik.</p>
+          </div>
+        </article>
+        <article class="map" data-reveal data-tilt="5" style="--d:240ms">
+          <div class="map__bg" aria-hidden="true"></div>
+          <div class="map__body">
+            <div class="ficon"><svg viewBox="0 0 32 32"><path d="M16 3v26M4.7 9.5l22.6 13M4.7 22.5l22.6-13"/><path d="M12 5l4 4 4-4M12 27l4-4 4 4"/></svg></div>
+            <h3><small>Çığ</small>Halvarya Fiyortları</h3>
+            <p>Kar bütün kış birikir; sonunda çığlar evleri gömer, dağ yollarını kapatır. Çığ bariyerleri kur, yolları aç, soğuğa karşı koy.</p>
+          </div>
+        </article>
+        <article class="map" data-reveal data-tilt="5" style="--d:320ms">
+          <div class="map__bg" aria-hidden="true"></div>
+          <div class="map__body">
+            <div class="ficon"><svg viewBox="0 0 32 32"><path d="M2 28l9-13h3l2 3 2-3h3l9 13z"/><path d="M14 11c-1-3 1-5 3-6M18 11c1-2 3-3 5-3"/></svg></div>
+            <h3><small>Volkan</small>Saranis Adaları</h3>
+            <p>Morasca'nın basıncı durmadan yükselir: kül tarlaları gömer, bir patlama dev dalgayı kıyıya salabilir. Kıyı seddi kur, feribot işlet, volkanik toprağa bağ dik.</p>
           </div>
         </article>
       </div>
@@ -276,7 +297,7 @@
         <ul class="ticks">
           <li>Gece-gündüz döngüsü: istikrarlı bölgeler parlar, çekişmeli olanlar titrer, isyancıların elindekiler karanlığa gömülür.</li>
           <li>Yardım konvoyları, seçim gecesi, bağışçılar konferansı, basın toplantıları ve havai fişekli hasat şenlikleri.</li>
-          <li>Yaklaşık 80 dinamik olay, 30 politika ve hikâyeni yazan aylık bir gazete.</li>
+          <li>100'ü aşkın dinamik olay, 40'tan fazla politika ve hikâyeni yazan aylık bir gazete.</li>
           <li>Tüm seferinin hızlandırılmış özeti; ayrıca Türkçe ve İngilizce birlik seslendirmeleri ve telsiz konuşmaları.</li>
         </ul>
       </div>
@@ -313,7 +334,7 @@
         <h2>Sadece fethetmek değil, yeniden inşa etmek üzerine internetsiz bir 3D strateji oyunu</h2>
         <p>ReBirth: Rebuild &amp; Resist, ülke kurma, afet sonrası yeniden yapılanma ve isyanla mücadeleyi birleştiren, Android ve PC (Windows, Linux) için bir 3D strateji ve yönetim oyunu. Bir deprem, sel ya da uzun bir kuraklığın ardından yıkılmış bir eyaletin başına geçiyor ve önceliğin ne olacağına karar veriyorsun: konut mu, temiz su mu, elektrik mi, klinikler mi, yoksa güvenlik mi?</p>
         <p>Klasik bir savaş oyununun aksine burada yalnızca askeri güç kazandırmaz. Her devriye, hava saldırısı ve kontrol noktası meşruiyetini etkiler; seferin nasıl biteceğini halkın güveni belirler. 14 bölgede istikrar, destek ve güvenlik arasında denge kur, bütçeni yönet, hava gücünü geliştir ve siviller arasına saklanan bir isyan hareketini alt et.</p>
-        <p>Üç özenle tasarlanmış harita, yedi kriz görevi, yaklaşık 80 dinamik olay ve gece-gündüz döngüsüyle ReBirth; şehir kurma, büyük strateji ve kriz yönetimi oyunlarını sevenlere internetsiz, her yerde ve altı dilde oynanabilen derin bir sefer sunuyor.</p>
+        <p>Beş özenle tasarlanmış harita, yedi kriz görevi, yüzü aşkın dinamik olay ve gece-gündüz döngüsüyle ReBirth; şehir kurma, büyük strateji ve kriz yönetimi oyunlarını sevenlere internetsiz, her yerde ve on bir dilde oynanabilen derin bir sefer sunuyor.</p>
       </div>
       <aside class="facts" data-reveal="right">
         <h3>Bir bakışta</h3>

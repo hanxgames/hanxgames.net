@@ -65,12 +65,17 @@
     .g-art__badge b { font-family: "Oswald", sans-serif; font-size: 28px; color: var(--accent); line-height: 1; }
     .g-art__badge span { font-size: 12px; color: var(--muted); line-height: 1.3; text-transform: uppercase; letter-spacing: .1em; }
 
-    .maps { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .maps { display: grid; gap: 18px; grid-template-columns: repeat(6, 1fr); }
+    .maps .map { grid-column: span 2; }
+    .maps .map:nth-child(n+4) { grid-column: span 3; }
+    @media (max-width: 900px) { .maps { grid-template-columns: 1fr; } .maps .map, .maps .map:nth-child(n+4) { grid-column: auto; } }
     .map { position: relative; border-radius: 20px; overflow: hidden; border: 1px solid var(--line); min-height: 360px; display: flex; align-items: flex-end; isolation: isolate; }
     .map__bg { position: absolute; inset: 0; z-index: -2; background: url(/assets/games/rebirth/shot-3.webp) no-repeat; background-size: 340% auto; transition: transform .8s var(--ease); }
     .map:nth-child(1) .map__bg { background-position: 5% 64%; }
     .map:nth-child(2) .map__bg { background-position: 50% 64%; }
     .map:nth-child(3) .map__bg { background-position: 95% 64%; }
+    .map:nth-child(4) .map__bg { background: url(/assets/games/rebirth/map-halvarya.webp) center / cover no-repeat; }
+    .map:nth-child(5) .map__bg { background: url(/assets/games/rebirth/map-saranis.webp) center 70% / cover no-repeat; }
     .map:hover .map__bg { transform: scale(1.08); }
     .map::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(0deg, rgba(11,9,6,.97) 10%, rgba(11,9,6,.55) 55%, rgba(11,9,6,.15)); }
     .map__body { padding: 24px; }
@@ -144,7 +149,7 @@
 <!-- /@stores --></div>
         <a class="community" href="https://www.reddit.com/r/ReBirthSocial/" target="_blank" rel="noopener" data-reveal style="--d:310ms"><span class="community__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg></span><span class="community__text"><small>Únete a nuestra comunidad de Reddit</small><b>r/ReBirthSocial</b></span><svg class="community__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
         <ul class="chips" data-reveal style="--d:340ms">
-          <li class="chip">3 mapas</li><li class="chip">3 desastres</li><li class="chip">Se juega sin conexión</li><li class="chip">11 idiomas</li>
+          <li class="chip">5 mapas</li><li class="chip">5 desastres</li><li class="chip">Se juega sin conexión</li><li class="chip">11 idiomas</li>
         </ul>
       </div>
       <div class="g-art" data-reveal="right" style="--d:200ms">
@@ -154,21 +159,21 @@
     </div>
   </header>
 
-  <!-- What's new (update 2.1.2) -->
+  <!-- What's new (updates 2.1.3 and 2.1.4) -->
   <section class="section" style="padding-top:40px">
     <div class="container split">
-      <div class="g-art__frame" data-reveal="left"><img src="/assets/games/rebirth/order-wheel.webp" alt="La rueda de órdenes alrededor de una unidad seleccionada en el mapa de ReBirth" width="1280" height="720" loading="lazy"></div>
+      <div class="g-art__frame" data-reveal="left"><img src="/assets/games/rebirth/halvarya-saranis.webp" alt="Fiordos de Halvarya e Islas Saranis, los dos nuevos mapas de campaña de ReBirth" width="1280" height="720" loading="lazy"></div>
       <div data-reveal="right">
-        <p class="eyebrow">Novedades · Actualización 2.1.2</p>
-        <h2 style="font-size:clamp(30px,4.4vw,50px);margin-top:14px">Una campaña más profunda, hecha con los jugadores</h2>
+        <p class="eyebrow">Novedades · Actualizaciones 2.1.3 y 2.1.4</p>
+        <h2 style="font-size:clamp(30px,4.4vw,50px);margin-top:14px">Dos nuevos frentes y una insurgencia oculta</h2>
         <ul class="ticks">
-          <li>Rueda de órdenes: toca una unidad y elige sus órdenes en los sectores que la rodean.</li>
-          <li>El déficit presupuestario ahora tiene consecuencias graduales, Fácil, Medio y Difícil se distinguen claramente y la Campaña personalizada renovada te permite combinar escenarios.</li>
-          <li>5 estrategias para el Frente Sombra, La historia de la campaña renovada y correcciones de errores reportados.</li>
+          <li>Dos nuevos mapas de campaña: Fiordos de Halvarya, con aludes y un frío feroz, e Islas Saranis, con un volcán que despierta, nubes de ceniza y una ola gigante.</li>
+          <li>Elige dónde instala la misión su cuartel general, mientras el Frente Sombra nace ahora en un distrito oculto en cada partida. En el modo Frente Sombra, eliges tu propia base.</li>
+          <li>Evento Cólera Negro: defiende el campamento Arden de la horda y encuentra la cura, abierto hasta el 30 de noviembre. Además, un nuevo menú principal con Continuar para cada modo.</li>
         </ul>
-        <p style="margin-top:16px">¡Gracias, Prempiti, por los comentarios detallados detrás de muchos de estos cambios!</p>
-        <p style="margin-top:6px;color:var(--muted)">Ya disponible en PC (itch.io); en Google Play tras la revisión de la tienda.</p>
-        <p style="margin-top:22px"><a href="https://rebirthgame.tr/haberler.html?lang=en#2026-10-28-surum-2-1-2" target="_blank" rel="noopener" class="btn">Lee las notas completas de la actualización (en inglés)</a></p>
+        <p style="margin-top:16px">Cinco mapas, cinco desastres y muchas ideas de nuestros jugadores. ¡Gracias!</p>
+        <p style="margin-top:6px;color:var(--muted)">Ya disponible en Google Play y en PC (itch.io).</p>
+        <p style="margin-top:22px"><a href="https://rebirthgame.tr/haberler.html?lang=en#2026-11-02-surum-2-1-4" target="_blank" rel="noopener" class="btn">Lee las notas completas de la actualización (en inglés)</a></p>
       </div>
     </div>
   </section>
@@ -195,7 +200,7 @@
   <section class="section" style="padding-top:20px">
     <div class="container">
       <div class="section-head" data-reveal>
-        <p class="eyebrow">Tres mapas · tres desastres · tres estrategias</p>
+        <p class="eyebrow">Cinco mapas · cinco desastres · tres estrategias</p>
         <h2>Cada provincia se rompe a su manera</h2>
       </div>
       <div class="maps">
@@ -221,6 +226,22 @@
             <div class="ficon"><svg viewBox="0 0 32 32"><circle cx="16" cy="13" r="5"/><path d="M16 2v3M16 21v2M5 13H2M30 13h-3M8 5l2 2M24 5l-2 2"/><path d="M4 28l5-3 4 3 4-3 4 3 4-3 3 2"/></svg></div>
             <h3><small>Sequía</small>Varzan Plateau</h3>
             <p>Cada distrito sufre su propia escasez de agua. Perfora pozos, construye aljibes, organiza camiones cisterna y planta un cinturón verde.</p>
+          </div>
+        </article>
+        <article class="map" data-reveal data-tilt="5" style="--d:240ms">
+          <div class="map__bg" aria-hidden="true"></div>
+          <div class="map__body">
+            <div class="ficon"><svg viewBox="0 0 32 32"><path d="M16 3v26M4.7 9.5l22.6 13M4.7 22.5l22.6-13"/><path d="M12 5l4 4 4-4M12 27l4-4 4 4"/></svg></div>
+            <h3><small>Aludes</small>Fiordos de Halvarya</h3>
+            <p>La nieve se acumula todo el invierno hasta que los aludes sepultan casas y cierran los pasos de montaña. Levanta barreras, despeja las carreteras y resiste el frío.</p>
+          </div>
+        </article>
+        <article class="map" data-reveal data-tilt="5" style="--d:320ms">
+          <div class="map__bg" aria-hidden="true"></div>
+          <div class="map__body">
+            <div class="ficon"><svg viewBox="0 0 32 32"><path d="M2 28l9-13h3l2 3 2-3h3l9 13z"/><path d="M14 11c-1-3 1-5 3-6M18 11c1-2 3-3 5-3"/></svg></div>
+            <h3><small>Volcán</small>Islas Saranis</h3>
+            <p>La presión de Morasca no deja de subir: la ceniza sepulta los campos y una erupción puede lanzar una ola gigante a la costa. Construye diques, opera ferris y planta viñedos en el suelo volcánico.</p>
           </div>
         </article>
       </div>
@@ -276,7 +297,7 @@
         <ul class="ticks">
           <li>Ciclo de día y noche: los distritos estables brillan, los disputados parpadean y los controlados por los insurgentes se quedan a oscuras.</li>
           <li>Convoyes de ayuda, la noche electoral, una conferencia de donantes, ruedas de prensa y fiestas de la cosecha con fuegos artificiales.</li>
-          <li>Unos 80 eventos dinámicos, 30 políticas y un periódico mensual que cuenta tu historia.</li>
+          <li>Más de 100 eventos dinámicos, más de 40 políticas y un periódico mensual que cuenta tu historia.</li>
           <li>Un timelapse de toda tu campaña, además de voces de las unidades y comunicaciones de radio en inglés y turco.</li>
         </ul>
       </div>
@@ -313,7 +334,7 @@
         <h2>Un juego de estrategia 3D sin internet sobre reconstruir, no solo conquistar</h2>
         <p>ReBirth: Rebuild &amp; Resist es un juego de estrategia y gestión en 3D para Android y PC (Windows y Linux) que combina construcción de naciones, recuperación tras desastres y guerra contrainsurgente. Tras un terremoto, una inundación o una larga sequía, tomas el mando de una provincia destrozada y decides qué va primero: vivienda, agua potable, electricidad, clínicas o seguridad.</p>
         <p>A diferencia de un juego de guerra clásico, aquí la fuerza militar por sí sola no basta. Cada patrulla, ataque aéreo y puesto de control afecta a tu legitimidad, y la confianza de la población decide cómo termina la campaña. Equilibra estabilidad, apoyo y seguridad en 14 distritos, gestiona tu presupuesto, investiga el poder aéreo y supera en astucia a una insurgencia que se esconde entre los civiles.</p>
-        <p>Con tres mapas diseñados a mano, siete misiones de crisis, unos 80 eventos dinámicos y un ciclo de día y noche, ReBirth ofrece a los fans de los juegos de construcción de ciudades, gran estrategia y gestión de crisis una campaña profunda que se juega sin conexión, en cualquier lugar y en seis idiomas.</p>
+        <p>Con cinco mapas diseñados a mano, siete misiones de crisis, más de 100 eventos dinámicos y un ciclo de día y noche, ReBirth ofrece a los fans de los juegos de construcción de ciudades, gran estrategia y gestión de crisis una campaña profunda que se juega sin conexión, en cualquier lugar y en once idiomas.</p>
       </div>
       <aside class="facts" data-reveal="right">
         <h3>De un vistazo</h3>
