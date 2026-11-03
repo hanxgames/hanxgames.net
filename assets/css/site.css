@@ -177,6 +177,8 @@ ul { margin: 0; padding: 0; list-style: none; }
 .store > span > small { font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; opacity: .82; }
 .store > span > b { font-size: 19px; font-weight: 600; letter-spacing: -.01em; font-family: "Inter", sans-serif; }
 .store--soon { opacity: .55; pointer-events: none; }
+.store--badge { padding: 0; min-height: 0; border: 0; background: none; border-radius: 9px; }
+.store--badge img { display: block; height: 56px; width: auto; }
 .store--itch:hover { border-color: #fa5c5c; box-shadow: 0 14px 34px -14px rgba(250,92,92,.6); }
 
 /* ---------- Common blocks ---------- */

@@ -70,7 +70,7 @@ EN_TEXT = dict(badges=(('Get it on', 'Google Play'), ('Download on the', 'App St
 
 # Facts used for the VideoGame structured data (descriptions come from each page).
 GAMES = {
-    '/rebirth/': dict(name='ReBirth: Rebuild & Resist', slug='rebirth', genre=['Strategy', 'Simulation'], gp='com.hantro.business', price='0', itch='https://hanx-games.itch.io/rebirth', community='https://www.reddit.com/r/ReBirthSocial/'),
+    '/rebirth/': dict(name='ReBirth: Rebuild & Resist', slug='rebirth', genre=['Strategy', 'Simulation'], gp='com.hantro.business', apple='6821863283', price='0', itch='https://hanx-games.itch.io/rebirth', community='https://www.reddit.com/r/ReBirthSocial/'),
     '/frontaxis/': dict(name='Frontaxis', slug='frontaxis', genre=['Strategy', 'Real-time strategy', 'Simulation'], gp='com.hanx.games', price='0'),
     '/poker/': dict(name='Hantro: Poker Roguelike', slug='poker', genre=['Card', 'Roguelike'], gp='com.ilhantro.hantro', price='0'),
     '/blackjack/': dict(name='Hantro: BlackJack Roguelike', slug='blackjack', genre=['Card', 'Strategy', 'Roguelike'], gp='com.hantro.blackjack', apple='6761393761', price='0'),
@@ -81,6 +81,10 @@ GAMES = {
 }
 GP_URL = 'https://play.google.com/store/apps/details?id='
 APPLE_URL = 'https://apps.apple.com/app/id'
+# resmî App Store rozetlerinin genişliği (40 birim yükseklikte; Apple Marketing Tools SVG'leri)
+APPSTORE_EN = {'en': 119.66407, 'tr': 151.29018, 'es': 119.66407, 'pt': 119.66407, 'de': 119.66407, 'fr': 126.50751}
+APPSTORE_ALT = {'en': 'Download on the App Store', 'tr': 'App Store’dan İndirin', 'es': 'Descárgalo en el App Store',
+                'pt': 'Baixar na App Store', 'de': 'Laden im App Store', 'fr': 'Télécharger dans l’App Store'}
 DEV_LINKS = ['https://play.google.com/store/apps/dev?id=4858435727768538175', 'https://apps.apple.com/developer/id1885639647']
 
 
@@ -104,12 +108,14 @@ def stores(attrs, lang='en', here='/'):
     a = dict(re.findall(r'(\w+)="([^"]*)"', attrs))
     (gs, gb), (as_, ab) = text_for(lang)['badges']
     out = []
+    if a.get('apple'):
+        # Apple'ın resmî "Download on the App Store" rozeti, sayfanın dilinde (assets/badges/app-store-<dil>.svg; oran korunur)
+        url = a['apple'] if a['apple'].startswith('http') else APPLE_URL + a['apple']
+        en = round(APPSTORE_EN.get(lang, APPSTORE_EN['en']) * 56 / 40)
+        out.append(f'<a class="store store--badge" href="{url}" target="_blank" rel="noopener"><img src="/assets/badges/app-store-{lang if lang in APPSTORE_EN else "en"}.svg" alt="{APPSTORE_ALT.get(lang, APPSTORE_ALT['en'])}" width="{en}" height="56"></a>')
     if a.get('gp'):
         url = a['gp'] if a['gp'].startswith('http') else GP_URL + a['gp'] + gp_referrer(here)
         out.append(f'<a class="store" href="{url}" target="_blank" rel="noopener">{GP_SVG}<span><small>{gs}</small><b>{gb}</b></span></a>')
-    if a.get('apple'):
-        url = a['apple'] if a['apple'].startswith('http') else APPLE_URL + a['apple']
-        out.append(f'<a class="store" href="{url}" target="_blank" rel="noopener">{APPLE_SVG}<span><small>{as_}</small><b>{ab}</b></span></a>')
     if a.get('itch'):
         isml, ibig = text_for(lang)['itch']
         out.append(f'<a class="store store--itch" href="{a["itch"]}" target="_blank" rel="noopener">{ITCH_SVG}<span><small>{isml}</small><b>{ibig}</b></span></a>')
