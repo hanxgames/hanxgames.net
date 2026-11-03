@@ -71,6 +71,7 @@ EN_TEXT = dict(badges=(('Get it on', 'Google Play'), ('Download on the', 'App St
 # Facts used for the VideoGame structured data (descriptions come from each page).
 GAMES = {
     '/rebirth/': dict(name='ReBirth: Rebuild & Resist', slug='rebirth', genre=['Strategy', 'Simulation'], gp='com.hantro.business', price='0', itch='https://hanx-games.itch.io/rebirth', community='https://www.reddit.com/r/ReBirthSocial/'),
+    '/frontaxis/': dict(name='Frontaxis', slug='frontaxis', genre=['Strategy', 'Real-time strategy', 'Simulation'], gp='com.hanx.games', price='0'),
     '/poker/': dict(name='Hantro: Poker Roguelike', slug='poker', genre=['Card', 'Roguelike'], gp='com.ilhantro.hantro', price='0'),
     '/blackjack/': dict(name='Hantro: BlackJack Roguelike', slug='blackjack', genre=['Card', 'Strategy', 'Roguelike'], gp='com.hantro.blackjack', apple='6761393761', price='0'),
     '/911-idle-dispatch/': dict(name='911: Idle Dispatch', slug='idle-dispatch', genre=['Simulation', 'Strategy', 'Idle'], gp='com.hantro.wwiii', apple='6813881867', price='0'),

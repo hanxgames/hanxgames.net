@@ -31,7 +31,7 @@
   <meta property="og:locale:alternate" content="fr_FR">
 <!-- /@head -->
   <!-- @schema -->
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://hanxgames.net/#org","name":"HanX Games","url":"https://hanxgames.net/","logo":"https://hanxgames.net/assets/brand/logo.webp","email":"hanxdestek@gmail.com","sameAs":["https://play.google.com/store/apps/dev?id=4858435727768538175","https://apps.apple.com/developer/id1885639647"]},{"@type":"WebSite","name":"HanX Games","url":"https://hanxgames.net/tr/","inLanguage":"tr","publisher":{"@id":"https://hanxgames.net/#org"}},{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":1,"url":"https://hanxgames.net/tr/rebirth/","name":"ReBirth: Rebuild & Resist"},{"@type":"ListItem","position":2,"url":"https://hanxgames.net/tr/poker/","name":"Hantro: Poker Roguelike"},{"@type":"ListItem","position":3,"url":"https://hanxgames.net/tr/blackjack/","name":"Hantro: BlackJack Roguelike"},{"@type":"ListItem","position":4,"url":"https://hanxgames.net/tr/911-idle-dispatch/","name":"911: Idle Dispatch"},{"@type":"ListItem","position":5,"url":"https://hanxgames.net/tr/darkway/","name":"DarkWay: Kingdom Choices"},{"@type":"ListItem","position":6,"url":"https://hanxgames.net/tr/moba-manager/","name":"Moba Manager: Esports Coach"},{"@type":"ListItem","position":7,"url":"https://hanxgames.net/tr/ember-keep/","name":"Hantro: Ember Keep"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://hanxgames.net/#org","name":"HanX Games","url":"https://hanxgames.net/","logo":"https://hanxgames.net/assets/brand/logo.webp","email":"hanxdestek@gmail.com","sameAs":["https://play.google.com/store/apps/dev?id=4858435727768538175","https://apps.apple.com/developer/id1885639647"]},{"@type":"WebSite","name":"HanX Games","url":"https://hanxgames.net/tr/","inLanguage":"tr","publisher":{"@id":"https://hanxgames.net/#org"}},{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":1,"url":"https://hanxgames.net/tr/rebirth/","name":"ReBirth: Rebuild & Resist"},{"@type":"ListItem","position":2,"url":"https://hanxgames.net/tr/frontaxis/","name":"Frontaxis"},{"@type":"ListItem","position":3,"url":"https://hanxgames.net/tr/poker/","name":"Hantro: Poker Roguelike"},{"@type":"ListItem","position":4,"url":"https://hanxgames.net/tr/blackjack/","name":"Hantro: BlackJack Roguelike"},{"@type":"ListItem","position":5,"url":"https://hanxgames.net/tr/911-idle-dispatch/","name":"911: Idle Dispatch"},{"@type":"ListItem","position":6,"url":"https://hanxgames.net/tr/darkway/","name":"DarkWay: Kingdom Choices"},{"@type":"ListItem","position":7,"url":"https://hanxgames.net/tr/moba-manager/","name":"Moba Manager: Esports Coach"},{"@type":"ListItem","position":8,"url":"https://hanxgames.net/tr/ember-keep/","name":"Hantro: Ember Keep"}]}]}</script>
 <!-- /@schema -->
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -39,7 +39,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,500;0,600;0,700;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/site.css?v=4">
+  <link rel="stylesheet" href="/assets/css/site.css?v=5">
   <style>
     .typer { font-family: var(--font-display); font-size: clamp(20px, 2.4vw, 28px); font-weight: 600; color: #fff; min-height: 1.3em; }
     .typer em { font-style: normal; background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
@@ -83,6 +83,8 @@
     .gcard__go svg { width: 18px; height: 18px; }
     .gcard:hover .gcard__go { transform: translateX(4px); background: var(--c); color: #000; }
     .gcard__link::after { content: ""; position: absolute; inset: 0; z-index: 2; }
+    .gcard__tag { position: absolute; top: 14px; right: 14px; z-index: 3; display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; background: rgba(0,0,0,.62); border: 1px solid color-mix(in srgb, var(--c) 70%, transparent); color: #fff; font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+    .gcard__tag::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--c); box-shadow: 0 0 10px var(--c); animation: blink 1.6s ease-in-out infinite; }
 
     /* ---------- Pillars / stats / contact ---------- */
     .pillars { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
@@ -225,6 +227,7 @@
     </a>
     <nav class="nav__links" aria-label="Oyunlar">
       <a href="/tr/rebirth/"><img src="/assets/games/rebirth/icon.webp" alt="" width="22" height="22" loading="lazy">ReBirth</a>
+      <a href="/tr/frontaxis/"><img src="/assets/games/frontaxis/icon.webp" alt="" width="22" height="22" loading="lazy">Frontaxis</a>
       <a href="/tr/poker/"><img src="/assets/games/poker/icon.webp" alt="" width="22" height="22" loading="lazy">Hantro: Poker</a>
       <a href="/tr/blackjack/"><img src="/assets/games/blackjack/icon.webp" alt="" width="22" height="22" loading="lazy">Hantro: BlackJack</a>
       <a href="/tr/911-idle-dispatch/"><img src="/assets/games/idle-dispatch/icon.webp" alt="" width="22" height="22" loading="lazy">911: Idle Dispatch</a>
@@ -330,7 +333,17 @@
             <div class="gcard__foot"><div class="plats"><span>Android</span><span>PC</span></div><span class="gcard__go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
           </div>
         </article>
-        <article class="gcard" data-reveal data-tilt="6" style="--c:#e8b84a;--d:60ms" data-shots="/assets/games/poker/shot-2.webp,/assets/games/poker/shot-3.webp,/assets/games/poker/shot-4.webp">
+        <article class="gcard" data-reveal data-tilt="6" style="--c:#c3cf72;--d:60ms" data-shots="/assets/games/frontaxis/shot-3.webp,/assets/games/frontaxis/shot-2.webp,/assets/games/frontaxis/shot-7.webp">
+          <div class="gcard__media"><img src="/assets/games/frontaxis/shot-6.webp" alt="Frontaxis ana menüsü" loading="lazy"><i class="gcard__bar" aria-hidden="true"></i><span class="gcard__tag">Kapalı test</span></div>
+          <div class="gcard__body">
+            <img class="gcard__icon" src="/assets/games/frontaxis/icon.webp" alt="" loading="lazy">
+            <span class="gcard__genre">Strateji · Gerçek arazi</span>
+            <h3><a class="gcard__link" href="/tr/frontaxis/">Frontaxis</a></h3>
+            <p>2030’da gerçek arazide 12 gerçek orduya komuta et. Kapalı teste katıl, çıkıştan önce oyna.</p>
+            <div class="gcard__foot"><div class="plats"><span>Android</span></div><span class="gcard__go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+          </div>
+        </article>
+        <article class="gcard" data-reveal data-tilt="6" style="--c:#e8b84a;--d:120ms" data-shots="/assets/games/poker/shot-2.webp,/assets/games/poker/shot-3.webp,/assets/games/poker/shot-4.webp">
           <div class="gcard__media"><img src="/assets/games/poker/shot-1.webp" alt="Hantro: Poker oynanışı" loading="lazy"><i class="gcard__bar" aria-hidden="true"></i></div>
           <div class="gcard__body">
             <img class="gcard__icon" src="/assets/games/poker/icon.webp" alt="" loading="lazy">
@@ -340,7 +353,7 @@
             <div class="gcard__foot"><div class="plats"><span>Android</span></div><span class="gcard__go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
           </div>
         </article>
-        <article class="gcard" data-reveal data-tilt="6" style="--c:#d14dff;--d:120ms" data-shots="/assets/games/blackjack/shot-2.webp,/assets/games/blackjack/shot-4.webp,/assets/games/blackjack/shot-6.webp">
+        <article class="gcard" data-reveal data-tilt="6" style="--c:#d14dff" data-shots="/assets/games/blackjack/shot-2.webp,/assets/games/blackjack/shot-4.webp,/assets/games/blackjack/shot-6.webp">
           <div class="gcard__media"><img src="/assets/games/blackjack/shot-1.webp" alt="Hantro: BlackJack görseli" loading="lazy"><i class="gcard__bar" aria-hidden="true"></i></div>
           <div class="gcard__body">
             <img class="gcard__icon" src="/assets/games/blackjack/icon.webp" alt="" loading="lazy">
@@ -350,7 +363,7 @@
             <div class="gcard__foot"><div class="plats"><span>Android</span><span>iOS</span></div><span class="gcard__go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
           </div>
         </article>
-        <article class="gcard" data-reveal data-tilt="6" style="--c:#ff3b4e" data-shots="/assets/games/idle-dispatch/shot-2.webp,/assets/games/idle-dispatch/shot-3.webp,/assets/games/idle-dispatch/shot-5.webp">
+        <article class="gcard" data-reveal data-tilt="6" style="--c:#ff3b4e;--d:60ms" data-shots="/assets/games/idle-dispatch/shot-2.webp,/assets/games/idle-dispatch/shot-3.webp,/assets/games/idle-dispatch/shot-5.webp">
           <div class="gcard__media"><img src="/assets/games/idle-dispatch/shot-1.webp" alt="911: Idle Dispatch görseli" loading="lazy"><i class="gcard__bar" aria-hidden="true"></i></div>
           <div class="gcard__body">
             <img class="gcard__icon" src="/assets/games/idle-dispatch/icon.webp" alt="" loading="lazy">
@@ -360,7 +373,7 @@
             <div class="gcard__foot"><div class="plats"><span>Android</span><span>iOS</span></div><span class="gcard__go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
           </div>
         </article>
-        <article class="gcard" data-reveal data-tilt="6" style="--c:#c9a063;--d:60ms" data-shots="/assets/games/darkway/shot-1.webp,/assets/games/darkway/shot-4.webp,/assets/games/darkway/shot-5.webp">
+        <article class="gcard" data-reveal data-tilt="6" style="--c:#c9a063;--d:120ms" data-shots="/assets/games/darkway/shot-1.webp,/assets/games/darkway/shot-4.webp,/assets/games/darkway/shot-5.webp">
           <div class="gcard__media"><img src="/assets/games/darkway/shot-2.webp" alt="DarkWay oynanışı" loading="lazy"><i class="gcard__bar" aria-hidden="true"></i></div>
           <div class="gcard__body">
             <img class="gcard__icon" src="/assets/games/darkway/icon.webp" alt="" loading="lazy">
@@ -370,7 +383,7 @@
             <div class="gcard__foot"><div class="plats"><span>Android</span><span>iOS</span></div><span class="gcard__go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
           </div>
         </article>
-        <article class="gcard" data-reveal data-tilt="6" style="--c:#5aa8ff;--d:120ms" data-shots="/assets/games/moba-manager/shot-2.webp,/assets/games/moba-manager/shot-4.webp,/assets/games/moba-manager/shot-6.webp">
+        <article class="gcard" data-reveal data-tilt="6" style="--c:#5aa8ff" data-shots="/assets/games/moba-manager/shot-2.webp,/assets/games/moba-manager/shot-4.webp,/assets/games/moba-manager/shot-6.webp">
           <div class="gcard__media"><img src="/assets/games/moba-manager/shot-1.webp" alt="Moba Manager oynanışı" loading="lazy"><i class="gcard__bar" aria-hidden="true"></i></div>
           <div class="gcard__body">
             <img class="gcard__icon" src="/assets/games/moba-manager/icon.webp" alt="" loading="lazy">
@@ -380,7 +393,7 @@
             <div class="gcard__foot"><div class="plats"><span>Android</span></div><span class="gcard__go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
           </div>
         </article>
-        <article class="gcard" data-reveal data-tilt="6" style="--c:#ff5fae" data-shots="/assets/games/ember-keep/shot-2.webp,/assets/games/ember-keep/shot-4.webp,/assets/games/ember-keep/shot-5.webp">
+        <article class="gcard" data-reveal data-tilt="6" style="--c:#ff5fae;--d:60ms" data-shots="/assets/games/ember-keep/shot-2.webp,/assets/games/ember-keep/shot-4.webp,/assets/games/ember-keep/shot-5.webp">
           <div class="gcard__media"><img src="/assets/games/ember-keep/shot-1.webp" alt="Ember Keep oynanışı" loading="lazy" style="object-position:50% 38%"><i class="gcard__bar" aria-hidden="true"></i></div>
           <div class="gcard__body">
             <img class="gcard__icon" src="/assets/games/ember-keep/icon.webp" alt="" loading="lazy">
@@ -472,6 +485,7 @@
         <h2>Android ve iOS için strateji, kart ve simülasyon oyunları</h2>
         <p>HanX Games pek çok türde mobil oyun geliştiriyor. İnternetsiz 3D strateji oyunu <a href="/tr/rebirth/">ReBirth</a>’te bir eyaleti yeniden kur, poker roguelike oyunu <a href="/tr/poker/">Hantro: Poker</a>’da milyarlık skorların peşine düş, blackjack deste kurma oyunu <a href="/tr/blackjack/">Hantro: BlackJack</a>’te rakipsiz desteler oluştur.</p>
         <p>911 acil çağrı simülasyonu <a href="/tr/911-idle-dispatch/">911: Idle Dispatch</a>’te bir şehrin acil hattını yönet, kaydırmalı RPG <a href="/tr/darkway/">DarkWay</a>’de ortaçağ krallığına hükmet, MOBA menajerlik oyunu <a href="/tr/moba-manager/">Moba Manager</a>’da espor takımı çalıştır ve kule savunma oyunu <a href="/tr/ember-keep/">Hantro: Ember Keep</a>’te kaleni savun.</p>
+        <p>En yeni oyunumuz, gerçek coğrafyada geçen askerî strateji oyunu <a href="/tr/frontaxis/">Frontaxis</a>, 2030’da 12 gerçek orduyu senin komutana veriyor ve şu an Android’de kapalı testte.</p>
         <p>Oyunlarımızın çoğu internetsiz oynanabilir ve telefon ile tabletlerde kısa oturumlar için tasarlandı. Hepsi Google Play’de, birçoğu App Store’da da var.</p>
       </div>
       <aside class="facts" data-reveal="right">
@@ -522,6 +536,7 @@
         <h4>Oyunlar</h4>
         <ul class="footer__games">
           <li><a href="/tr/rebirth/">ReBirth</a></li>
+          <li><a href="/tr/frontaxis/">Frontaxis</a></li>
           <li><a href="/tr/poker/">Hantro: Poker</a></li>
           <li><a href="/tr/blackjack/">Hantro: BlackJack</a></li>
           <li><a href="/tr/911-idle-dispatch/">911: Idle Dispatch</a></li>

@@ -113,7 +113,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .nav.is-open .nav__burger span { opacity: 0; }
 .nav.is-open .nav__burger::after { transform: translateY(-6px) rotate(-45deg); }
 
-@media (max-width: 1180px) {
+@media (max-width: 1340px) {
   .nav__burger { display: block; }
   .lang { margin-left: auto; }
   /* The nav's backdrop-filter makes it the containing block, so size the drawer explicitly. */
