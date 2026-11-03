@@ -1299,6 +1299,8 @@ PAGES['rebirth/index.html'] += [
      'Kesra Deltası</h3>'),
     ('Varzan Plateau</h3>',
      'Varzan Yaylası</h3>'),
+    ('href="https://rebirthgame.tr/privacy.html"',
+     'href="https://rebirthgame.tr/privacy.html?lang=tr"'),
 ]
 
 # 2026 ana sayfa tasarımı (yeni logo ve intro, 2026-10-25): kaldırılan yörünge bölümünün çiftleri çıkar, yeni metinler
