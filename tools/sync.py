@@ -76,7 +76,7 @@ GAMES = {
     '/blackjack/': dict(name='Hantro: BlackJack Roguelike', slug='blackjack', genre=['Card', 'Strategy', 'Roguelike'], gp='com.hantro.blackjack', apple='6761393761', price='0'),
     '/911-idle-dispatch/': dict(name='911: Idle Dispatch', slug='idle-dispatch', genre=['Simulation', 'Strategy', 'Idle'], gp='com.hantro.wwiii', apple='6813881867', price='0'),
     '/darkway/': dict(name='DarkWay: Kingdom Choices', slug='darkway', genre=['Role Playing', 'Strategy', 'Card'], gp='com.hantro.darkway.rpg', apple='6801437989', price='0.49'),
-    '/moba-manager/': dict(name='Moba Manager: Esports Coach', slug='moba-manager', genre=['Strategy', 'Sports', 'Simulation'], gp='com.hantro.blockblastmaster', price='0'),
+    '/moba-manager/': dict(name='Moba Manager: Esports Coach', slug='moba-manager', genre=['Strategy', 'Sports', 'Simulation'], gp='com.hantro.blockblastmaster', apple='6823991266', price='0'),
     '/ember-keep/': dict(name='Hantro: Ember Keep', slug='ember-keep', genre=['Strategy', 'Tower Defense', 'Roguelike'], gp='hantro.tower.roguelike', apple='6803483619', price='0'),
 }
 GP_URL = 'https://play.google.com/store/apps/details?id='
