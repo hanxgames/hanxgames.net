@@ -1,0 +1,78 @@
+# Russian translation: built ONLY for the S.W.A.T privacy page (see SCOPED in tools/sync.py).
+# Links to other pages stay unprefixed (there is no /ru/ version of them).
+
+BADGES = (('Скачать в', 'Google Play'), ('Загрузить в', 'App Store'))
+LANG_LABEL = 'Язык'
+
+COMMON = [
+    ('<a class="skip" href="#main">Skip to content</a>', '<a class="skip" href="#main">Перейти к содержимому</a>'),
+    ('aria-label="HanX Games home"', 'aria-label="HanX Games, главная"'),
+    ('<nav class="nav__links" aria-label="Games">', '<nav class="nav__links" aria-label="Игры">'),
+    ('aria-label="Open menu"', 'aria-label="Открыть меню"'),
+    ('Independent mobile game studio. Strategy, cards, simulation and RPG games for Android and iOS.',
+     'Независимая студия мобильных игр. Стратегии, карточные игры, симуляторы и RPG для Android и iOS.'),
+    ('<h4>Games</h4>', '<h4>Игры</h4>'),
+    ('<h4>Find us</h4>', '<h4>Мы в сети</h4>'),
+    ('HanX Games. All rights reserved.', 'HanX Games. Все права защищены.'),
+    ('Google Play and the Google Play logo are trademarks of Google LLC. App Store is a service mark of Apple Inc.',
+     'Google Play и логотип Google Play являются товарными знаками Google LLC. App Store является знаком обслуживания Apple Inc.'),
+    ('<li><a href="/privacy/">Privacy</a></li>', '<li><a href="/privacy/">Конфиденциальность</a></li>'),
+]
+
+PAGES = {}
+
+# S.W.A.T privacy page (2026-11-06)
+PAGES['swat/privacy/index.html'] = [
+    ('<title>S.W.A.T: RTS Tactical Game Privacy Policy | HanX Games</title>',
+     '<title>Политика конфиденциальности S.W.A.T: RTS Tactical Game | HanX Games</title>'),
+    ('content="Privacy policy for S.W.A.T: RTS Tactical Game (Android): no ads, no purchases, no account. Local save, optional Google Play Games sign-in and Firebase Crashlytics crash reports."',
+     'content="Политика конфиденциальности S.W.A.T: RTS Tactical Game (Android): без рекламы, без покупок, без аккаунта. Локальное сохранение, необязательный вход в Google Play Игры и отчёты о сбоях Firebase Crashlytics."'),
+    ('<meta property="og:title" content="S.W.A.T: RTS Tactical Game Privacy Policy | HanX Games">',
+     '<meta property="og:title" content="Политика конфиденциальности S.W.A.T: RTS Tactical Game | HanX Games">'),
+    ('content="No ads, no purchases, no account. Optional Google Play Games sign-in and crash reports."',
+     'content="Без рекламы, без покупок, без аккаунта. Необязательный вход в Google Play Игры и отчёты о сбоях."'),
+    ('<h1>S.W.A.T: RTS Tactical Game Privacy Policy</h1>',
+     '<h1>Политика конфиденциальности S.W.A.T: RTS Tactical Game</h1>'),
+    ('<p>Last updated: 6 November 2026</p>',
+     '<p>Последнее обновление: 6 ноября 2026 г.</p>'),
+    ('<h2>About this policy</h2>',
+     '<h2>Об этой политике</h2>'),
+    ('<p>This policy explains how S.W.A.T: RTS Tactical Game (Android, package hantro.tower.roguelike), made by HanX Games, handles data. For the hanxgames.net website, see the <a href="/privacy/">website privacy page</a>.</p>',
+     '<p>В этой политике объясняется, как S.W.A.T: RTS Tactical Game (Android, пакет hantro.tower.roguelike) от HanX Games обращается с данными. О сайте hanxgames.net см. <a href="/privacy/">страницу конфиденциальности сайта</a>.</p>'),
+    ('<h2>What the game does not do</h2>',
+     '<h2>Чего игра не делает</h2>'),
+    ('<p>The game has no ads and no in-app purchases. It does not ask you to create an account, and it does not use your location, camera, microphone or contacts.</p>',
+     '<p>В игре нет рекламы и встроенных покупок. Она не требует создавать аккаунт и не использует ваше местоположение, камеру, микрофон или контакты.</p>'),
+    ('<h2>Your progress</h2>',
+     '<h2>Ваш прогресс</h2>'),
+    ('<p>Your game progress is stored on your device in a local save file. Unless you use the optional Google Play Games cloud save (see below), it stays on your device, and the local file is removed when you uninstall the game.</p>',
+     '<p>Прогресс сохраняется на вашем устройстве в локальном файле сохранения. Если вы не используете необязательное облачное сохранение Google Play Игры (см. ниже), он остаётся на устройстве, а локальный файл удаляется при удалении игры.</p>'),
+    ('<h2>Google Play Games Services (optional)</h2>',
+     '<h2>Сервисы Google Play Игры (необязательно)</h2>'),
+    ('<p>You can sign in to Google Play Games Services from the game, but you do not have to. If you do, Google provides your player ID and player name to the game. Cloud save (saved games) keeps your progress in your Google account so you can restore it on another device. Achievements and leaderboard scores are sent to Google Play Games, and on leaderboards your player name may be visible to other players. Google handles this data under the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>, and you manage it from your Google account and the Play Games settings.</p>',
+     '<p>Из игры можно войти в сервисы Google Play Игры, но это не обязательно. Если вы войдёте, Google передаст игре ваш идентификатор игрока и имя игрока. Облачное сохранение (сохранённые игры) хранит ваш прогресс в вашем аккаунте Google, чтобы его можно было восстановить на другом устройстве. Достижения и результаты в таблицах лидеров отправляются в Google Play Игры, а в таблицах лидеров ваше имя игрока может быть видно другим игрокам. Google обрабатывает эти данные в соответствии с <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Политикой конфиденциальности Google</a>; управлять ими можно через аккаунт Google и настройки Play Игр.</p>'),
+    ('<h2>Crash reports (Firebase Crashlytics)</h2>',
+     '<h2>Отчёты о сбоях (Firebase Crashlytics)</h2>'),
+    ('<p>The game uses Firebase Crashlytics, a service from Google, to receive crash and error reports. A report can include your device model, operating system version, the game version, the crash stack trace and a Crashlytics installation ID. We use it only to find and fix bugs and keep the game stable. We do not sell this data and do not use it for advertising. Google processes it as described in the <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase privacy and data processing information</a>.</p>',
+     '<p>Игра использует Firebase Crashlytics, сервис Google, чтобы получать отчёты о сбоях и ошибках. Отчёт может содержать модель вашего устройства, версию операционной системы, версию игры, трассировку стека сбоя и идентификатор установки Crashlytics. Мы используем его только для поиска и исправления ошибок и поддержания стабильной работы игры. Мы не продаём эти данные и не используем их для рекламы. Google обрабатывает их так, как описано в <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">информации Firebase о конфиденциальности и обработке данных</a>.</p>'),
+    ('<h2>Google Play</h2>',
+     '<h2>Google Play</h2>'),
+    ("<p>Downloading and updating the game through Google Play is governed by Google Play's own terms and privacy policy, not by this one.</p>",
+     '<p>Загрузка и обновление игры через Google Play регулируются условиями и политикой конфиденциальности самого Google Play, а не этой политикой.</p>'),
+    ('<h2>Children</h2>',
+     '<h2>Дети</h2>'),
+    ('<p>The game is not aimed at children under 13. It contains weapon violence shown with unrealistic low-poly characters.</p>',
+     '<p>Игра не предназначена для детей младше 13 лет. В ней есть насилие с применением оружия, показанное с помощью нереалистичных низкополигональных персонажей.</p>'),
+    ('<h2>Deleting your data</h2>',
+     '<h2>Удаление данных</h2>'),
+    ('<p>Data on your device is deleted when you uninstall the game. Google Play Games data (cloud save, achievements, leaderboards) is managed from your Google account. To ask us to delete Crashlytics data, email us at the address below.</p>',
+     '<p>Данные на вашем устройстве удаляются при удалении игры. Данными Google Play Игры (облачное сохранение, достижения, таблицы лидеров) вы управляете через аккаунт Google. Чтобы попросить удалить данные Crashlytics, напишите нам по адресу ниже.</p>'),
+    ('<h2>Changes to this policy</h2>',
+     '<h2>Изменения в политике</h2>'),
+    ('<p>If this policy changes, we will update this page and the date at the top.</p>',
+     '<p>Если политика изменится, мы обновим эту страницу и дату вверху.</p>'),
+    ('<h2>Contact</h2>',
+     '<h2>Контакты</h2>'),
+    ('<p>Questions about privacy: ',
+     '<p>Вопросы о конфиденциальности: '),
+]

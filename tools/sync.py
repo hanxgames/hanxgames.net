@@ -33,7 +33,11 @@ LANG_INFO = {
     'pt': ('Português', 'pt_BR'),
     'de': ('Deutsch', 'de_DE'),
     'fr': ('Français', 'fr_FR'),
+    'ru': ('Русский', 'ru_RU'),
 }
+# Languages built only for the listed pages (no site-wide translation): they appear in the language
+# menu / hreflang / sitemap of those pages only, and their links to other pages stay unprefixed.
+SCOPED = {'ru': ['swat/privacy/index.html']}
 ONLY = sys.argv[sys.argv.index('--lang') + 1] if '--lang' in sys.argv else None
 MODULES = {}
 for _c in LANG_INFO:
@@ -45,7 +49,7 @@ for _c in LANG_INFO:
         if _c == ONLY or ONLY is None:
             raise
         print(f'  (skipping {_c}: {type(_e).__name__}: {_e})')
-LANGS = ['en'] + [c for c in LANG_INFO if c in MODULES]
+LANGS = ['en'] + [c for c in LANG_INFO if c in MODULES and c not in SCOPED]
 OTHER = [c for c in LANGS if c != 'en']
 
 read = lambda p: open(os.path.join(ROOT, p), encoding='utf-8').read()
@@ -95,6 +99,10 @@ def text_for(lang):
     return dict(badges=m.BADGES, itch=getattr(m, 'ITCH', EN_TEXT['itch']), lang_label=m.LANG_LABEL)
 
 
+def langs_for(here):
+    return LANGS + [c for c, pages in SCOPED.items() if c in MODULES and any(page_path(p) == here for p in pages)]
+
+
 def lang_url(here, lang):
     return here if lang == 'en' else '/' + lang + here
 
@@ -134,19 +142,20 @@ def lang_menu(here, active):
     label = text_for(active)['lang_label']
     links = ''.join(
         f'<a href="{lang_url(here, c)}" hreflang="{c}" lang="{c}"{" aria-current=\"true\"" if c == active else ""}>{LANG_INFO[c][0]}</a>'
-        for c in LANGS)
+        for c in langs_for(here))
     return (f'<details class="lang"><summary aria-label="{label}: {LANG_INFO[active][0]}">{GLOBE_SVG}<span>{active.upper()}</span></summary>'
             f'<div class="lang__menu">{links}</div></details>')
 
 
 def head_block(here, lang):
-    out = [f'<link rel="alternate" hreflang="{c}" href="{SITE}{lang_url(here, c)}">' for c in LANGS]
+    LG = langs_for(here)
+    out = [f'<link rel="alternate" hreflang="{c}" href="{SITE}{lang_url(here, c)}">' for c in LG]
     out.append(f'<link rel="alternate" hreflang="x-default" href="{SITE}{here}">')
     out.append(f'<meta property="og:locale" content="{LANG_INFO[lang][1]}">')
-    out += [f'<meta property="og:locale:alternate" content="{LANG_INFO[c][1]}">' for c in LANGS if c != lang]
-    if lang == 'en' and OTHER:
+    out += [f'<meta property="og:locale:alternate" content="{LANG_INFO[c][1]}">' for c in LG if c != lang]
+    if lang == 'en' and len(LG) > 1:
         # First visit: follow the browser's language. The language menu stores an explicit choice.
-        codes = json.dumps(OTHER).replace('"', "'")
+        codes = json.dumps(LG[1:]).replace('"', "'")
         out.append("<script>try{if(!localStorage.getItem('hx-lang')){var L=%s,n=navigator.languages||[navigator.language||''];"
                    "for(var i=0;i<n.length;i++){var c=(n[i]||'').slice(0,2).toLowerCase();if(c==='en')break;"
                    "if(L.indexOf(c)>-1){location.replace('/'+c+location.pathname+location.hash);break}}}}catch(e){}</script>" % codes)
@@ -256,7 +265,8 @@ def translate(html, rel, here, lang):
     html = html.replace('<html lang="en">', f'<html lang="{lang}">', 1)
     html = re.sub(r'<!-- @stores([^>]*?)-->.*?<!-- /@stores -->',
                   lambda m: '<!-- @stores' + m.group(1) + '-->\n' + stores(m.group(1), lang, here) + '\n<!-- /@stores -->', html, flags=re.S)
-    html = INTERNAL.sub(f'href="/{lang}/', html)  # internal links -> same language; assets are shared
+    if lang not in SCOPED:
+        html = INTERNAL.sub(f'href="/{lang}/', html)  # internal links -> same language; assets are shared
     html = re.sub(r'(rel="canonical" href="%s/)' % re.escape(SITE), rf'\g<1>{lang}/', html)
     html = re.sub(r'(property="og:url" content="%s/)' % re.escape(SITE), rf'\g<1>{lang}/', html)
     html = block(html, 'lang', lang_menu(here, lang))
@@ -268,8 +278,8 @@ def translate(html, rel, here, lang):
 def sitemap(paths):
     rows = []
     for here in sorted(paths, key=lambda p: (p != '/', p)):
-        alts = ''.join(f'<xhtml:link rel="alternate" hreflang="{c}" href="{SITE}{lang_url(here, c)}"/>' for c in LANGS)
-        for c in LANGS:
+        alts = ''.join(f'<xhtml:link rel="alternate" hreflang="{c}" href="{SITE}{lang_url(here, c)}"/>' for c in langs_for(here))
+        for c in langs_for(here):
             rows.append(f'  <url><loc>{SITE}{lang_url(here, c)}</loc>{alts}</url>')
     return ('<?xml version="1.0" encoding="UTF-8"?>\n'
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
@@ -301,7 +311,7 @@ def main():
             if f == '404.html':
                 continue  # GitHub Pages serves one 404 for every path; it localises itself in JS.
             paths.append(here)
-            for lang in build:
+            for lang in [c for c in dict.fromkeys(build + [x for x in SCOPED if ONLY in (None, x)]) if c not in SCOPED or rel.replace(os.sep, '/') in SCOPED[c]]:
                 out, missing = translate(html, rel, here, lang)
                 for m in missing:
                     problems += 1
