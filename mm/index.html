@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Moba Manager</title>
+<link rel="icon" href="/favicon.ico">
+<script>
+(function(){
+  var PLAY="https://play.google.com/store/apps/details?id=com.hantro.blockblastmaster&referrer=utm_source%3Dinstagram%26utm_medium%3Dstory%26utm_campaign%3Dmoba-manager";
+  var IOS="https://apps.apple.com/app/id6823991266";
+  var ua=navigator.userAgent||"";
+  var ios=/iPhone|iPad|iPod/i.test(ua)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
+  if(/android/i.test(ua)) location.replace(PLAY);
+  else if(ios) location.replace(IOS);
+})();
+</script>
+<style>
+:root{--bg:#0d1020;--fg:#fff;--muted:#a9b0c8}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:radial-gradient(circle at 50% 20%,#24305e 0,var(--bg) 70%);color:var(--fg);
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;display:flex;align-items:center;justify-content:center;padding:24px 16px;text-align:center}
+main{max-width:420px;width:100%}
+.icon{width:120px;height:120px;border-radius:26px;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+h1{font-size:28px;margin:18px 0 6px}
+p{color:var(--muted);margin:0 0 28px;font-size:16px}
+.badges{display:flex;flex-direction:column;align-items:center;gap:14px}
+.badges a{display:block}
+.badges img{display:block;height:60px;width:auto}
+.badges a.play img{height:89px;margin:-14px 0}
+</style>
+</head>
+<body>
+<main>
+  <img class="icon" src="/assets/games/moba-manager/icon.webp" alt="Moba Manager">
+  <h1>Moba Manager</h1>
+  <p id="sub">Oyunu indirmek için mağazanı seç</p>
+  <div class="badges">
+    <a id="ios" href="https://apps.apple.com/app/id6823991266"><img id="ios-img" src="/assets/badges/app-store-tr.svg" alt="App Store'dan İndirin"></a>
+    <a id="play" class="play" href="https://play.google.com/store/apps/details?id=com.hantro.blockblastmaster&amp;referrer=utm_source%3Dinstagram%26utm_medium%3Dstory%26utm_campaign%3Dmoba-manager"><img id="play-img" src="/assets/badges/google-play-tr.png" alt="Google Play'den Alın"></a>
+  </div>
+</main>
+<script>
+if(!/^tr/i.test(navigator.language||"")){
+  document.documentElement.lang="en";
+  document.getElementById("sub").textContent="Choose your store to download the game";
+  var a=document.getElementById("ios-img");a.src="/assets/badges/app-store-en.svg";a.alt="Download on the App Store";
+  var g=document.getElementById("play-img");g.src="/assets/badges/google-play-en.png";g.alt="Get it on Google Play";
+}
+</script>
+</body>
+</html>
