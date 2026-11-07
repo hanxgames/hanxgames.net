@@ -81,8 +81,7 @@ GAMES = {
     '/911-idle-dispatch/': dict(name='911: Idle Dispatch', slug='idle-dispatch', genre=['Simulation', 'Strategy', 'Idle'], gp='com.hantro.wwiii', apple='6813881867', price='0'),
     '/darkway/': dict(name='DarkWay: Kingdom Choices', slug='darkway', genre=['Role Playing', 'Strategy', 'Card'], gp='com.hantro.darkway.rpg', apple='6801437989', price='0.49'),
     '/moba-manager/': dict(name='Moba Manager: Esports Coach', slug='moba-manager', genre=['Strategy', 'Sports', 'Simulation'], gp='com.hantro.blockblastmaster', apple='6823991266', price='0'),
-    '/ember-keep/': dict(name='Hantro: Ember Keep', slug='ember-keep', genre=['Strategy', 'Tower Defense', 'Roguelike'], gp='hantro.tower.roguelike', apple='6803483619', price='0'),
-    # Same Play listing as the former Hantro: Ember Keep.
+    # Same Play listing as the former Hantro: Ember Keep (/ember-keep/ now redirects here).
     '/swat/': dict(name='S.W.A.T: RTS Tactical Game', slug='swat', genre=['Strategy', 'Real-time strategy', 'Tactical'], gp='hantro.tower.roguelike', price='0'),
 }
 GP_URL = 'https://play.google.com/store/apps/details?id='
