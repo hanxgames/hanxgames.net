@@ -37,7 +37,7 @@ LANG_INFO = {
 }
 # Languages built only for the listed pages (no site-wide translation): they appear in the language
 # menu / hreflang / sitemap of those pages only, and their links to other pages stay unprefixed.
-SCOPED = {'ru': ['swat/privacy/index.html']}
+SCOPED = {'ru': ['swat/index.html', 'swat/privacy/index.html']}
 ONLY = sys.argv[sys.argv.index('--lang') + 1] if '--lang' in sys.argv else None
 MODULES = {}
 for _c in LANG_INFO:
@@ -82,6 +82,8 @@ GAMES = {
     '/darkway/': dict(name='DarkWay: Kingdom Choices', slug='darkway', genre=['Role Playing', 'Strategy', 'Card'], gp='com.hantro.darkway.rpg', apple='6801437989', price='0.49'),
     '/moba-manager/': dict(name='Moba Manager: Esports Coach', slug='moba-manager', genre=['Strategy', 'Sports', 'Simulation'], gp='com.hantro.blockblastmaster', apple='6823991266', price='0'),
     '/ember-keep/': dict(name='Hantro: Ember Keep', slug='ember-keep', genre=['Strategy', 'Tower Defense', 'Roguelike'], gp='hantro.tower.roguelike', apple='6803483619', price='0'),
+    # Same Play listing as the former Hantro: Ember Keep.
+    '/swat/': dict(name='S.W.A.T: RTS Tactical Game', slug='swat', genre=['Strategy', 'Real-time strategy', 'Tactical'], gp='hantro.tower.roguelike', price='0'),
 }
 GP_URL = 'https://play.google.com/store/apps/details?id='
 APPLE_URL = 'https://apps.apple.com/app/id'
@@ -107,9 +109,14 @@ def lang_url(here, lang):
     return here if lang == 'en' else '/' + lang + here
 
 
-def gp_referrer(here):
+def gp_referrer(here, campaign=None, medium='web'):
     """Campaign tag on Google Play links: Play Console acquisition reports and Firebase show installs per page. No personal data."""
-    return '&amp;referrer=utm_source%3Dhanxgames.net%26utm_medium%3Dweb%26utm_campaign%3D' + (here.strip('/').replace('/', '-') or 'home')
+    return (f'&amp;referrer=utm_source%3Dhanxgames.net%26utm_medium%3D{medium}%26utm_campaign%3D'
+            + (campaign or here.strip('/').replace('/', '-') or 'home'))
+
+
+# Google Play interface language for <!-- @stores ... hl="1" --> links
+GP_HL = {'en': 'en', 'tr': 'tr', 'es': 'es', 'pt': 'pt_BR', 'de': 'de', 'fr': 'fr', 'ru': 'ru'}
 
 
 def stores(attrs, lang='en', here='/'):
@@ -122,7 +129,8 @@ def stores(attrs, lang='en', here='/'):
         en = round(APPSTORE_EN.get(lang, APPSTORE_EN['en']) * 56 / 40)
         out.append(f'<a class="store store--badge" href="{url}" target="_blank" rel="noopener"><img src="/assets/badges/app-store-{lang if lang in APPSTORE_EN else "en"}.svg" alt="{APPSTORE_ALT.get(lang, APPSTORE_ALT['en'])}" width="{en}" height="56"></a>')
     if a.get('gp'):
-        url = a['gp'] if a['gp'].startswith('http') else GP_URL + a['gp'] + gp_referrer(here)
+        hl = f'&amp;hl={GP_HL.get(lang, "en")}' if a.get('hl') else ''
+        url = a['gp'] if a['gp'].startswith('http') else GP_URL + a['gp'] + hl + gp_referrer(here, a.get('campaign'), a.get('medium', 'web'))
         out.append(f'<a class="store" href="{url}" target="_blank" rel="noopener">{GP_SVG}<span><small>{gs}</small><b>{gb}</b></span></a>')
     if a.get('itch'):
         isml, ibig = text_for(lang)['itch']
@@ -134,7 +142,7 @@ NAV_GAMES = re.findall(r'<a href="(/[^"]+/)"><img src="([^"]+)"[^>]*>([^<]+)</a>
 
 
 def more(here):
-    items = [f'<a href="{h}"><img src="{i}" alt="" loading="lazy">{n}</a>' for h, i, n in NAV_GAMES if h != here]
+    items = [f'<a href="{h}"><img src="{i}" alt="" width="40" height="40" loading="lazy">{n}</a>' for h, i, n in NAV_GAMES if h != here]
     return '<div class="more-games">\n' + '\n'.join(items) + '\n</div>'
 
 
@@ -191,7 +199,7 @@ def schema(html, here, lang):
     elif here in GAMES:
         g = GAMES[here]
         stores_ = [GP_URL + g['gp']] + ([APPLE_URL + g['apple']] if g.get('apple') else [])
-        shots = sorted(set(re.findall(r'src="(/assets/games/%s/shot-\d+\.webp)"' % g['slug'], html)))
+        shots = sorted(set(re.findall(r'src="(/assets/games/%s/(?:[a-z]{2}/)?shot-\d+\.webp)"' % g['slug'], html)))
         graph.append({
             '@type': ['VideoGame', 'MobileApplication'], 'name': g['name'], 'url': url, 'inLanguage': lang,
             'description': meta(html, 'name', 'description'),
@@ -205,6 +213,16 @@ def schema(html, here, lang):
             'author': {'@id': SITE + '/#org'}, 'publisher': {'@id': SITE + '/#org'},
             'installUrl': stores_[0], 'sameAs': stores_ + ([g['itch']] if g.get('itch') else []) + ([g['community']] if g.get('community') else []),
         })
+        # Embedded trailer: <video data-ld-name=".." data-ld-desc=".." data-ld-date=".." data-ld-duration=".." poster=".."><source src="..">
+        vid = re.search(r'<video\b([^>]*)>\s*<source src="([^"]+)"', html)
+        if vid and 'data-ld-name' in vid.group(1):
+            va = dict(re.findall(r'([\w-]+)="([^"]*)"', vid.group(1)))
+            video = {'@type': 'VideoObject', '@id': url + '#trailer', 'name': htmllib.unescape(va['data-ld-name']),
+                     'description': htmllib.unescape(va['data-ld-desc']), 'thumbnailUrl': SITE + va['poster'],
+                     'uploadDate': va['data-ld-date'], 'duration': va['data-ld-duration'], 'contentUrl': SITE + vid.group(2),
+                     'embedUrl': url + '#trailer', 'inLanguage': va.get('data-ld-lang', lang), 'publisher': {'@id': SITE + '/#org'}}
+            graph[-1]['trailer'] = {'@id': video['@id']}
+            graph.append(video)
         graph.append(org)
         graph.append({'@type': 'BreadcrumbList', 'itemListElement': [
             {'@type': 'ListItem', 'position': 1, 'name': 'HanX Games', 'item': home},
@@ -310,7 +328,8 @@ def main():
             write_if_changed(p, html)
             if f == '404.html':
                 continue  # GitHub Pages serves one 404 for every path; it localises itself in JS.
-            paths.append(here)
+            if 'name="robots" content="noindex' not in html:
+                paths.append(here)  # redirect pages (noindex) stay out of the sitemap
             for lang in [c for c in dict.fromkeys(build + [x for x in SCOPED if ONLY in (None, x)]) if c not in SCOPED or rel.replace(os.sep, '/') in SCOPED[c]]:
                 out, missing = translate(html, rel, here, lang)
                 for m in missing:

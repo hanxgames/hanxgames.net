@@ -11,7 +11,8 @@
     es: ['es-ES', 'Visor de capturas', 'Cerrar', 'Anterior', 'Siguiente'],
     pt: ['pt-BR', 'Visualizador de capturas', 'Fechar', 'Anterior', 'Próxima'],
     de: ['de-DE', 'Screenshot-Ansicht', 'Schließen', 'Zurück', 'Weiter'],
-    fr: ['fr-FR', 'Visionneuse de captures', 'Fermer', 'Précédente', 'Suivante']
+    fr: ['fr-FR', 'Visionneuse de captures', 'Fermer', 'Précédente', 'Suivante'],
+    ru: ['ru-RU', 'Просмотр скриншотов', 'Закрыть', 'Назад', 'Далее']
   }[lang] || ['en-US', 'Screenshot viewer', 'Close', 'Previous', 'Next'];
   HX.locale = I18N[0];
   var T = { viewer: I18N[1], close: I18N[2], prev: I18N[3], next: I18N[4] };
