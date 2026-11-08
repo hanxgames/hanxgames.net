@@ -82,7 +82,7 @@ GAMES = {
     '/darkway/': dict(name='DarkWay: Kingdom Choices', slug='darkway', genre=['Role Playing', 'Strategy', 'Card'], gp='com.hantro.darkway.rpg', apple='6801437989', price='0.49'),
     '/moba-manager/': dict(name='Moba Manager: Esports Coach', slug='moba-manager', genre=['Strategy', 'Sports', 'Simulation'], gp='com.hantro.blockblastmaster', apple='6823991266', price='0'),
     # Same Play listing as the former Hantro: Ember Keep (/ember-keep/ now redirects here).
-    '/swat/': dict(name='S.W.A.T: RTS Tactical Game', slug='swat', genre=['Strategy', 'Real-time strategy', 'Tactical'], gp='hantro.tower.roguelike', price='0'),
+    '/swat/': dict(name='SWAT: Tactical Raids', slug='swat', genre=['Strategy', 'Real-time strategy', 'Tactical'], gp='hantro.tower.roguelike', price='0'),
 }
 GP_URL = 'https://play.google.com/store/apps/details?id='
 APPLE_URL = 'https://apps.apple.com/app/id'
