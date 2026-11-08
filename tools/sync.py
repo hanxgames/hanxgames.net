@@ -38,6 +38,7 @@ LANG_INFO = {
 # Languages built only for the listed pages (no site-wide translation): they appear in the language
 # menu / hreflang / sitemap of those pages only, and their links to other pages stay unprefixed.
 SCOPED = {'ru': ['swat/index.html', 'swat/privacy/index.html']}
+STANDALONE = ('mm',)  # self-contained hidden pages (own TR/EN, noindex): never localized or rewritten
 ONLY = sys.argv[sys.argv.index('--lang') + 1] if '--lang' in sys.argv else None
 MODULES = {}
 for _c in LANG_INFO:
@@ -307,7 +308,7 @@ def main():
     build = [ONLY] if ONLY else OTHER
     problems, paths = 0, []
     for dp, dn, fn in os.walk(ROOT):
-        dn[:] = [d for d in dn if d not in ('.git', 'partials', 'tools', 'assets', 'node_modules') and d not in LANG_INFO]
+        dn[:] = [d for d in dn if d not in ('.git', 'partials', 'tools', 'assets', 'node_modules') + STANDALONE and d not in LANG_INFO]
         for f in fn:
             if not f.endswith('.html'):
                 continue
