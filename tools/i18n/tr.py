@@ -2077,3 +2077,34 @@ PAGES['swat/index.html'] = [
     ('/assets/games/swat/mp-poster-en.webp',
      '/assets/games/swat/mp-poster-tr.webp'),
 ]
+
+
+# Destek sayfası (2026-11-09)
+PAGES['support/index.html'] = [
+    ('<title>Support | HanX Games</title>',
+     '<title>Destek | HanX Games</title>'),
+    ('content="Get help with HanX Games games: contact us by email at hanxdestek@gmail.com."',
+     'content="HanX Games oyunları için yardım: hanxdestek@gmail.com adresinden bize e-posta gönderin."'),
+    ('<meta property="og:title" content="Support | HanX Games">',
+     '<meta property="og:title" content="Destek | HanX Games">'),
+    ('content="Need help with one of our games? Email hanxdestek@gmail.com."',
+     'content="Oyunlarımızdan biriyle ilgili yardım mı lazım? hanxdestek@gmail.com adresine yazın."'),
+    ('<h1>Support</h1>',
+     '<h1>Destek</h1>'),
+    ('<p>Need help with one of our games, or have a question about a purchase, your progress or privacy? Write to us and we will get back to you.</p>',
+     '<p>Oyunlarımızdan biriyle ilgili yardıma mı ihtiyacınız var ya da bir satın alma, ilerlemeniz veya gizlilik hakkında sorunuz mu var? Bize yazın, size dönüş yapalım.</p>'),
+    ('<h2>Contact</h2>',
+     '<h2>İletişim</h2>'),
+    ('<p>Email: ',
+     '<p>E-posta: '),
+    ("<p>To help us answer faster, please include the game's name, your device model and the game version (shown in the game's Settings).</p>",
+     '<p>Daha hızlı yanıt verebilmemiz için lütfen oyunun adını, cihaz modelinizi ve oyun sürümünü (oyunun Ayarlar bölümünde yazar) ekleyin.</p>'),
+    ('<h2>Purchases</h2>',
+     '<h2>Satın almalar</h2>'),
+    ("<p>Purchases are processed by the App Store or Google Play. If a purchase is missing, use Restore Purchases in the game's Settings. For refunds, contact the store where you made the purchase.</p>",
+     "<p>Satın almalar App Store veya Google Play tarafından işlenir. Bir satın alma eksikse oyunun Ayarlar bölümündeki Satın Alımları Geri Yükle'yi kullanın. İade için satın almayı yaptığınız mağazaya başvurun.</p>"),
+    ('<h2>Privacy</h2>',
+     '<h2>Gizlilik</h2>'),
+    ('<p>Each game has its own privacy policy, linked from its store page and inside the game. For this website, see the <a href="/privacy/">website privacy page</a>.</p>',
+     '<p>Her oyunun kendi gizlilik politikası vardır; mağaza sayfasından ve oyunun içinden ulaşılabilir. Bu web sitesi için <a href="/privacy/">web sitesi gizlilik sayfasına</a> bakın.</p>'),
+]

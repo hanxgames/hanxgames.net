@@ -2067,3 +2067,34 @@ PAGES['swat/index.html'] = [
     ('<summary>Does SWAT: Tactical Raids have multiplayer?</summary><div class="faq__a"><p>Yes, as a beta. Multiplayer has 4v4 attack and defense rounds in ranked and quick matches, with 16 operators, costumes and gear. It is separate from the career mode.</p></div>',
      '<summary>¿SWAT: Tactical Raids tiene multijugador?</summary><div class="faq__a"><p>Sí, en beta. El multijugador tiene rondas 4v4 de ataque y defensa en partidas clasificatorias y rápidas, con 16 operadores, aspectos y equipo. Es independiente del modo carrera.</p></div>'),
 ]
+
+
+# Destek sayfası (2026-11-09)
+PAGES['support/index.html'] = [
+    ('<title>Support | HanX Games</title>',
+     '<title>Soporte | HanX Games</title>'),
+    ('content="Get help with HanX Games games: contact us by email at hanxdestek@gmail.com."',
+     'content="Ayuda con los juegos de HanX Games: escríbenos a hanxdestek@gmail.com."'),
+    ('<meta property="og:title" content="Support | HanX Games">',
+     '<meta property="og:title" content="Soporte | HanX Games">'),
+    ('content="Need help with one of our games? Email hanxdestek@gmail.com."',
+     'content="¿Necesitas ayuda con uno de nuestros juegos? Escribe a hanxdestek@gmail.com."'),
+    ('<h1>Support</h1>',
+     '<h1>Soporte</h1>'),
+    ('<p>Need help with one of our games, or have a question about a purchase, your progress or privacy? Write to us and we will get back to you.</p>',
+     '<p>¿Necesitas ayuda con uno de nuestros juegos o tienes una pregunta sobre una compra, tu progreso o la privacidad? Escríbenos y te responderemos.</p>'),
+    ('<h2>Contact</h2>',
+     '<h2>Contacto</h2>'),
+    ('<p>Email: ',
+     '<p>Correo electrónico: '),
+    ("<p>To help us answer faster, please include the game's name, your device model and the game version (shown in the game's Settings).</p>",
+     '<p>Para responderte más rápido, indica el nombre del juego, el modelo de tu dispositivo y la versión del juego (aparece en los Ajustes del juego).</p>'),
+    ('<h2>Purchases</h2>',
+     '<h2>Compras</h2>'),
+    ("<p>Purchases are processed by the App Store or Google Play. If a purchase is missing, use Restore Purchases in the game's Settings. For refunds, contact the store where you made the purchase.</p>",
+     '<p>Las compras las procesa la App Store o Google Play. Si falta una compra, usa Restaurar compras en los Ajustes del juego. Para reembolsos, contacta con la tienda donde hiciste la compra.</p>'),
+    ('<h2>Privacy</h2>',
+     '<h2>Privacidad</h2>'),
+    ('<p>Each game has its own privacy policy, linked from its store page and inside the game. For this website, see the <a href="/privacy/">website privacy page</a>.</p>',
+     '<p>Cada juego tiene su propia política de privacidad, enlazada desde su página de la tienda y dentro del juego. Para este sitio web, consulta la <a href="/privacy/">página de privacidad del sitio</a>.</p>'),
+]
