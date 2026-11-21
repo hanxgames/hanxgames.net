@@ -75,7 +75,7 @@ EN_TEXT = dict(badges=(('Get it on', 'Google Play'), ('Download on the', 'App St
 
 # Facts used for the VideoGame structured data (descriptions come from each page).
 GAMES = {
-    '/rebirth/': dict(name='ReBirth: Rebuild & Resist', slug='rebirth', genre=['Strategy', 'Simulation'], gp='com.hantro.business', apple='6821863283', price='0', itch='https://hanx-games.itch.io/rebirth', community='https://www.reddit.com/r/ReBirthSocial/'),
+    '/rebirth/': dict(name='ReBirth: Rebuild & Resist', alternate=['ReBirth: Offline War Strategy', 'ReBirth: Savaş ve Şehir Kurma', 'ReBirth: Estrategia de Guerra', 'ReBirth: Estratégia de Guerra', 'ReBirth: Aufbau-Strategiespiel', 'ReBirth : Stratégie de guerre'], slug='rebirth', genre=['Strategy', 'Simulation'], gp='com.hantro.business', apple='6821863283', price='0', itch='https://hanx-games.itch.io/rebirth', community='https://www.reddit.com/r/ReBirthSocial/'),
     '/frontaxis/': dict(name='Frontaxis', slug='frontaxis', genre=['Strategy', 'Real-time strategy', 'Simulation'], gp='com.hanx.games', price='0'),
     '/poker/': dict(name='Hantro: Poker Roguelike', slug='poker', genre=['Card', 'Roguelike'], gp='com.ilhantro.hantro', price='0'),
     '/blackjack/': dict(name='Hantro: BlackJack Roguelike', slug='blackjack', genre=['Card', 'Strategy', 'Roguelike'], gp='com.hantro.blackjack', apple='6761393761', price='0'),
@@ -202,6 +202,7 @@ def schema(html, here, lang):
         shots = sorted(set(re.findall(r'src="(/assets/games/%s/(?:[a-z]{2}/)?shot-\d+\.webp)"' % g['slug'], html)))
         graph.append({
             '@type': ['VideoGame', 'MobileApplication'], 'name': g['name'], 'url': url, 'inLanguage': lang,
+            **({'alternateName': g['alternate']} if g.get('alternate') else {}),
             'description': meta(html, 'name', 'description'),
             'image': meta(html, 'property', 'og:image'),
             'screenshot': [SITE + s for s in shots],
